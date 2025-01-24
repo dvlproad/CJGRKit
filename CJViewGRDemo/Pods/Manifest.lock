@@ -1,0 +1,62 @@
+PODS:
+  - CJViewGR-Swift (0.0.1):
+    - CJViewGR-Swift/Extension (= 0.0.1)
+  - CJViewGR-Swift/Extension (0.0.1)
+  - CQDemoKit/BaseUIKit (0.7.1):
+    - Masonry
+  - CQDemoKit/BaseUtil (0.7.1)
+  - CQDemoKit/BaseVC (0.7.1):
+    - CQDemoKit/BaseVC/Base (= 0.7.1)
+    - CQDemoKit/BaseVC/Collection (= 0.7.1)
+    - CQDemoKit/BaseVC/ScrollView (= 0.7.1)
+    - CQDemoKit/BaseVC/TabBar (= 0.7.1)
+    - CQDemoKit/BaseVC/TableView (= 0.7.1)
+    - CQDemoKit/BaseVC/TextView (= 0.7.1)
+    - CQDemoKit/Helper
+  - CQDemoKit/BaseVC/Base (0.7.1):
+    - CQDemoKit/BaseUIKit
+    - CQDemoKit/Helper
+    - Masonry
+  - CQDemoKit/BaseVC/Collection (0.7.1):
+    - CQDemoKit/BaseVC/Base
+    - CQDemoKit/Helper
+  - CQDemoKit/BaseVC/ScrollView (0.7.1):
+    - CQDemoKit/BaseVC/Base
+    - CQDemoKit/Helper
+  - CQDemoKit/BaseVC/TabBar (0.7.1):
+    - CQDemoKit/Helper
+  - CQDemoKit/BaseVC/TableView (0.7.1):
+    - CQDemoKit/BaseVC/Base
+    - CQDemoKit/Helper
+  - CQDemoKit/BaseVC/TextView (0.7.1):
+    - CQDemoKit/BaseUtil
+    - CQDemoKit/BaseVC/Base
+    - CQDemoKit/Helper
+  - CQDemoKit/Helper (0.7.1)
+  - Masonry (1.1.0)
+  - SnapKit (5.7.1)
+
+DEPENDENCIES:
+  - CJViewGR-Swift (from `../`)
+  - CQDemoKit/BaseVC (~> 0.7.1)
+  - SnapKit
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - CQDemoKit
+    - Masonry
+    - SnapKit
+
+EXTERNAL SOURCES:
+  CJViewGR-Swift:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CJViewGR-Swift: 84e6c40429e800d3b3e3657c5364e7b3896b62d4
+  CQDemoKit: d3c8f63f39f685299711194a65bb2f6ec11bc947
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
+
+PODFILE CHECKSUM: 20be21c0906231be1b6986b92f3af6f43f1497fe
+
+COCOAPODS: 1.16.2
