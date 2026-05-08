@@ -12,6 +12,7 @@
 		8A1000032E58B00000000001 /* StickerEditorDemoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1000042E58B00000000001 /* StickerEditorDemoPage.swift */; };
 		8A1000052E58B00000000001 /* LayoutInputGestureDemoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1000062E58B00000000001 /* LayoutInputGestureDemoPage.swift */; };
 		8A1000072E58B00000000001 /* GestureTestCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1000082E58B00000000001 /* GestureTestCard.swift */; };
+		8A1000092E58B00000000001 /* LayoutInputGestureDemoPage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A10000A2E58B00000000001 /* LayoutInputGestureDemoPage2.swift */; };
 		9723B4392CF76F6D0095398F /* CJViewGRDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9723B4382CF76F6D0095398F /* CJViewGRDemoApp.swift */; };
 		9723B43B2CF76F6D0095398F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9723B43A2CF76F6D0095398F /* ContentView.swift */; };
 		9723B43D2CF76F6F0095398F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9723B43C2CF76F6F0095398F /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 		8A1000042E58B00000000001 /* StickerEditorDemoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerEditorDemoPage.swift; sourceTree = "<group>"; };
 		8A1000062E58B00000000001 /* LayoutInputGestureDemoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutInputGestureDemoPage.swift; sourceTree = "<group>"; };
 		8A1000082E58B00000000001 /* GestureTestCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureTestCard.swift; sourceTree = "<group>"; };
+		8A10000A2E58B00000000001 /* LayoutInputGestureDemoPage2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutInputGestureDemoPage2.swift; sourceTree = "<group>"; };
 		9723B4352CF76F6D0095398F /* CJViewGRDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CJViewGRDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9723B4382CF76F6D0095398F /* CJViewGRDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CJViewGRDemoApp.swift; sourceTree = "<group>"; };
 		9723B43A2CF76F6D0095398F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				8A1000022E58B00000000001 /* BasicGestureDemoPage.swift */,
 				8A1000042E58B00000000001 /* StickerEditorDemoPage.swift */,
 				8A1000062E58B00000000001 /* LayoutInputGestureDemoPage.swift */,
+				8A10000A2E58B00000000001 /* LayoutInputGestureDemoPage2.swift */,
 				8A1000082E58B00000000001 /* GestureTestCard.swift */,
 				9723B43C2CF76F6F0095398F /* Assets.xcassets */,
 				9723B43E2CF76F6F0095398F /* Preview Content */,
@@ -341,6 +344,7 @@
 				8A1000012E58B00000000001 /* BasicGestureDemoPage.swift in Sources */,
 				8A1000032E58B00000000001 /* StickerEditorDemoPage.swift in Sources */,
 				8A1000052E58B00000000001 /* LayoutInputGestureDemoPage.swift in Sources */,
+				8A1000092E58B00000000001 /* LayoutInputGestureDemoPage2.swift in Sources */,
 				8A1000072E58B00000000001 /* GestureTestCard.swift in Sources */,
 				9723B4392CF76F6D0095398F /* CJViewGRDemoApp.swift in Sources */,
 			);

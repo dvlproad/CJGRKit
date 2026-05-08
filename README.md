@@ -135,7 +135,8 @@ Demo 工程位于 `CJViewGRDemo`。其中：
 
 - `Basic Gesture Demo` 展示基础拖动、缩放、旋转。
 - `Sticker Editor Demo` 展示两个贴纸视图的选中态切换、角按钮显示隐藏，以及右下角缩放/旋转操作柄。
-- `Layout Input + Gesture Demo` 展示 `CJLayoutInputView` 和 `addGR(baseScale:baseRotation:)` 的联动，验证手势结束后写回位置、缩放、旋转，输入框修改后预览同步更新。
+- `Layout Input + Gesture Demo` 展示独立持久 scale 路线：内容仍按原始 `width/height` 渲染，`scale` 传给 `addGR(baseScale:)`，手势结束后只写回 `left/top/scale/rotationDegrees`。
+- `Layout Model + Gesture Demo` 展示 CJViewElement 的烘焙路线：使用 `CJTextLayoutModel` 作为唯一布局状态，并通过 `Text.property(layout).layout(layout) { content in content.addGR(...) }` 渲染。该页面专门验证 `layout(decorateContent:)` 插入点：内容盒子先成型，`addGR` 再包住内容盒子，最后由 `layout` 处理 left/top。手势缩放结束后需要同步写回 `width/height/scale`，并按中心补偿 `left/top`；文本字体已通过 `fontSize * scale` 烘焙进内容，因此这里只传 `baseRotation`，不传 `baseScale`。
 
 ## 当前可优化点
 

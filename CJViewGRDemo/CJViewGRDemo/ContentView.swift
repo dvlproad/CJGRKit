@@ -22,6 +22,10 @@ struct ContentView: View {
                 NavigationLink("Layout Input + Gesture Demo") {
                     LayoutInputGestureDemoPage()
                 }
+
+                NavigationLink("Layout Model + Gesture Demo") {
+                    LayoutInputGestureDemoPage2()
+                }
             }
             .navigationTitle("CJViewGR Demo")
         }
