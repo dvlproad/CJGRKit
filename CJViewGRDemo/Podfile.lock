@@ -3,65 +3,58 @@ PODS:
   - CJViewGR-Swift (0.0.1):
     - CJViewGR-Swift/Extension (= 0.0.1)
   - CJViewGR-Swift/Extension (0.0.1)
-  - CQDemoKit/BaseUIKit (0.7.1):
+  - CQDemoKit/BaseUIKit (0.8.0):
     - Masonry
-  - CQDemoKit/BaseUtil (0.7.1)
-  - CQDemoKit/BaseVC (0.7.1):
-    - CQDemoKit/BaseVC/Base (= 0.7.1)
-    - CQDemoKit/BaseVC/Collection (= 0.7.1)
-    - CQDemoKit/BaseVC/ScrollView (= 0.7.1)
-    - CQDemoKit/BaseVC/TabBar (= 0.7.1)
-    - CQDemoKit/BaseVC/TableView (= 0.7.1)
-    - CQDemoKit/BaseVC/TextView (= 0.7.1)
-    - CQDemoKit/Helper
-  - CQDemoKit/BaseVC/Base (0.7.1):
+  - CQDemoKit/BaseUtil (0.8.0)
+  - CQDemoKit/BaseVC (0.8.0):
+    - CQDemoKit/BaseVC/Base (= 0.8.0)
+    - CQDemoKit/BaseVC/Collection (= 0.8.0)
+    - CQDemoKit/BaseVC/ScrollView (= 0.8.0)
+    - CQDemoKit/BaseVC/TabBar (= 0.8.0)
+    - CQDemoKit/BaseVC/TableView (= 0.8.0)
+    - CQDemoKit/BaseVC/TextView (= 0.8.0)
+  - CQDemoKit/BaseVC/Base (0.8.0):
     - CQDemoKit/BaseUIKit
-    - CQDemoKit/Helper
     - Masonry
-  - CQDemoKit/BaseVC/Collection (0.7.1):
+  - CQDemoKit/BaseVC/Collection (0.8.0):
     - CQDemoKit/BaseVC/Base
-    - CQDemoKit/Helper
-  - CQDemoKit/BaseVC/ScrollView (0.7.1):
+  - CQDemoKit/BaseVC/ScrollView (0.8.0):
     - CQDemoKit/BaseVC/Base
+  - CQDemoKit/BaseVC/TabBar (0.8.0):
     - CQDemoKit/Helper
-  - CQDemoKit/BaseVC/TabBar (0.7.1):
-    - CQDemoKit/Helper
-  - CQDemoKit/BaseVC/TableView (0.7.1):
+  - CQDemoKit/BaseVC/TableView (0.8.0):
     - CQDemoKit/BaseVC/Base
-    - CQDemoKit/Helper
-  - CQDemoKit/BaseVC/TextView (0.7.1):
+  - CQDemoKit/BaseVC/TextView (0.8.0):
     - CQDemoKit/BaseUtil
     - CQDemoKit/BaseVC/Base
-    - CQDemoKit/Helper
-  - CQDemoKit/Helper (0.7.1)
+  - CQDemoKit/Helper (0.8.0)
   - Masonry (1.1.0)
   - SnapKit (5.7.1)
 
 DEPENDENCIES:
-  - CJViewElement-Swift/LayoutInputView (from `../../CJViewCreatorSDK`)
+  - CJViewElement-Swift/LayoutInputView (~> 0.0.1)
   - CJViewGR-Swift (from `../`)
-  - CQDemoKit/BaseVC (~> 0.7.1)
+  - CQDemoKit/BaseVC (~> 0.8.0)
   - SnapKit
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - CJViewElement-Swift
     - CQDemoKit
     - Masonry
     - SnapKit
 
 EXTERNAL SOURCES:
-  CJViewElement-Swift:
-    :path: "../../CJViewCreatorSDK"
   CJViewGR-Swift:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CJViewElement-Swift: 9aa71e1cf250cadee0a61c04ae10ffc5fc77bc48
+  CJViewElement-Swift: b91ce13dec653ce1842751102d899be5ea474993
   CJViewGR-Swift: 22a6cb1bba996a2d7e0853dc537a4d4b74c2b36b
-  CQDemoKit: d3c8f63f39f685299711194a65bb2f6ec11bc947
+  CQDemoKit: 1fea1039a960befe72d4452ff17827e2828b9501
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
 
-PODFILE CHECKSUM: 985f270bdb90a9aab3b16abad3c57b44b24f85ac
+PODFILE CHECKSUM: f5e9e06057ddb4f5a9b8461ae8586a4979bbc4d6
 
 COCOAPODS: 1.16.2
