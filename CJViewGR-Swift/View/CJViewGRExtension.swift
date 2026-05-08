@@ -29,10 +29,12 @@ public extension View {
               showCornerButton: showCornerButton,
               onDelete: nil,
               onUpdate: nil,
-              onMinimize: nil,
-              onSelect: nil,
-              minScale: minScale,
-              maxScale: maxScale)
+                      onMinimize: nil,
+                      onSelect: nil,
+                      onTransformEnded: nil,
+                      baseRotation: .zero,
+                      minScale: minScale,
+                      maxScale: maxScale)
     }
 
     // 为视图添加完整贴纸编辑能力。showCornerButton 通常由外部选中态控制；
@@ -44,6 +46,8 @@ public extension View {
                       onUpdate: (() -> Void)?,
                       onMinimize: (() -> Void)?,
                       onSelect: (() -> Void)? = nil,
+                      onTransformEnded: ((CJGRTransformResult) -> Void)? = nil,
+                      baseRotation: Angle = .zero,
                       minScale: CGFloat = 0.3,
                       maxScale: CGFloat = 6.0) -> some View {
         self.modifier(
@@ -54,6 +58,8 @@ public extension View {
                              onUpdate: onUpdate,
                              onMinimize: onMinimize,
                              onSelect: onSelect,
+                             onTransformEnded: onTransformEnded,
+                             baseRotation: baseRotation,
                              minScale: minScale,
                              maxScale: maxScale)
         )

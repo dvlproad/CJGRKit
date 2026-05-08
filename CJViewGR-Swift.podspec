@@ -1,5 +1,10 @@
 Pod::Spec.new do |s|
-  #验证方法：pod lib lint CJViewGR-Swift.podspec --allow-warnings --use-libraries --verbose
+  #验证方法1：pod lib lint CJViewGR-Swift.podspec --sources='https://github.com/CocoaPods/Specs.git' --allow-warnings --use-libraries --verbose
+  #提交方法(github公有库)： pod trunk push CJViewGR-Swift.podspec --allow-warnings --verbose
+  
+  # pod的本地索引文件：~/Library/Caches/CocoaPods/search_index.json
+  # pod的owner操作：https://www.jianshu.com/p/a9b8c2a1f3cf
+
   s.name         = "CJViewGR-Swift"
   s.version      = "0.0.1"
   s.summary      = "Swift版的视图手势操作扩展库"

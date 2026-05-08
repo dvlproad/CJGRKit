@@ -7,6 +7,19 @@
 
 import SwiftUI
 
+public struct CJGRTransformResult {
+    public let translation: CGSize
+    public let scale: CGFloat
+    public let rotation: Angle
+
+    public init(translation: CGSize = .zero,
+                scale: CGFloat = 1,
+                rotation: Angle = .zero) {
+        self.translation = translation
+        self.scale = scale
+        self.rotation = rotation
+    }
+}
 
 // 为任意 SwiftUI 视图添加贴纸编辑器常见的拖动、捏合缩放、旋转和角按钮能力。
 public struct CJGRViewModifier: ViewModifier {
@@ -17,6 +30,8 @@ public struct CJGRViewModifier: ViewModifier {
     public let onUpdate: (() -> Void)?
     public let onMinimize: (() -> Void)?
     public let onSelect: (() -> Void)?
+    public let onTransformEnded: ((CJGRTransformResult) -> Void)?
+    public let baseRotation: Angle
     public let minScale: CGFloat
     public let maxScale: CGFloat
 
@@ -40,6 +55,8 @@ public struct CJGRViewModifier: ViewModifier {
                 onUpdate: (() -> Void)? = nil,
                 onMinimize: (() -> Void)? = nil,
                 onSelect: (() -> Void)? = nil,
+                onTransformEnded: ((CJGRTransformResult) -> Void)? = nil,
+                baseRotation: Angle = .zero,
                 minScale: CGFloat = 0.3,
                 maxScale: CGFloat = 6.0) {
         self.enableGR = enableGR
@@ -48,6 +65,8 @@ public struct CJGRViewModifier: ViewModifier {
         self.onUpdate = onUpdate
         self.onMinimize = onMinimize
         self.onSelect = onSelect
+        self.onTransformEnded = onTransformEnded
+        self.baseRotation = baseRotation
         self.minScale = minScale
         self.maxScale = maxScale
     }
@@ -66,7 +85,15 @@ public struct CJGRViewModifier: ViewModifier {
                 isPinchingBelowMinScale = isAtOrBelowMinScale(scale * safeScaleValue(value))
             }
             .onEnded { value in
-                scale = limitedScale(scale * safeScaleValue(value))
+                let oldScale = scale
+                let newScale = limitedScale(scale * safeScaleValue(value))
+                if onTransformEnded != nil {
+                    let deltaScale = oldScale > 0 ? newScale / oldScale : newScale
+                    notifyTransformEnded(scale: deltaScale)
+                    scale = oldScale
+                } else {
+                    scale = newScale
+                }
                 isPinchingBelowMinScale = false
                 isTransforming = false
             }
@@ -82,7 +109,12 @@ public struct CJGRViewModifier: ViewModifier {
                 isTransforming = true
             }
             .onEnded { value in
-                rotation += safeRotationValue(value, allowsRotationAtMinScale: true)
+                let deltaRotation = safeRotationValue(value, allowsRotationAtMinScale: true)
+                if onTransformEnded != nil {
+                    notifyTransformEnded(rotation: deltaRotation)
+                } else {
+                    rotation += deltaRotation
+                }
                 isTransforming = false
             }
 
@@ -100,8 +132,13 @@ public struct CJGRViewModifier: ViewModifier {
             .onEnded { value in
                 guard isTransforming == false else { return }
                 onSelect?()
-                position.width += value.translation.width
-                position.height += value.translation.height
+                if onTransformEnded != nil {
+                    notifyTransformEnded(translation: value.translation)
+                    position = .zero
+                } else {
+                    position.width += value.translation.width
+                    position.height += value.translation.height
+                }
             }
 
         let transformGesture = dragGesture
@@ -132,7 +169,7 @@ public struct CJGRViewModifier: ViewModifier {
             }
             .contentShape(Rectangle())
             .scaleEffect(currentScale)
-            .rotationEffect(rotation + gestureRotation)
+            .rotationEffect(baseRotation + rotation + gestureRotation)
             .offset(x: position.width + gestureOffset.width,
                     y: position.height + gestureOffset.height)
             .onTapGesture {
@@ -218,10 +255,40 @@ public struct CJGRViewModifier: ViewModifier {
     }
 
     private func finishCornerResize() {
+        let endedScale = scale
+        let deltaScale = resizeStartScale > 0 ? endedScale / resizeStartScale : endedScale
+        let deltaRotation = Angle.radians(rotation.radians - resizeStartRotation.radians)
+        if onTransformEnded != nil {
+            notifyTransformEnded(scale: deltaScale, rotation: deltaRotation)
+            scale = resizeStartScale
+            rotation = resizeStartRotation
+        }
         resizeStartScale = scale
         resizeStartRotation = rotation
         isResizingFromCorner = false
         isTransforming = false
+    }
+
+    private func notifyTransformEnded(translation: CGSize = .zero,
+                                      scale: CGFloat = 1,
+                                      rotation: Angle = .zero) {
+        guard hasVisibleTransformChange(translation: translation, scale: scale, rotation: rotation) else {
+            return
+        }
+        onTransformEnded?(
+            CJGRTransformResult(translation: translation,
+                                scale: scale,
+                                rotation: rotation)
+        )
+    }
+
+    private func hasVisibleTransformChange(translation: CGSize,
+                                           scale: CGFloat,
+                                           rotation: Angle) -> Bool {
+        abs(translation.width) > 0.01 ||
+        abs(translation.height) > 0.01 ||
+        abs(scale - 1) > 0.001 ||
+        abs(rotation.degrees) > 0.01
     }
 
     // 最小缩放附近加一个很小的吸附区，减少手势噪声导致的边界抖动。
