@@ -1,5 +1,10 @@
 PODS:
+  - CJViewElement-Swift/ComponentConfigModel (0.0.1):
+    - CJViewElement-Swift/Model
+  - CJViewElement-Swift/Extension (0.0.1)
   - CJViewElement-Swift/LayoutInputView (0.0.1)
+  - CJViewElement-Swift/Model (0.0.1):
+    - CJViewElement-Swift/Extension
   - CJViewGR-Swift (0.0.1):
     - CJViewGR-Swift/Extension (= 0.0.1)
   - CJViewGR-Swift/Extension (0.0.1)
@@ -32,6 +37,7 @@ PODS:
   - SnapKit (5.7.1)
 
 DEPENDENCIES:
+  - CJViewElement-Swift/ComponentConfigModel (~> 0.0.1)
   - CJViewElement-Swift/LayoutInputView (~> 0.0.1)
   - CJViewGR-Swift (from `../`)
   - CQDemoKit/BaseVC (~> 0.8.0)
@@ -55,6 +61,6 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
 
-PODFILE CHECKSUM: f5e9e06057ddb4f5a9b8461ae8586a4979bbc4d6
+PODFILE CHECKSUM: 069269f11f55fd9acae29dd33e8b816ec1c68192
 
 COCOAPODS: 1.16.2

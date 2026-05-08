@@ -22,6 +22,16 @@ public struct CJGRTransformResult {
 }
 
 // 为任意 SwiftUI 视图添加贴纸编辑器常见的拖动、捏合缩放、旋转和角按钮能力。
+//
+// 注意 baseScale/baseRotation 表示外部模型里已经持久化的变换。
+//
+// baseScale 适合“缩放作为独立变换保存”的路线：内容仍按原始 width/height 渲染，
+// 持久缩放由 CJGRViewModifier 内部和本次手势缩放一起执行。
+// 如果业务已经把缩放烘焙进内容盒子，例如 width/height 已经变化，或文本字体已经按 scale 放大，
+// 则不要再传 baseScale，避免双重缩放。
+//
+// baseRotation 适合所有需要持久旋转的编辑态。不要在 addGR 外层再写 .rotationEffect(...)，
+// 否则手势坐标和写回模型的 translation/rotation 不在同一坐标系。
 public struct CJGRViewModifier: ViewModifier {
 //    @ObservedObject public var imageModel: GRImageModel
     public let enableGR: Bool
@@ -31,6 +41,9 @@ public struct CJGRViewModifier: ViewModifier {
     public let onMinimize: (() -> Void)?
     public let onSelect: (() -> Void)?
     public let onTransformEnded: ((CJGRTransformResult) -> Void)?
+    // 外部已持久化的缩放倍数。它会和本次手势临时 scale 一起作用到内容和编辑框。
+    public let baseScale: CGFloat
+    // 外部已持久化的旋转角度。它会和本次手势临时 rotation 一起作用到内容和编辑框。
     public let baseRotation: Angle
     public let minScale: CGFloat
     public let maxScale: CGFloat
@@ -56,6 +69,7 @@ public struct CJGRViewModifier: ViewModifier {
                 onMinimize: (() -> Void)? = nil,
                 onSelect: (() -> Void)? = nil,
                 onTransformEnded: ((CJGRTransformResult) -> Void)? = nil,
+                baseScale: CGFloat = 1,
                 baseRotation: Angle = .zero,
                 minScale: CGFloat = 0.3,
                 maxScale: CGFloat = 6.0) {
@@ -66,6 +80,7 @@ public struct CJGRViewModifier: ViewModifier {
         self.onMinimize = onMinimize
         self.onSelect = onSelect
         self.onTransformEnded = onTransformEnded
+        self.baseScale = baseScale
         self.baseRotation = baseRotation
         self.minScale = minScale
         self.maxScale = maxScale
@@ -158,7 +173,7 @@ public struct CJGRViewModifier: ViewModifier {
                     // 避免 padding 参与内容布局，导致选中时原始视图位置发生变化。
                     CJGRCornerView(zoom: 0.50,
                                    contentInset: cornerOutset,
-                                   displayScale: currentScale,
+                                   displayScale: displayScale,
                                    onDelete: onDelete,
                                    onUpdate: onUpdate,
                                    onMinimize: onMinimize,
@@ -168,7 +183,7 @@ public struct CJGRViewModifier: ViewModifier {
                 }
             }
             .contentShape(Rectangle())
-            .scaleEffect(currentScale)
+            .scaleEffect(displayScale)
             .rotationEffect(baseRotation + rotation + gestureRotation)
             .offset(x: position.width + gestureOffset.width,
                     y: position.height + gestureOffset.height)
@@ -186,10 +201,12 @@ public struct CJGRViewModifier: ViewModifier {
 
     private func limitedScale(_ value: CGFloat) -> CGFloat {
         guard isFiniteScaleValue(value) else { return scale }
+        let minRelativeScale = minScale / safeBaseScale
+        let maxRelativeScale = max(minRelativeScale, maxScale / safeBaseScale)
         if isAtOrBelowMinScale(value) {
-            return minScale
+            return minRelativeScale
         }
-        return min(max(value, minScale), maxScale)
+        return min(max(value, minRelativeScale), maxRelativeScale)
     }
 
     // 非法、无穷大或小于等于 0 的缩放值都按“没有缩放变化”处理，保护 scaleEffect。
@@ -222,10 +239,10 @@ public struct CJGRViewModifier: ViewModifier {
     }
 
     private var cornerHitOutset: CGFloat {
-        guard currentScale > 0 else { return 0 }
+        guard displayScale > 0 else { return 0 }
         // 角按钮最小命中区域为 44pt，按钮中心放在贴纸角上，因此四周需要预留半径 22pt。
         // 这里除以当前缩放，是为了抵消外层 scaleEffect，让屏幕上的命中区域保持稳定大小。
-        return minimumCornerHitLength / 2 / currentScale
+        return minimumCornerHitLength / 2 / displayScale
     }
 
     // 拖动右下角操作柄时，把该角点看作绕贴纸中心运动的点。
@@ -244,13 +261,13 @@ public struct CJGRViewModifier: ViewModifier {
         let startLength = vectorLength(startVector)
         guard startLength > 0 else { return }
 
-        let startVectorInScreen = rotated(startVector, by: resizeStartRotation) * resizeStartScale
+        let startVectorInScreen = rotated(startVector, by: resizeStartRotation) * (safeBaseScale * resizeStartScale)
         let movedVectorInScreen = CGSize(width: startVectorInScreen.width + translation.width,
                                          height: startVectorInScreen.height + translation.height)
         let movedLength = vectorLength(movedVectorInScreen)
         guard movedLength > 0 else { return }
 
-        scale = limitedScale(movedLength / startLength)
+        scale = limitedScale((movedLength / startLength) / safeBaseScale)
         rotation = angle(of: movedVectorInScreen) - angle(of: startVector)
     }
 
@@ -293,7 +310,16 @@ public struct CJGRViewModifier: ViewModifier {
 
     // 最小缩放附近加一个很小的吸附区，减少手势噪声导致的边界抖动。
     private func isAtOrBelowMinScale(_ value: CGFloat) -> Bool {
-        value <= minScale + minScaleDeadZone
+        safeBaseScale * value <= minScale + minScaleDeadZone
+    }
+
+    private var safeBaseScale: CGFloat {
+        guard Double(baseScale).isFinite, baseScale > 0 else { return 1 }
+        return baseScale
+    }
+
+    private var displayScale: CGFloat {
+        safeBaseScale * currentScale
     }
 
     private func vectorLength(_ vector: CGSize) -> CGFloat {

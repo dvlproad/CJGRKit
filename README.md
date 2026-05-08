@@ -27,6 +27,8 @@ MyStickerView()
 
 ```swift
 @State private var selectedID: Int?
+@State private var scale: CGFloat = 1
+@State private var rotationDegrees: CGFloat = 0
 
 MyStickerView()
     .frame(width: 240, height: 180)
@@ -42,6 +44,13 @@ MyStickerView()
         onSelect: {
             selectedID = 1
         },
+        onTransformEnded: { transform in
+            // 写回本次手势的相对变化
+            scale *= transform.scale
+            rotationDegrees += transform.rotation.degrees
+        },
+        baseScale: scale,
+        baseRotation: .degrees(rotationDegrees),
         minScale: 0.4,
         maxScale: 4.0
     )
@@ -66,6 +75,54 @@ ZStack {
 
 `showCornerButton` 建议由业务层的选中态控制。点击、拖动、缩放、旋转或拖右下角操作柄时，组件会触发 `onSelect`，业务层据此切换当前选中的贴纸。
 
+`baseScale` 和 `baseRotation` 用来传入业务模型里已经持久化的缩放和旋转。只要一个元素已经有持久 scale/rotation，就不要在 `.addGR(...)` 外层再写 `.scaleEffect(...)` 或 `.rotationEffect(...)`。外层 scale/rotation 会让视觉内容、编辑边框、角按钮命中区域和手势写回坐标分散在不同层，容易出现边框不贴内容、旋转后拖动跳动、缩放后文字抖动等问题。
+
+缩放持久化有两条路线，二选一，不要混用：
+
+1. 烘焙进内容盒子  
+   手势结束后把缩放写入内容自己的 layout，例如同步修改 `width/height`，或者文本渲染时使用 `fontSize * scale`。这时下一次渲染出来的内容盒子本身已经是缩放后的尺寸，`addGR` 不需要也不应该再传同一个 `baseScale`，否则会双重缩放。
+
+2. 独立持久 scale  
+   内容仍按原始 `width/height` 渲染，缩放作为独立字段保存。这时应该把这个字段传给 `addGR(baseScale:)`，让内容、边框、角按钮和本次手势缩放都在 `addGR` 内同一套坐标系里处理。
+
+正确顺序应该是：
+
+```swift
+content
+    .frame(width: layout.width, height: layout.height)
+    .addGR(
+        onTransformEnded: { transform in
+            layout.left += transform.translation.width
+            layout.top += transform.translation.height
+            layout.scale *= transform.scale
+            layout.rotationDegrees += transform.rotation.degrees
+        },
+        baseScale: layout.scale,
+        baseRotation: .degrees(layout.rotationDegrees)
+    )
+    .offset(x: layout.left, y: layout.top)
+```
+
+上面示例对应第 2 条路线：`layout.width/height` 是原始内容盒子尺寸，`layout.scale` 是独立持久缩放字段。如果采用第 1 条路线，示例就应该把缩放写入内容盒子，并省略 `baseScale`：
+
+```swift
+content
+    .frame(width: layout.width, height: layout.height)
+    .addGR(
+        onTransformEnded: { transform in
+            layout.left += transform.translation.width
+            layout.top += transform.translation.height
+            layout.width *= transform.scale
+            layout.height *= transform.scale
+            layout.rotationDegrees += transform.rotation.degrees
+        },
+        baseRotation: .degrees(layout.rotationDegrees)
+    )
+    .offset(x: layout.left, y: layout.top)
+```
+
+这里 `onTransformEnded` 返回的是本次手势的相对变化：`translation` 是本次拖动增量，`scale` 是本次缩放倍率，`rotation` 是本次旋转增量。外部写回模型后，`addGR` 会清掉内部临时状态，避免双重位移、双重缩放或双重旋转。
+
 右下角按钮在完整贴纸模式下不是普通点击按钮，而是缩放/旋转操作柄。拖动它时，组件会以贴纸中心为基准，根据“中心到右下角”的向量长度变化计算缩放，根据向量角度变化计算旋转。
 
 角按钮的最小命中区域为 44pt。组件会根据当前缩放值做反向补偿，并在贴纸内容外预留半个命中区域，保证贴纸缩小后按钮仍然好按，且按钮外侧也可以稳定响应。
@@ -78,6 +135,7 @@ Demo 工程位于 `CJViewGRDemo`。其中：
 
 - `Basic Gesture Demo` 展示基础拖动、缩放、旋转。
 - `Sticker Editor Demo` 展示两个贴纸视图的选中态切换、角按钮显示隐藏，以及右下角缩放/旋转操作柄。
+- `Layout Input + Gesture Demo` 展示 `CJLayoutInputView` 和 `addGR(baseScale:baseRotation:)` 的联动，验证手势结束后写回位置、缩放、旋转，输入框修改后预览同步更新。
 
 ## 当前可优化点
 

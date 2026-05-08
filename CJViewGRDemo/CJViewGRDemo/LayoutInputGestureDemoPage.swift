@@ -26,11 +26,12 @@ struct LayoutInputGestureDemoPage: View {
 
                 GestureTestCard(colors: [.purple, .pink],
                                 title: "Layout Linked",
-                                subtitle: "Drag, pinch, rotate",
-                                textScale: scale)
+                                subtitle: "Drag, pinch, rotate")
                     .frame(width: width, height: height)
                     // 这里先按 layout 放置原始内容盒子，再把持久旋转交给 addGR(baseRotation:)。
                     // 手势结束后把临时变换写回下面的 CJLayoutInputView，方便观察两边状态是否同步。
+                    // 持久 scale 交给 addGR(baseScale:) 处理，不能放在 addGR 外层做 scaleEffect。
+                    // 这样内容、编辑边框、角按钮和手势临时缩放都在同一套坐标系里。
                     .addGR(
                         showCornerButton: true,
                         onDelete: {
@@ -42,6 +43,7 @@ struct LayoutInputGestureDemoPage: View {
                         onMinimize: nil,
                         onSelect: nil,
                         onTransformEnded: applyTransform,
+                        baseScale: scale,
                         baseRotation: .degrees(rotationDegrees),
                         minScale: 0.4,
                         maxScale: 4.0
@@ -90,16 +92,7 @@ struct LayoutInputGestureDemoPage: View {
         top += transform.translation.height
 
         if transform.scale != 1 {
-            let oldWidth = width
-            let oldHeight = height
-            let newWidth = max(1, oldWidth * transform.scale)
-            let newHeight = max(1, oldHeight * transform.scale)
-
-            left -= (newWidth - oldWidth) / 2
-            top -= (newHeight - oldHeight) / 2
-            width = newWidth
-            height = newHeight
-            scale *= transform.scale
+            scale = min(max(scale * transform.scale, 0.4), 4.0)
         }
 
         let deltaRotationDegrees = CGFloat(transform.rotation.degrees)
