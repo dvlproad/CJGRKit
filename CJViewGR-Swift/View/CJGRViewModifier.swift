@@ -115,11 +115,10 @@ public struct CJGRViewModifier: ViewModifier {
 //            .rotationEffect(.degrees(imageModel.currentRotationDegrees))
 //            .offset(x: imageModel.position.width + imageModel.dragOffset.width,
 //                    y: imageModel.position.height + imageModel.dragOffset.height)
-            // 角按钮有一半在贴纸边界外。先给内容预留命中区域，再把边框按 contentInset
-            // 画回真实内容边界，保证按钮外侧也能稳定响应拖拽。
-            .padding(cornerOutset)
             .overlay {
                 if showCornerButton {
+                    // 角按钮有一半在贴纸边界外。用负 padding 扩展 overlay 的绘制和命中区域，
+                    // 避免 padding 参与内容布局，导致选中时原始视图位置发生变化。
                     CJGRCornerView(zoom: 0.50,
                                    contentInset: cornerOutset,
                                    displayScale: currentScale,
@@ -128,6 +127,7 @@ public struct CJGRViewModifier: ViewModifier {
                                    onMinimize: onMinimize,
                                    onMinimizeDragChanged: resizeFromCorner,
                                    onMinimizeDragEnded: finishCornerResize)
+                    .padding(-cornerOutset)
                 }
             }
             .contentShape(Rectangle())
