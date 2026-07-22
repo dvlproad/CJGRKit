@@ -60,7 +60,7 @@
             ] componentsJoinedByString:@"\n"];
             module.classEntry = [DragViewController class];
             module.isCreateByXib = YES;
-            module.xibBundleName = @"TSDemo_ImageFilter";
+            module.xibBundleName = @"TSDemo_GRKit";
             
             [sectionDataModel.values addObject:module];
         }

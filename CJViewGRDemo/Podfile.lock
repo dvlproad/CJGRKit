@@ -1,5 +1,5 @@
 PODS:
-  - CJBaseUIKit-Swift/UIView/as (0.0.2)
+  - CJBaseUIKit-Swift/UIView/as (0.0.4)
   - CJBaseUIKit/UIView/CJDragAction (0.9.0)
   - CJGRKit (0.2.5):
     - CJGRKit/CGRectCJAdjustHelper (= 0.2.5)
@@ -34,16 +34,28 @@ PODS:
     - UIPathCJHelper
   - CJGRKit/KeepBounds (0.2.5):
     - CJGRKit/CGRectCJAdjustHelper
-  - CJViewElement-Swift/ComponentConfigModel (0.0.1):
+  - CJViewElement-Swift (0.0.3):
+    - CJViewElement-Swift/CommonSettingRow (= 0.0.3)
+    - CJViewElement-Swift/ComponentConfigModel (= 0.0.3)
+    - CJViewElement-Swift/Extension (= 0.0.3)
+    - CJViewElement-Swift/LayoutInputView (= 0.0.3)
+    - CJViewElement-Swift/Model (= 0.0.3)
+    - CJViewElement-Swift/SquareResultView (= 0.0.3)
+  - CJViewElement-Swift/CommonSettingRow (0.0.3):
+    - CJViewElement-Swift/ComponentConfigModel
+    - CJViewElement-Swift/LayoutInputView
+  - CJViewElement-Swift/ComponentConfigModel (0.0.3):
     - CJViewElement-Swift/Model
-  - CJViewElement-Swift/Extension (0.0.1)
-  - CJViewElement-Swift/LayoutInputView (0.0.1)
-  - CJViewElement-Swift/Model (0.0.1):
+  - CJViewElement-Swift/Extension (0.0.3)
+  - CJViewElement-Swift/LayoutInputView (0.0.3)
+  - CJViewElement-Swift/Model (0.0.3):
     - CJViewElement-Swift/Extension
+  - CJViewElement-Swift/SquareResultView (0.0.3):
+    - CJViewElement-Swift/ComponentConfigModel
   - CJViewGR-Swift (0.0.1):
     - CJViewGR-Swift/Extension (= 0.0.1)
   - CJViewGR-Swift/Extension (0.0.1)
-  - CQDemoKit-Swift/BaseVC (0.0.2)
+  - CQDemoKit-Swift/BaseVC (0.0.3)
   - CQDemoKit/BaseUIKit (0.9.10):
     - Masonry
   - CQDemoKit/BaseUtil (0.9.10)
@@ -100,6 +112,8 @@ PODS:
     - CQDemoResource/Images
   - TSDemo_GRKit-Swift (0.0.1):
     - CJBaseUIKit-Swift/UIView/as
+    - CJViewElement-Swift
+    - CJViewGR-Swift
     - CQDemoKit-Swift/BaseVC
     - CQDemoKit/BaseVC
     - CQDemoKit/Demo_Resource
@@ -142,17 +156,17 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   CJBaseUIKit: 082b23d89703a9ff17f6b17f33c23569c2e67581
-  CJBaseUIKit-Swift: 432f05b09106994c16a4cf582c6a728c3e59316e
+  CJBaseUIKit-Swift: 793f4cef22ca20965eb3271b9340be383b277f22
   CJGRKit: c1e4083565d9a3f659022d93c1e53180411c2f55
-  CJViewElement-Swift: b91ce13dec653ce1842751102d899be5ea474993
+  CJViewElement-Swift: 216908621cdaeb319b638fc788554f36f20ce13d
   CJViewGR-Swift: d079f917d23cbba3582848e1bac268a1cf684a04
   CQDemoKit: 9f8aa6a4170962f9621b08748ac66f2d88d25f35
-  CQDemoKit-Swift: 054d1ddf8e358a1328423315e24aa37e48f2e1ee
+  CQDemoKit-Swift: ffbe4790a99eecd0b2b6628dd35dfb3b53351d26
   CQDemoResource: 4b414e6919d4a6f72c2ec7fba3ef69bdb82714eb
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
   TSDemo_GRKit: 571b1f8f823bd11f3a62bd2cebfdbeeeb27c6440
-  TSDemo_GRKit-Swift: 22820d75a5ba08c98313959195b3d7681bafb6ab
+  TSDemo_GRKit-Swift: 6eaae22e1cc235ea77c8d4383c12ae6569762130
   UIPathCJHelper: f06a25a414a889098be70a89a33f939ddd9eb805
 
 PODFILE CHECKSUM: 3a24ef4b10476bf08fc8c83cd60a0ace4ff10fab

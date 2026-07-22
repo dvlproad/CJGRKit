@@ -1,6 +1,6 @@
 //
 //  TSImageClipAdjustGRViewController.m
-//  TSDemo_ImageFilter
+//  CJViewGRDemo
 //
 //  Created by qian on 2021/3/5.
 //

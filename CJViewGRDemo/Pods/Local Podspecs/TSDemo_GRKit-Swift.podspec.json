@@ -14,7 +14,7 @@
     "git": "https://github.com/dvlproad/CJGRKit",
     "tag": "TSDemo_GRKit-Swift_0.0.1"
   },
-  "source_files": "TSDemo_GRKit-Swift/TSGRMainViewController.{swift}",
+  "source_files": "TSDemo_GRKit-Swift/**/*.{swift}",
   "frameworks": "UIKit",
   "requires_arc": true,
   "dependencies": {
@@ -23,7 +23,9 @@
     "CQDemoKit-Swift/BaseVC": [],
     "CQDemoResource/Images": [],
     "CJBaseUIKit-Swift/UIView/as": [],
-    "TSDemo_GRKit": []
+    "TSDemo_GRKit": [],
+    "CJViewGR-Swift": [],
+    "CJViewElement-Swift": []
   },
   "swift_version": "5.0"
 }

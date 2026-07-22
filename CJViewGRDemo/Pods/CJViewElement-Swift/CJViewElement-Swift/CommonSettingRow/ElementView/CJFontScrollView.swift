@@ -1,0 +1,117 @@
+//
+//  CJFontScrollView.swift
+//  CJViewCreatorDemo
+//
+//  Created by qian on 2024/12/15.
+//
+
+import Foundation
+import SwiftUI
+
+public struct CJFontScrollView: View {
+    var contentPadding: EdgeInsets
+    
+    var fontModels: [CJFontDataModel]
+    @Binding var currentFontModel: CJFontDataModel
+    var onChangeOfFontModel: ((_ newFontModel: CJFontDataModel) -> Void)
+    
+    @State var selectedIndex: Int?
+    
+    public init(
+        contentPadding: EdgeInsets = EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0),
+        fontModels: [CJFontDataModel],
+        currentFontModel: Binding<CJFontDataModel>,
+        onChangeOfFontModel: @escaping (_: CJFontDataModel) -> Void
+    ) {
+        self.contentPadding = contentPadding
+        self.fontModels = fontModels
+        self._currentFontModel = currentFontModel
+        self.onChangeOfFontModel = onChangeOfFontModel
+    }
+    
+    // MARK: View
+    public var body: some View {
+        ScrollViewReader { scrollView in
+            ScrollView(.horizontal, showsIndicators: false) {
+                LazyHStack(spacing: 10) {
+//                            ForEach(0..<items.count, id:\.self) { index in
+//                                let item = items[index].data
+                    ForEach(Array(fontModels.enumerated()), id: \.offset) { index, model in
+                        CJFontIcon(fontModel: model, isSelected: currentFontModel.id == model.id)
+                            .onTapGesture {
+                                selectFont(index, fontModel: model)
+                            }
+                            .id(index)
+                    }
+                }
+                .padding(.leading, contentPadding.leading)
+                .padding(.trailing, contentPadding.trailing)
+                .frame(height: 40)
+            }
+            .onChange(of: selectedIndex) { oldValue, newValue in
+                withAnimation {
+                    if let index = newValue {
+                        scrollView.scrollTo(index, anchor: .center)
+                    }
+                }
+            }
+            .onChange(of: currentFontModel) { oldValue, newValue in
+                selectedIndex = fontModels.firstIndex(where: { $0.id == newValue.id }) ?? -1
+            }
+            .onAppear() {
+                selectedIndex = fontModels.firstIndex(where: { $0.id == currentFontModel.id }) ?? -1
+                
+                withAnimation {
+                    if let index = selectedIndex {
+                        scrollView.scrollTo(index, anchor: .center)
+                    }
+                }
+            }
+        }
+    }
+    
+    // MARK: Event
+    private func selectFont(_ index: Int, fontModel: CJFontDataModel) {
+        currentFontModel = fontModel.copy()
+        
+        selectedIndex = fontModels.firstIndex(where: { $0.id == fontModel.id }) ?? -1
+        
+        onChangeOfFontModel(fontModel.copy())
+    }
+}
+
+
+
+
+public struct CJFontIcon: View {
+    var fontModel: CJFontDataModel
+    var isSelected: Bool
+    
+    public var body: some View {
+        ZStack(alignment: .center){
+            if(isSelected){
+                Rectangle() // 可以是透明的，用于确保点击事件被捕捉
+                 .fill(Color(hex: "#2E2E2E"))
+                 .contentShape(Rectangle()) // 确保整个区域都是可点击的
+                 .frame(width: 65,height: 28)
+                 .cornerRadius(15)
+                Image(fontModel.egImage)
+                    .resizable()
+                    .renderingMode(.template) // 将图片设置为模板模式
+                    .foregroundColor(Color.white)
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 65,height: 28)
+            }else{
+                Image(fontModel.egImage)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 65,height: 28)
+            }
+        }
+        .frame(width: 65,height: 28)
+    }
+}
+
+#Preview {
+    CJFontIcon(fontModel: CJFontDataModel(name: "fontImage_6", egImage: "fontImage_6"), isSelected: false)
+}

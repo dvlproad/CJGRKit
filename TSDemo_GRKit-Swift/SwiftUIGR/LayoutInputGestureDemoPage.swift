@@ -10,7 +10,7 @@ import CQDemoKit
 import CJViewGR_Swift
 import CJViewElement_Swift
 
-struct LayoutInputGestureDemoPage: View {
+public struct LayoutInputGestureDemoPage: View {
     @State private var left: CGFloat = 60
     @State private var top: CGFloat = 70
     @State private var width: CGFloat = 220
@@ -19,7 +19,11 @@ struct LayoutInputGestureDemoPage: View {
     @State private var rotationDegrees: CGFloat = 0
     @State private var refreshID: Int = 0
 
-    var body: some View {
+    public init() {
+        
+    }
+    
+    public var body: some View {
         VStack(spacing: 16) {
             ZStack(alignment: .topLeading) {
                 Color(.systemGroupedBackground)

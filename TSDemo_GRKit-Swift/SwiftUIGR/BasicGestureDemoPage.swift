@@ -8,8 +8,12 @@
 import SwiftUI
 import CJViewGR_Swift
 
-struct BasicGestureDemoPage: View {
-    var body: some View {
+public struct BasicGestureDemoPage: View {
+    public init() {
+        
+    }
+    
+    public var body: some View {
         ZStack {
             Color(.systemGroupedBackground)
                 .ignoresSafeArea()

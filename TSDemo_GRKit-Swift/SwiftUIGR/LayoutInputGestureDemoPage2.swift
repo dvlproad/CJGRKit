@@ -10,7 +10,7 @@ import CQDemoKit
 import CJViewGR_Swift
 import CJViewElement_Swift
 
-struct LayoutInputGestureDemoPage2: View {
+public struct LayoutInputGestureDemoPage2: View {
     @State private var layout: CJTextLayoutModel = {
         let layout = CJTextLayoutModel()
         layout.left = 52
@@ -30,7 +30,11 @@ struct LayoutInputGestureDemoPage2: View {
     }()
     @State private var refreshID: Int = 0
 
-    var body: some View {
+    public init() {
+        
+    }
+    
+    public var body: some View {
         VStack(spacing: 16) {
             ZStack(alignment: .topLeading) {
                 Color(.systemGroupedBackground)

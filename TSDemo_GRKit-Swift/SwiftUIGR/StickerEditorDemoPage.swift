@@ -9,10 +9,14 @@ import SwiftUI
 import CQDemoKit
 import CJViewGR_Swift
 
-struct StickerEditorDemoPage: View {
+public struct StickerEditorDemoPage: View {
     @State private var selectedCardID: Int?
 
-    var body: some View {
+    public init() {
+        
+    }
+    
+    public var body: some View {
         ZStack {
             Color(.systemGroupedBackground)
                 .ignoresSafeArea()

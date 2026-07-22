@@ -87,3 +87,61 @@ struct NavigationTitleModifier: ViewModifier {
         }
     }
 }
+
+// MARK: - Preview
+@available(iOS 14.0, *)
+struct CQTSSwiftUIBaseHomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationView {
+            MySwiftUIBaseHomeView()
+        }
+    }
+}
+
+@available(iOS 14.0, *)
+struct MySwiftUIBaseHomeView: View {
+    var body: some View {
+        CQTSSwiftUIBaseHomeView(
+            title: "首页",
+            sectionDataModels: [
+                CQDMSwiftSectionDataModel(
+                    theme: "功能列表",
+                    values: [
+                        CQDMSwiftModuleModel(
+                            title: "跳转到详情页面",
+                            content: "使用 viewGetterHandle 点击后跳转到 NavigationLink",
+                            viewGetterHandle: {
+                                AnyView(Text("详情页面"))
+                            }
+                        ),
+                        CQDMSwiftModuleModel(
+                            title: "点击执行动作",
+                            content: "使用 actionBlock 点击后直接执行闭包",
+                            actionBlock: {
+                                print("点击了 actionBlock")
+                            }
+                        )
+                    ]
+                ),
+                CQDMSwiftSectionDataModel(
+                    theme: "更多功能",
+                    values: [
+                        CQDMSwiftModuleModel(
+                            title: "设置",
+                            viewGetterHandle: {
+                                AnyView(Text("设置页面"))
+                            }
+                        ),
+                        CQDMSwiftModuleModel(
+                            title: "关于",
+                            content: "版本 1.0.0",
+                            viewGetterHandle: {
+                                AnyView(Text("关于页面"))
+                            }
+                        )
+                    ]
+                )
+            ]
+        )
+    }
+}

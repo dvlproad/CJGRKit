@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
   s.swift_version = '5.0'
 
   s.source       = { :git => "https://github.com/dvlproad/CJGRKit", :tag => "TSDemo_GRKit-Swift_0.0.1" }
-  s.source_files  = "TSDemo_GRKit-Swift/TSGRMainViewController.{swift}"
+  s.source_files  = "TSDemo_GRKit-Swift/**/*.{swift}"
   # s.resources = "CJBaseUtil/**/*.{png}"
   s.frameworks = 'UIKit'
 
@@ -43,10 +43,16 @@ Pod::Spec.new do |s|
   s.dependency 'CQDemoKit/Demo_Resource'  # 需要使用 UIImage+CQTSInFramework.h
   s.dependency 'CQDemoKit/BaseVC'
   s.dependency 'CQDemoKit-Swift/BaseVC'
+#  s.dependency 'CQDemoKit-Swift/as'
+  
   s.dependency 'CQDemoResource/Images'
+  
   s.dependency 'CJBaseUIKit-Swift/UIView/as'
 
+  
   s.dependency 'TSDemo_GRKit'
+  s.dependency 'CJViewGR-Swift'
+  s.dependency 'CJViewElement-Swift'
 #   # 可联动的菜单
 #   s.subspec 'LinkedMenu' do |ss|
 #     ss.source_files = "TSDemo_GRKit-Swift/LinkedMenu/**/*.{swift}"

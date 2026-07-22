@@ -1,0 +1,92 @@
+//
+//  CJBackgroundSettingRow.swift
+//  CJViewCreatorDemo
+//
+//  Created by qian on 2024/12/15.
+//
+//  CJBackgroundSettingRow 改为和 CJTextsSettingView 一样的使用方法，未来可支持像其一样的复杂使用
+
+import SwiftUI
+
+public struct CJBackgroundSettingRow: View {
+    var contentPadding: EdgeInsets
+    
+    var title: String
+    var subTitle: String?
+    
+    public let models: [CJTextColorDataModel]
+    @Binding var currentBackgroundModel: CJBoxDecorationModel
+    public var onChangeOfBackgroundModel: ((_ newBackgroundModel: CJBoxDecorationModel) -> Void)
+    
+    //@State var selectedIndex: Int?
+    @State private var originalBackgroundModel: CJBoxDecorationModel?
+    public init(
+        contentPadding: EdgeInsets = EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0),
+        title: String,
+        subTitle: String? = nil,
+        models: [CJTextColorDataModel],
+        currentBackgroundModel: Binding<CJBoxDecorationModel>,
+        onChangeOfBackgroundModel: @escaping (_: CJBoxDecorationModel) -> Void
+    ) {
+        self.contentPadding = contentPadding
+        
+        self.title = title
+        self.subTitle = subTitle
+        
+        self.models = models
+        self._currentBackgroundModel = currentBackgroundModel
+        self._originalBackgroundModel = State(initialValue: currentBackgroundModel.wrappedValue.copy())
+        
+        //self.selectedIndex = selectedIndex
+        self.onChangeOfBackgroundModel = onChangeOfBackgroundModel
+    }
+    
+    // MARK: View
+    public var body: some View {
+        ZStack{
+            VStack(alignment: .center, spacing: 0) {
+                CJSettingTitleRow(title: title, subTitle: subTitle, showRecoverIcon: .constant(currentBackgroundModel != originalBackgroundModel)) {
+                    guard let originalBackgroundModel = originalBackgroundModel else {
+                        return
+                    }
+                    currentBackgroundModel = originalBackgroundModel.copy()
+                    //selectedIndex = models.firstMatchingColorIndex(currentBackgroundModel.colorModel)
+                    onChangeOfBackgroundModel(currentBackgroundModel.copy())
+                }
+                .padding(.leading, contentPadding.leading)
+                
+                backgroundScrollView
+            }
+            .frame(width: UIScreen.main.bounds.width, height: 80)
+        }
+        .onAppear(perform: {
+            //selectedIndex = models.firstMatchingColorIndex(currentBackgroundModel.colorModel)
+        })
+    }
+    
+    /// 颜色滚动视图
+    var backgroundScrollView: some View {
+        var colorModels: [CJTextColorDataModel] = []
+        for (index, colorModel) in models.enumerated() {
+            colorModels.append(colorModel)
+        }
+        
+        return CJColorScrollView(
+            contentPadding: contentPadding,
+            colorModels: colorModels,
+            currentColorModel: Binding(
+                get: { currentBackgroundModel.colorModel ?? CJTextColorDataModel() },
+                set: { newColorModel in
+                    currentBackgroundModel = currentBackgroundModel.withColorModel(newColorModel.copy())
+                }
+            ),
+            onChangeOfColorModel: { newColorModel in
+                //selectedIndex = models.firstMatchingColorIndex(newColorModel)
+                onChangeOfBackgroundModel(currentBackgroundModel.copy())
+            }
+        )
+    }
+    
+    // MARK: Event
+    
+}

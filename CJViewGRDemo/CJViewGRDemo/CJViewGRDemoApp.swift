@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import TSDemo_GRKit_Swift
 
 @main
 struct CJViewGRDemoApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
+            TSGRSwiftUIMainViewController()
         }
     }
 }

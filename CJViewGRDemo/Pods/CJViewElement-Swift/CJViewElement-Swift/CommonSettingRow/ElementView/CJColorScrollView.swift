@@ -1,0 +1,142 @@
+//
+//  CJColorScrollView.swift
+//  CJViewCreatorDemo
+//
+//  Created by qian on 2024/12/15.
+//
+
+import Foundation
+import SwiftUI
+
+public struct CJColorScrollView: View {
+    public var contentPadding: EdgeInsets
+    
+    public var colorModels: [CJTextColorDataModel]
+    @Binding public var currentColorModel: CJTextColorDataModel
+    public var onChangeOfColorModel: ((_ newColorModel: CJTextColorDataModel) -> Void)
+    
+    @State var paletteSelectedColor: Color = .clear  // 调色板上选中的颜色
+    @State var showPalette: Bool = false
+    @State var selectedIndex: Int?
+    
+    public init(
+        contentPadding: EdgeInsets = EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0),
+        colorModels: [CJTextColorDataModel],
+        currentColorModel: Binding<CJTextColorDataModel>,
+        onChangeOfColorModel: @escaping (_: CJTextColorDataModel) -> Void
+    ) {
+        self.contentPadding = contentPadding
+        self.colorModels = colorModels
+        self._currentColorModel = currentColorModel
+        if currentColorModel.wrappedValue.colorStrings.count == 2 {
+            let colorStrings = currentColorModel.wrappedValue.colorStrings
+            if colorStrings[0] == colorStrings[1] {
+                self._paletteSelectedColor = State(initialValue: Color(hex: colorStrings[0]))
+            }
+        }
+        self.onChangeOfColorModel = onChangeOfColorModel
+    }
+    
+    
+    // MARK: View
+    public var body: some View {
+        ScrollViewReader { scrollView in
+            ScrollView(.horizontal, showsIndicators: false) {
+                LazyHStack(spacing: 10) {
+                    CJColorPickerIcon(paletteSelectedColor: $paletteSelectedColor, showPalette: $showPalette)
+                        .frame(width: 30, height: 30)
+                    
+//                            ForEach(0..<items.count, id:\.self) { index in
+//                                let item = items[index].data
+                    ForEach(Array(colorModels.enumerated()), id: \.offset) { index, model in
+                        CJColorIcon(colorModel: model, isSelected: model.matchesColorPreset(currentColorModel))
+                            .onTapGesture {
+                                selectColor(index, colorModel: model)
+                            }
+                            .id(index)
+                    }
+                }
+                .padding(.leading, contentPadding.leading)
+                .padding(.trailing, contentPadding.trailing)
+                .frame(height: 40)
+            }
+            .onChange(of: selectedIndex) { oldValue, newValue in
+                withAnimation {
+                    if let index = newValue {
+                        scrollView.scrollTo(index, anchor: .center)
+                    }
+                }
+            }
+            .onChange(of: currentColorModel) { oldValue, newValue in
+                selectedIndex = colorModels.firstMatchingColorIndex(newValue)
+            }
+            .onChange(of: paletteSelectedColor) { oldValue, newValue in
+                if newValue == .clear {
+                    return
+                }
+                let colorModel = CJTextColorDataModel(id: "8888", solidColorString: newValue.toHex(includeAlpha: false) ?? "")
+                currentColorModel = colorModel
+                selectedIndex = -1
+                onChangeOfColorModel(colorModel)
+            }
+            .onAppear() {
+                selectedIndex = colorModels.firstMatchingColorIndex(currentColorModel)
+                
+                withAnimation {
+                    if let index = selectedIndex {
+                        scrollView.scrollTo(index, anchor: .center)
+                    }
+                }
+            }
+        }
+    }
+    
+    // MARK: Event
+    private func selectColor(_ index: Int, colorModel: CJTextColorDataModel) {
+        currentColorModel = colorModel
+        
+        selectedIndex = colorModels.firstMatchingColorIndex(colorModel)
+        
+        onChangeOfColorModel(colorModel)
+    }
+}
+
+
+
+public struct CJColorIcon: View {
+    var colorModel: CJTextColorDataModel
+    var isSelected: Bool
+    
+    public var body: some View {
+        ZStack{
+            Rectangle()
+                .fill(colorModel.linearGradientColor)
+                .contentShape(Rectangle()) // 确保整个区域都是可点击的
+                .frame(width: 30, height: 30)
+                .cornerRadius(15)
+            
+            if isSelected {
+                Image("check", bundle: .cjViewElement)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 14, height: 10)
+            }
+            
+            // 如果是白色，加个边框，解决背景是白色会看不到的问题
+            if let solidColorString = colorModel.colorStrings.first,
+               solidColorString.contains("FFFFFF") {
+                RoundedRectangle(cornerRadius: 15, style: .continuous)
+                    .stroke(Color(hex: "#EEEEEE").opacity(1), lineWidth: 1)
+                    .frame(width: 30, height: 30)
+            }
+        }
+    }
+}
+
+// MARK: - Preview
+struct Preview_CJColorIcon: PreviewProvider {
+    static var previews: some View {
+        let colorModel = CJTextColorDataModel(id: "", startPoint: .top, endPoint: .bottom, colorStrings: ["#1F625B","#7CB1AF"])
+        CJColorIcon(colorModel: colorModel, isSelected: false)
+    }
+}
