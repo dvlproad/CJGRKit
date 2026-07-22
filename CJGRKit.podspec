@@ -14,7 +14,7 @@
   #提交方法： pod repo push dvlproadPublicSpec CJGRKit.podspec --sources=cocoapods,dvlproadPublicSpec --allow-warnings --use-libraries --verbose
 Pod::Spec.new do |s|
   s.name         = "CJGRKit"
-  s.version      = "0.2.4"
+  s.version      = "0.2.5"
   s.summary      = "可进行各种手势(缩放、拖动(含位置调整))的基于UIView或UIScrollView的视图基类"
   s.homepage     = "https://github.com/dvlproad/CJGRKit.git"
 
@@ -43,7 +43,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "9.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJGRKit.git", :tag => "CJGRKit_0.2.4" }
+  s.source       = { :git => "https://github.com/dvlproad/CJGRKit.git", :tag => "CJGRKit_0.2.5" }
   #s.source_files  = "CJDemoCommon/*.{h,m}"
   #s.source_files = "CJChat/TestOSChinaPod.{h,m}"
 
@@ -84,7 +84,7 @@ Pod::Spec.new do |s|
       sss.dependency "CJGRKit/CJGRView/Base"
     end
 
-    # CJImageNormalAdjustGRView 、 CJImageClipAdjustGRView
+    # CJImageNormalAdjustGRView-图片普通调整（缩放、拖动）视图，没有裁剪框。场景：如图片拼接里的位置、大小调整。  CJImageClipAdjustGRView-图片裁剪调整（缩放、拖动）视图，有裁剪框。场景：如图片裁剪框里的位置、大小调整。
     ss.subspec 'ImageAdjustGRView' do |sss|
       sss.source_files = "CJGRKit/CJGRView/ImageAdjustGRView/**/*.{h,m}"
       sss.dependency "CJGRKit/CJGRView/BaseAdjustGRView"

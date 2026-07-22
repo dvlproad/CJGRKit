@@ -4,6 +4,8 @@
 //
 //  Created by qian on 2021/3/5.
 //
+//
+//  图片裁剪调整（缩放、拖动）视图，有裁剪框。场景：如图片裁剪框里的位置、大小调整。
 //  裁剪缩放调整视图：为更好使用，请继承并根据要求调用updateFrameByImage方法（附：本类里面已重写 layoutSubviews）
 
 #import "CJAdjustGRView.h"
@@ -13,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CJImageClipAdjustGRView : CJAdjustGRView {
     
 }
+@property (nonatomic, strong) UIImage *image;   // 要裁剪的图片（请在 init 后设置)
 
 #pragma mark - Init
 /*
@@ -43,9 +46,6 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param image 通过imageName或imageUrl等得到的图片
  */
 - (void)updateFrameByImage:(UIImage *)image;
-
-#pragma mark - Get
-- (UIImageView *)imageView;
 
 @end
 

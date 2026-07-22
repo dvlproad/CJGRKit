@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CQMaskCenterView : UIView {
     
 }
+@property (nonatomic, strong) UIImage *image;   // 要裁剪的图片（请在 init 后设置)
 
 
 - (void)showOccludedView:(BOOL)show;

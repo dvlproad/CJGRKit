@@ -6,14 +6,16 @@
 //
 
 #import "TSMaskImageGRScrollViewController.h"
+#import <CQDemoResource/CQTSAssetSourceUtil.h>
 #import <CJGRKit/CJImageGRScrollView.h>
 #import <CJGRKit/CQMaskCenterView.h>
 
+#import "TSImageSourceUtil.h"
 
 @interface TSMaskImageGRScrollViewController () {
     
 }
-@property (nonatomic, strong) CQMaskCenterView *scrollView;
+@property (nonatomic, strong) CQMaskCenterView *maskView;
 
 @end
 
@@ -23,19 +25,25 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    CQMaskCenterView *scrollView = [[CQMaskCenterView alloc] init];
-    scrollView.backgroundColor = [UIColor redColor];
-    [self.view addSubview:scrollView];
-    [scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self setupViews];
+    
+//    [self.maskView showOccludedView:YES];
+}
+
+- (void)setupViews {
+    CQMaskCenterView *maskView = [[CQMaskCenterView alloc] init];
+    maskView.backgroundColor = UIColor.greenColor;
+    [self.view addSubview:maskView];
+    [maskView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.centerY.mas_equalTo(self.view);
         make.top.mas_equalTo(self.mas_topLayoutGuide).mas_offset(100);
         make.left.mas_equalTo(self.view).mas_offset(20);
     }];
-    self.scrollView = scrollView;
+    self.maskView = maskView;
     
     
-//        UIImageView *imageView = [[UIImageView alloc] init];
-//        imageView.image = [UIImage imageNamed:@"bmp1.bmp"];
+    UIImage *localImageRandom = [TSImageSourceUtil localImageRandom];
+    self.maskView.image = localImageRandom;
 }
 
 /*

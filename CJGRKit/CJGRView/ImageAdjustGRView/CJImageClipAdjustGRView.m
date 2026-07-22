@@ -42,6 +42,13 @@
 }
 
 
+#pragma mark - Setter
+- (void)setImage:(UIImage *)image {
+    _image = image;
+    self.imageView.image = image;
+}
+
+
 /*
  *  获取要裁剪/处在裁剪区域clippingFrame中的图片像素区域：使用场景图片裁剪
  *
@@ -79,6 +86,10 @@
     
     if (self.hasSetFrameForThisImage == NO) {
         UIImage *image = [self imageView].image;
+        if (image == nil) {
+            NSLog(@"未设置图片，内容将为空");
+            return;
+        }
         [self updateFrameByImage:image];
     }
 }

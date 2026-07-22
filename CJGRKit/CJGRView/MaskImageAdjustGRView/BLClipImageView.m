@@ -20,8 +20,10 @@
         return clippingRegionView;
     }];
     if (self) {
+        // CJMaskImageAdjustGRView的方法：添加蒙层
         [self addMaskLayerWithRectPathType:CJRectPathTypeRectangle opacity:1.0]; // 默认遮住不显示裁剪框外的区域
         
+        // CJAdjustGRView的方法：设置拖动和捏合缩放等手势状态发生变化的回调(内部已处理完位置调整等操作)
         [self setupExtraPanStateChangeBlock:^(UIGestureRecognizerState panGRState) {
             if(panGRState == UIGestureRecognizerStateBegan) {
                 [self showOther:YES];

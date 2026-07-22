@@ -12,7 +12,7 @@
 @interface CQMaskCenterView () <UIScrollViewDelegate> {
     
 }
-@property (nonatomic, strong) CJGRScrollView *scrollView;
+@property (nonatomic, strong) CJImageGRScrollView *scrollView;
 @property (nonatomic, strong) UIView *occludedTopView;
 @property (nonatomic, strong) UIView *occludedBottomView;
 
@@ -29,7 +29,14 @@
     return self;
 }
 
+#pragma mark - Setter
+- (void)setImage:(UIImage *)image {
+    _image = image;
+    self.scrollView.image = image;
+}
 
+
+#pragma mark - Public Method
 - (void)showOccludedView:(BOOL)show {
     CGFloat alpha = show ? 0.3 : 0;
     self.occludedTopView.alpha = alpha;
@@ -37,6 +44,8 @@
 }
 
 
+
+#pragma makr - SetupViews
 - (void)setupViews {
     
     

@@ -67,7 +67,7 @@
     self.alwaysBounceVertical = NO;
     
     UIView *containerView = [[UIView alloc] init];
-    containerView.backgroundColor = [UIColor greenColor];
+    //containerView.backgroundColor = [UIColor clearColor];
     [self addSubview:containerView];
     [containerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(self);

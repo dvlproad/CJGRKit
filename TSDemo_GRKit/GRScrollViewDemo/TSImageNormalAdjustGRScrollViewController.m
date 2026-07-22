@@ -1,24 +1,24 @@
 //
-//  TSImageNormalAdjustGRViewController2.m
+//  TSImageNormalAdjustGRScrollViewController.m
 //  TSDemo_ImageFilter
 //
 //  Created by qian on 2021/3/5.
 //
 
-#import "TSImageNormalAdjustGRViewController2.h"
+#import "TSImageNormalAdjustGRScrollViewController.h"
 #import <Masonry/Masonry.h>
 #import <CQDemoKit/CQTSContainerViewFactory.h>
 #import <CQDemoResource/CQTSAssetSourceUtil.h>
 #import <CJGRKit/CJImageGRScrollView.h>
 
-@interface TSImageNormalAdjustGRViewController2 () {
+@interface TSImageNormalAdjustGRScrollViewController () {
     
 }
 @property (nonatomic, strong) CJImageGRScrollView *imageScaleView;
 
 @end
 
-@implementation TSImageNormalAdjustGRViewController2
+@implementation TSImageNormalAdjustGRScrollViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,11 +28,11 @@
     
     UIView *buttonsView = [CQTSContainerViewFactory twoButtonsViewAlongAxis:MASAxisTypeVertical title1:@"竖直长图" actionBlock1:^(UIButton * _Nonnull bButton) {
         UIImage *image = [UIImage cqresource_imageNamed:@"cqts_jpg_long_vertical_1.jpg"];
-        [self.imageScaleView updateImage:image];
+        self.imageScaleView.image = image;
         
     } title2:@"水平宽图" actionBlock2:^(UIButton * _Nonnull bButton) {
         UIImage *image = [UIImage cqresource_imageNamed:@"cqts_jpg_long_horizontal_1.jpg"];
-        [self.imageScaleView updateImage:image];
+        self.imageScaleView.image = image;
     }];
     [self.view addSubview:buttonsView];
     [buttonsView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -58,7 +58,8 @@
     NSInteger trySelIndex = random();
     NSArray<NSString *> *folderNames = @[@"png", @"jpg"];
     UIImage *localImageRandom = [CQTSAssetSourceUtil localImageAtIndex:trySelIndex folderNames:folderNames];
-    [imageScaleView updateImage:localImageRandom];
+    imageScaleView.image = localImageRandom;
+    
 }
 
 

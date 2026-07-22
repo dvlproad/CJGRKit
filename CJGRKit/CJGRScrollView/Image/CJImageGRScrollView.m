@@ -38,10 +38,11 @@
 }
 
 
+#pragma mark - Setter
+- (void)setImage:(UIImage *)image {
+    _image = image;
+    self.imageView.image = image;
 
-#pragma mark - Update
-- (void)updateImage:(UIImage *)image {
-    [[self imageView] setImage:image];
     _hasSetFrameForThisImage = NO;
 
     [self updateFrameByImage:image];

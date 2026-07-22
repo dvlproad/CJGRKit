@@ -12,7 +12,7 @@
 
 #import "DragViewController.h"
 #import "TSImageSourceUtil.h"
-#import "TSImageNormalAdjustGRViewController2.h"
+#import "TSImageNormalAdjustGRScrollViewController.h"
 #import "TSMaskImageGRScrollViewController.h"
 #import "TSAdjustGRViewController.h"
 #import "TSGRViewController.h"

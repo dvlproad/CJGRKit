@@ -41,6 +41,13 @@
     return self.scaleShowView;
 }
 
+#pragma mark - Setter
+- (void)setImage:(UIImage *)image {
+    _image = image;
+    self.imageView.image = image;
+}
+
+
 #pragma mark - Update
 //- (void)updateImage:(UIImage *)image {
 //    [[self imageView] setImage:image];
@@ -55,6 +62,10 @@
     
     if (self.hasSetFrameForThisImage == NO) {
         UIImage *image = [self imageView].image;
+        if (image == nil) {
+            NSLog(@"未设置图片，内容将为空");
+            return;
+        }
         [self updateFrameByImage:image];
     }
 }

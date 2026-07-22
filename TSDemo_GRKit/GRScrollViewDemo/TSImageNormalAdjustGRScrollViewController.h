@@ -1,5 +1,5 @@
 //
-//  TSImageNormalAdjustGRViewController2.h
+//  TSImageNormalAdjustGRScrollViewController.h
 //  TSDemo_ImageFilter
 //
 //  Created by qian on 2021/3/5.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TSImageNormalAdjustGRViewController2 : CJUIKitBaseViewController
+@interface TSImageNormalAdjustGRScrollViewController : CJUIKitBaseViewController
 
 @end
 

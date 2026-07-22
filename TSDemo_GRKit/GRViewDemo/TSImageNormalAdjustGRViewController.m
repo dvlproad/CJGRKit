@@ -28,12 +28,12 @@
     
     UIView *buttonsView = [CQTSContainerViewFactory twoButtonsViewAlongAxis:MASAxisTypeVertical title1:@"竖直长图" actionBlock1:^(UIButton * _Nonnull bButton) {
         UIImage *image = [TSImageSourceUtil longVertical01];
-        [self.imageScaleView imageView].image = image;
+        self.imageScaleView.image = image;
         [self.imageScaleView updateFrameByImage:image];
         
     } title2:@"水平宽图" actionBlock2:^(UIButton * _Nonnull bButton) {
         UIImage *image = [TSImageSourceUtil longHorizontal01];
-        [self.imageScaleView imageView].image = image;
+        self.imageScaleView.image = image;
         [self.imageScaleView updateFrameByImage:image];
     }];
     [self.view addSubview:buttonsView];
@@ -57,7 +57,7 @@
     imageScaleView.pinchMaxScale =  2;
     
     UIImage *localImageRandom = [TSImageSourceUtil localImageRandom];
-    [imageScaleView imageView].image = localImageRandom;
+    imageScaleView.image = localImageRandom;
     [imageScaleView updateFrameByImage:localImageRandom];
 }
 

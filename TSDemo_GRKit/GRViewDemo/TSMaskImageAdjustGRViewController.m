@@ -9,14 +9,12 @@
 #import <Masonry/Masonry.h>
 #import <CQDemoKit/CQTSContainerViewFactory.h>
 #import <CQDemoResource/CQTSAssetSourceUtil.h>
-#import <CJGRKit/CJImageClipAdjustGRView.h>
-
-#import "BLClipImageView.h"
+#import <CJGRKit/BLClipImageView.h>
 
 @interface TSMaskImageAdjustGRViewController () {
     
 }
-@property (nonatomic, strong) CJImageClipAdjustGRView *imageScaleView;
+@property (nonatomic, strong) BLClipImageView *imageScaleView;
 
 @end
 
@@ -28,19 +26,19 @@
     
     UIView *buttonsView = [CQTSContainerViewFactory threeButtonsViewAlongAxis:MASAxisTypeVertical title1:@"竖直长图" actionBlock1:^(UIButton * _Nonnull bButton) {
         UIImage *image = [UIImage cqresource_imageNamed:@"cqts_jpg_long_vertical_1.jpg"];
-        [self.imageScaleView imageView].image = image;
+        self.imageScaleView.image = image;
         [self.imageScaleView updateFrameByImage:image];
         
     } title2:@"水平宽图" actionBlock2:^(UIButton * _Nonnull bButton) {
         UIImage *image = [UIImage cqresource_imageNamed:@"cqts_jpg_long_horizontal_1.jpg"];
-        [self.imageScaleView imageView].image = image;
+        self.imageScaleView.image = image;
         [self.imageScaleView updateFrameByImage:image];
         
     } title3:@"随机图" actionBlock3:^(UIButton * _Nonnull bButton) {
         NSInteger trySelIndex = random();
         NSArray<NSString *> *folderNames = @[@"png", @"jpg"];
         UIImage *localImageRandom = [CQTSAssetSourceUtil localImageAtIndex:trySelIndex folderNames:folderNames];
-        [self.imageScaleView imageView].image = localImageRandom;
+        self.imageScaleView.image = localImageRandom;
         [self.imageScaleView updateFrameByImage:localImageRandom];
     }];
     [self.view addSubview:buttonsView];
@@ -67,7 +65,7 @@
     NSInteger trySelIndex = random();
     NSArray<NSString *> *folderNames = @[@"png", @"jpg"];
     UIImage *localImageRandom = [CQTSAssetSourceUtil localImageAtIndex:trySelIndex folderNames:folderNames];
-    [imageScaleView imageView].image = localImageRandom;
+    imageScaleView.image = localImageRandom;
     [imageScaleView updateFrameByImage:localImageRandom];
 }
 
