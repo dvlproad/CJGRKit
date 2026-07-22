@@ -24,7 +24,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.navigationItem.title = NSLocalizedString(@"使用场景2：一个可进行拖动和缩放的图片视图本身", nil);
+    self.navigationItem.title = NSLocalizedString(@"使用场景1：一个可进行拖动和缩放的图片视图本身", nil);
     
     UIView *buttonsView = [CQTSContainerViewFactory twoButtonsViewAlongAxis:MASAxisTypeVertical title1:@"竖直长图" actionBlock1:^(UIButton * _Nonnull bButton) {
         UIImage *image = [UIImage cqresource_imageNamed:@"cqts_jpg_long_vertical_1.jpg"];

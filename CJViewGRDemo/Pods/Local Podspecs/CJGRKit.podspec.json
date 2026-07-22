@@ -1,6 +1,6 @@
 {
   "name": "CJGRKit",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "summary": "可进行各种手势(缩放、拖动(含位置调整))的基于UIView或UIScrollView的视图基类",
   "homepage": "https://github.com/dvlproad/CJGRKit.git",
   "license": {
@@ -10,13 +10,13 @@
   "authors": {
     "dvlproad": ""
   },
-  "description": "各种手势，可按需独立引入：\n• CJGRKit/CGRectCJSubHelper - 帮助类\n• CJGRKit/CGRectCJAdjustHelper - 调整移动区域的帮助类\n• CJGRKit/Extension - 扩展方法\n• CJGRKit/CJGRView - 自定义的形同 UIScrollView 能够进行拖动和缩放的视图\n• CJGRKit/CJGRScrollView - 继承系统的 UIScrollView，增加其他限制\n\n每个子库可独立引入，详见各子库描述。",
+  "description": "各种手势，可按需独立引入：\n• CJGRKit/CGRectCJSubHelper - 一个调整小区域的frame使其保持在cage内部，或调整大区域的frame使其包含住小区域的帮助类\n• CJGRKit/CGRectCJAdjustHelper - 调整移动区域的帮助类\n• CJGRKit/KeepBounds - UIView+CJKeepBounds.h 限制本视图不移出其父视图或keyWindow\n• CJGRKit/CJGRView - 继承系统并添加有手势的 UIView ，能够进行拖动、缩放等手势\n• CJGRKit/CJGRScrollView - 继承系统并添加有手势的 UIScrollView ，能够进行拖动、缩放等手势\n\n每个子库可独立引入，详见各子库描述。",
   "platforms": {
     "ios": "9.0"
   },
   "source": {
     "git": "https://github.com/dvlproad/CJGRKit.git",
-    "tag": "CJGRKit_0.2.4"
+    "tag": "CJGRKit_0.2.5"
   },
   "frameworks": "UIKit",
   "requires_arc": true,
@@ -30,7 +30,7 @@
       "source_files": "CJGRKit/CGRectCJAdjustHelper/*.{h,m}"
     },
     {
-      "name": "Extension",
+      "name": "KeepBounds",
       "source_files": "CJGRKit/Extension/**/*.{h,m}",
       "dependencies": {
         "CJGRKit/CGRectCJAdjustHelper": []
@@ -87,13 +87,6 @@
           "dependencies": {
             "CJGRKit/CJGRScrollView/Base": [],
             "CJGRKit/CGRectCJSubHelper": []
-          }
-        },
-        {
-          "name": "MaskImage",
-          "source_files": "CJGRKit/CJGRScrollView/MaskImage/**/*.{h,m}",
-          "dependencies": {
-            "CJGRKit/CJGRScrollView/Image": []
           }
         }
       ]

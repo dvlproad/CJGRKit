@@ -9,12 +9,12 @@
 #import <Masonry/Masonry.h>
 #import <CQDemoKit/CQTSContainerViewFactory.h>
 #import <CQDemoResource/CQTSAssetSourceUtil.h>
-#import <CJGRKit/BLClipImageView.h>
+#import <CJGRKit/CQMaskImageAdjustGRView.h>
 
 @interface TSMaskImageAdjustGRViewController () {
     
 }
-@property (nonatomic, strong) BLClipImageView *imageScaleView;
+@property (nonatomic, strong) CQMaskImageAdjustGRView *imageScaleView;
 
 @end
 
@@ -49,7 +49,7 @@
         make.left.mas_equalTo(self.view).mas_offset(20);
     }];
     
-    BLClipImageView *imageScaleView = [[BLClipImageView alloc] initWithFrame:CGRectZero];
+    CQMaskImageAdjustGRView *imageScaleView = [[CQMaskImageAdjustGRView alloc] initWithFrame:CGRectZero];
     imageScaleView.backgroundColor = [UIColor blackColor];
     [self.view addSubview:imageScaleView];
     [imageScaleView mas_makeConstraints:^(MASConstraintMaker *make) {

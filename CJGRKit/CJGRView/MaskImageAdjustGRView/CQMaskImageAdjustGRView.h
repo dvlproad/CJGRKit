@@ -1,16 +1,17 @@
 //
-//  BLClipImageView.h
+//  CQMaskImageAdjustGRView.h
 //  TSDemo_ImageFilter
 //
 //  Created by qian on 2021/3/9.
 //
+//  已完成定制有遮罩层的图片裁剪调整（缩放、拖动）视图
 
 #import <CJGRKit/CJMaskImageAdjustGRView.h>
 #import <UIPathCJHelper/UIBezierPathCJHelper.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BLClipImageView : CJMaskImageAdjustGRView {
+@interface CQMaskImageAdjustGRView : CJMaskImageAdjustGRView {
     
 }
 - (instancetype)initWithFrame:(CGRect)frame NS_DESIGNATED_INITIALIZER;

@@ -24,7 +24,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.navigationItem.title = NSLocalizedString(@"使用场景1：拖动图片进行裁剪", nil);
+    self.navigationItem.title = NSLocalizedString(@"使用场景2：拖动图片进行裁剪", nil);
     
     UIView *buttonsView = [CQTSContainerViewFactory twoButtonsViewAlongAxis:MASAxisTypeVertical title1:@"竖直长图" actionBlock1:^(UIButton * _Nonnull bButton) {
         UIImage *image = [TSImageSourceUtil longVertical01];

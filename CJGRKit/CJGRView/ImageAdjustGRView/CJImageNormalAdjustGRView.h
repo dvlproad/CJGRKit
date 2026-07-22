@@ -37,6 +37,10 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)updateFrameByImage:(UIImage *)image;
 
+#pragma mark - Get
+// 提供 ImageView 供外部设置网络图片时候使用
+- (UIImageView *)imageView;
+
 @end
 
 NS_ASSUME_NONNULL_END

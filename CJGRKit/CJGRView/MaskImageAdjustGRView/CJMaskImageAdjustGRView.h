@@ -4,6 +4,7 @@
 //
 //  Created by qian on 2021/3/9.
 //
+//  用于定制有遮罩层的图片裁剪调整（缩放、拖动）视图
 
 #import "CJImageClipAdjustGRView.h"
 #import <UIPathCJHelper/UIBezierPathCJHelper.h>

@@ -31,11 +31,11 @@ Pod::Spec.new do |s|
 
   s.description  = <<-DESC
                  各种手势，可按需独立引入：
-                 • CJGRKit/CGRectCJSubHelper - 帮助类
+                 • CJGRKit/CGRectCJSubHelper - 一个调整小区域的frame使其保持在cage内部，或调整大区域的frame使其包含住小区域的帮助类
                  • CJGRKit/CGRectCJAdjustHelper - 调整移动区域的帮助类
-                 • CJGRKit/Extension - 扩展方法
-                 • CJGRKit/CJGRView - 自定义的形同 UIScrollView 能够进行拖动和缩放的视图
-                 • CJGRKit/CJGRScrollView - 继承系统的 UIScrollView，增加其他限制
+                 • CJGRKit/KeepBounds - UIView+CJKeepBounds.h 限制本视图不移出其父视图或keyWindow
+                 • CJGRKit/CJGRView - 继承系统并添加有手势的 UIView ，能够进行拖动、缩放等手势
+                 • CJGRKit/CJGRScrollView - 继承系统并添加有手势的 UIScrollView ，能够进行拖动、缩放等手势
 
                  每个子库可独立引入，详见各子库描述。
                  DESC
@@ -54,7 +54,7 @@ Pod::Spec.new do |s|
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
 
-  # 帮助类
+  # 一个调整小区域的frame使其保持在cage内部，或调整大区域的frame使其包含住小区域的帮助类
   s.subspec 'CGRectCJSubHelper' do |ss|
     ss.source_files = "CJGRKit/CGRectCJSubHelper/*.{h,m}"
   end
@@ -64,13 +64,13 @@ Pod::Spec.new do |s|
     ss.source_files = "CJGRKit/CGRectCJAdjustHelper/*.{h,m}"
   end
 
-  # 扩展方法
-  s.subspec 'Extension' do |ss| # 当前只有 UIView+CJKeepBounds.h
+  # UIView+CJKeepBounds.h 限制本视图不移出其父视图或keyWindow
+  s.subspec 'KeepBounds' do |ss| # 当前只有 UIView+CJKeepBounds.h
     ss.source_files = "CJGRKit/Extension/**/*.{h,m}"
     ss.dependency "CJGRKit/CGRectCJAdjustHelper"
   end
 
-  # 自定义的形同 UIScrollView 能够进行拖动和缩放的视图
+  # 继承系统并添加有手势的 UIView ，能够进行拖动、缩放等手势
   s.subspec 'CJGRView' do |ss|
     # CJGRView
     ss.subspec 'Base' do |sss|
@@ -91,7 +91,7 @@ Pod::Spec.new do |s|
       sss.dependency "CJGRKit/CGRectCJSubHelper" # ImageAdjustGRView 中需要使用
     end
 
-    # CJMaskImageAdjustGRView
+    # CJMaskImageAdjustGRView-用于定制有遮罩层的图片裁剪调整（缩放、拖动）视图。CQMaskImageAdjustGRView-已完成定制有遮罩层的图片裁剪调整（缩放、拖动）视图
     ss.subspec 'MaskImageAdjustGRView' do |sss|
       sss.source_files = "CJGRKit/CJGRView/MaskImageAdjustGRView/**/*.{h,m}"
       sss.dependency "CJGRKit/CJGRView/ImageAdjustGRView"
@@ -100,7 +100,7 @@ Pod::Spec.new do |s|
     
   end
 
-  # 继承系统的 UIScrollView，增加其他限制
+  # 继承系统并添加有手势的 UIScrollView ，能够进行拖动、缩放等手势
   s.subspec 'CJGRScrollView' do |ss|
     # CJGRScrollView
     ss.subspec 'Base' do |sss|
@@ -108,17 +108,11 @@ Pod::Spec.new do |s|
       sss.dependency "Masonry"
     end
 
-    # CJImageGRScrollView
+    # CJImageGRScrollView（没有 Adjust 功能）
     ss.subspec 'Image' do |sss|
       sss.source_files = "CJGRKit/CJGRScrollView/Image/**/*.{h,m}"
       sss.dependency 'CJGRKit/CJGRScrollView/Base'
       sss.dependency "CJGRKit/CGRectCJSubHelper"
-    end
-
-    # CQMaskCenterView
-    ss.subspec 'MaskImage' do |sss|
-      sss.source_files = "CJGRKit/CJGRScrollView/MaskImage/**/*.{h,m}"
-      sss.dependency 'CJGRKit/CJGRScrollView/Image'
     end
   end
   

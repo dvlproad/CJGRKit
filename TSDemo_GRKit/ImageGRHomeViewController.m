@@ -19,7 +19,6 @@
 
 // 图片视图：缩放+位置调整+蒙版：使用CJGRScrollView
 #import "TSImageNormalAdjustGRScrollViewController.h"
-#import "TSMaskImageGRScrollViewController.h"
 
 
 
@@ -110,10 +109,10 @@
     }
     
     
-    // 图片缩放与位置调整+添加蒙版
+    // 缩放+位置调整：使用CJGRScrollView
     {
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
-        sectionDataModel.theme = @"缩放+位置调整+蒙版：使用CJGRScrollView";
+        sectionDataModel.theme = @"缩放+位置调整：使用CJGRScrollView";
         {
             CQDMModuleModel *module = [[CQDMModuleModel alloc] init];
             module.title = @"图片视图(普通)：缩放+位置调整(CJImageGRScrollView 类似 CJImageNormalAdjustGRView)";
@@ -122,12 +121,6 @@
                 @"图片普通调整（缩放、拖动）视图，没有裁剪框。场景：如图片拼接里的位置、大小调整。"
                 ] componentsJoinedByString:@"\n"];
             module.classEntry = [TSImageNormalAdjustGRScrollViewController class];
-            [sectionDataModel.values addObject:module];
-        }
-        {
-            CQDMModuleModel *module = [[CQDMModuleModel alloc] init];
-            module.title = @"图片缩放与位置调整+添加蒙版(BUG蒙层跑底部去了)";
-            module.classEntry = [TSMaskImageGRScrollViewController class];
             [sectionDataModel.values addObject:module];
         }
         [sectionDataModels addObject:sectionDataModel];

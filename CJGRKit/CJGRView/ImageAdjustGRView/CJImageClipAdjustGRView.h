@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @return 可缩放子视图大小和调整子视图位置的视图
  */
-- (instancetype)initWithClippingViewCreateBlock:(UIView *(^ _Nullable)(void))clippingViewCreateBlock;
+- (instancetype)initWithClippingViewCreateBlock:(UIView *(^ _Nullable)(void))clippingViewCreateBlock NS_DESIGNATED_INITIALIZER;
 - (instancetype)initWithSubViewCreateBlock:(UIView *(^ _Nonnull)(void))subViewCreateBlock
                    clippingViewCreateBlock:(UIView *(^ _Nullable)(void))clippingViewCreateBlock NS_UNAVAILABLE;
 
@@ -46,6 +46,10 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param image 通过imageName或imageUrl等得到的图片
  */
 - (void)updateFrameByImage:(UIImage *)image;
+
+#pragma mark - Get
+// 提供 ImageView 供外部设置网络图片时候使用
+- (UIImageView *)imageView;
 
 @end
 

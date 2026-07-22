@@ -14,13 +14,12 @@
 #import "CGRectCJSubHelper.h"
 #import "CJGRScrollView.h"
 #import "CJImageGRScrollView.h"
-#import "CQMaskCenterView.h"
 #import "CJGRView.h"
 #import "CJAdjustGRView.h"
 #import "CJImageClipAdjustGRView.h"
 #import "CJImageNormalAdjustGRView.h"
-#import "BLClipImageView.h"
 #import "CJMaskImageAdjustGRView.h"
+#import "CQMaskImageAdjustGRView.h"
 #import "UIView+CJKeepBounds.h"
 
 FOUNDATION_EXPORT double CJGRKitVersionNumber;

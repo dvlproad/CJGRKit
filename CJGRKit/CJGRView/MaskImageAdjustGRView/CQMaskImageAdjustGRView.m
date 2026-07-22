@@ -1,13 +1,13 @@
 //
-//  BLClipImageView.m
+//  CQMaskImageAdjustGRView.m
 //  TSDemo_ImageFilter
 //
 //  Created by qian on 2021/3/9.
 //
 
-#import "BLClipImageView.h"
+#import "CQMaskImageAdjustGRView.h"
 
-@implementation BLClipImageView
+@implementation CQMaskImageAdjustGRView
 
 
 - (instancetype)initWithFrame:(CGRect)frame {

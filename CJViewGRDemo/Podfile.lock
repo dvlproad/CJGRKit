@@ -1,41 +1,38 @@
 PODS:
   - CJBaseUIKit-Swift/UIView/as (0.0.2)
   - CJBaseUIKit/UIView/CJDragAction (0.9.0)
-  - CJGRKit (0.2.4):
-    - CJGRKit/CGRectCJAdjustHelper (= 0.2.4)
-    - CJGRKit/CGRectCJSubHelper (= 0.2.4)
-    - CJGRKit/CJGRScrollView (= 0.2.4)
-    - CJGRKit/CJGRView (= 0.2.4)
-    - CJGRKit/Extension (= 0.2.4)
-  - CJGRKit/CGRectCJAdjustHelper (0.2.4)
-  - CJGRKit/CGRectCJSubHelper (0.2.4)
-  - CJGRKit/CJGRScrollView (0.2.4):
-    - CJGRKit/CJGRScrollView/Base (= 0.2.4)
-    - CJGRKit/CJGRScrollView/Image (= 0.2.4)
-    - CJGRKit/CJGRScrollView/MaskImage (= 0.2.4)
-  - CJGRKit/CJGRScrollView/Base (0.2.4):
+  - CJGRKit (0.2.5):
+    - CJGRKit/CGRectCJAdjustHelper (= 0.2.5)
+    - CJGRKit/CGRectCJSubHelper (= 0.2.5)
+    - CJGRKit/CJGRScrollView (= 0.2.5)
+    - CJGRKit/CJGRView (= 0.2.5)
+    - CJGRKit/KeepBounds (= 0.2.5)
+  - CJGRKit/CGRectCJAdjustHelper (0.2.5)
+  - CJGRKit/CGRectCJSubHelper (0.2.5)
+  - CJGRKit/CJGRScrollView (0.2.5):
+    - CJGRKit/CJGRScrollView/Base (= 0.2.5)
+    - CJGRKit/CJGRScrollView/Image (= 0.2.5)
+  - CJGRKit/CJGRScrollView/Base (0.2.5):
     - Masonry
-  - CJGRKit/CJGRScrollView/Image (0.2.4):
+  - CJGRKit/CJGRScrollView/Image (0.2.5):
     - CJGRKit/CGRectCJSubHelper
     - CJGRKit/CJGRScrollView/Base
-  - CJGRKit/CJGRScrollView/MaskImage (0.2.4):
-    - CJGRKit/CJGRScrollView/Image
-  - CJGRKit/CJGRView (0.2.4):
-    - CJGRKit/CJGRView/Base (= 0.2.4)
-    - CJGRKit/CJGRView/BaseAdjustGRView (= 0.2.4)
-    - CJGRKit/CJGRView/ImageAdjustGRView (= 0.2.4)
-    - CJGRKit/CJGRView/MaskImageAdjustGRView (= 0.2.4)
-  - CJGRKit/CJGRView/Base (0.2.4):
+  - CJGRKit/CJGRView (0.2.5):
+    - CJGRKit/CJGRView/Base (= 0.2.5)
+    - CJGRKit/CJGRView/BaseAdjustGRView (= 0.2.5)
+    - CJGRKit/CJGRView/ImageAdjustGRView (= 0.2.5)
+    - CJGRKit/CJGRView/MaskImageAdjustGRView (= 0.2.5)
+  - CJGRKit/CJGRView/Base (0.2.5):
     - CJGRKit/CGRectCJAdjustHelper
-  - CJGRKit/CJGRView/BaseAdjustGRView (0.2.4):
+  - CJGRKit/CJGRView/BaseAdjustGRView (0.2.5):
     - CJGRKit/CJGRView/Base
-  - CJGRKit/CJGRView/ImageAdjustGRView (0.2.4):
+  - CJGRKit/CJGRView/ImageAdjustGRView (0.2.5):
     - CJGRKit/CGRectCJSubHelper
     - CJGRKit/CJGRView/BaseAdjustGRView
-  - CJGRKit/CJGRView/MaskImageAdjustGRView (0.2.4):
+  - CJGRKit/CJGRView/MaskImageAdjustGRView (0.2.5):
     - CJGRKit/CJGRView/ImageAdjustGRView
     - UIPathCJHelper
-  - CJGRKit/Extension (0.2.4):
+  - CJGRKit/KeepBounds (0.2.5):
     - CJGRKit/CGRectCJAdjustHelper
   - CJViewElement-Swift/ComponentConfigModel (0.0.1):
     - CJViewElement-Swift/Model
@@ -146,7 +143,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   CJBaseUIKit: 082b23d89703a9ff17f6b17f33c23569c2e67581
   CJBaseUIKit-Swift: 432f05b09106994c16a4cf582c6a728c3e59316e
-  CJGRKit: c5cdc1d38798a3a43d776cfcb5296f48234ff1fe
+  CJGRKit: c1e4083565d9a3f659022d93c1e53180411c2f55
   CJViewElement-Swift: b91ce13dec653ce1842751102d899be5ea474993
   CJViewGR-Swift: d079f917d23cbba3582848e1bac268a1cf684a04
   CQDemoKit: 9f8aa6a4170962f9621b08748ac66f2d88d25f35
