@@ -18,7 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    //self.tabBar.backgroundImage = [UIImage cqdemokit_xcassetImageNamed:@"tabbar_BG"];
+    //self.tabBar.backgroundImage = [UIImage cqresource_imageNamed:@"tabbar_BG"];
     
 //    [self setSelectedIndex:0];
 //    [self setViewControllers:@[firstNavigationController, secondNavigationController, navigationController3, navigationController4] animated:YES];
@@ -51,19 +51,31 @@
     ③设置角标tabBarItem.badgeValue：如果没有设置图片，角标默认显示在左上角，设置了图片就会在图片的右上角显示
     */
     UIViewController *viewController = nil;
-    Class classEntry = tabBarModel.classEntry;
-    NSString *clsString = NSStringFromClass(tabBarModel.classEntry);
-    if (tabBarModel.isCreateByXib) {
-        NSBundle *xibBundle = tabBarModel.xibBundle;
-        viewController = [[classEntry alloc] initWithNibName:clsString bundle:xibBundle];
+    if (tabBarModel.viewControllerGetterHandle != nil) {
+        viewController = tabBarModel.viewControllerGetterHandle();
     } else {
-        viewController = [[classEntry alloc] init];
+        Class classEntry = tabBarModel.classEntry;
+        NSString *clsString = NSStringFromClass(tabBarModel.classEntry);
+        if (tabBarModel.isCreateByXib) {
+            NSBundle *xibBundle = tabBarModel.xibBundle;
+            viewController = [[classEntry alloc] initWithNibName:clsString bundle:xibBundle];
+        } else {
+            viewController = [[classEntry alloc] init];
+        }
     }
     
     viewController.title = tabBarModel.title;
     viewController.navigationItem.title = tabBarModel.title;
     viewController.tabBarItem.title = tabBarModel.title;
-    viewController.tabBarItem.image = [[UIImage imageNamed:@"icons8-calendar"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *tabbarImage = tabBarModel.normalImage;
+    /*
+    if (tabbarImage == nil) {
+        NSBundle *imageBundle = [NSBundle bundleForClass:NSClassFromString(@"CJUIKitBaseTabBarViewController")];
+        tabbarImage = [UIImage imageNamed:@"icons8-calendar" inBundle:imageBundle compatibleWithTraitCollection:nil];
+        tabbarImage = [UIImage cqresource_imageNamed:@"icons8-calendar"];
+    }
+    */
+    viewController.tabBarItem.image = [tabbarImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UINavigationController *rootViewController = [[UINavigationController alloc] initWithRootViewController:viewController];
     return rootViewController;;
 }
@@ -79,23 +91,23 @@
 }
 
 - (void)setupViews {
-    self.tabBar.backgroundImage = [UIImage cqdemokit_xcassetImageNamed:@"tabbar_BG"];
+    self.tabBar.backgroundImage = [UIImage cqresource_imageNamed:@"tabbar_BG"];
     
     UIViewController *viewController1 = [[CQPhoneStepLoginHomeViewController alloc] init];
     viewController1.tabBarItem.title = NSLocalizedString(@"登录", nil);
-    viewController1.tabBarItem.image = [[UIImage cqdemokit_xcassetImageNamed:@"icons8-settings"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    viewController1.tabBarItem.image = [UIImage cqresource_imageNamed:@"icons8-settings"];
     UINavigationController *navigationController1 = [[UINavigationController alloc] initWithRootViewController:viewController1];
     [self addChildViewController:navigationController1];
     
     UIViewController *viewController2 = [[CQImproveNameViewController alloc] initWithIdentityType:CQIdentityTypeBiao];
     viewController2.tabBarItem.title = NSLocalizedString(@"完善表资料", nil);
-    viewController2.tabBarItem.image = [[UIImage cqdemokit_xcassetImageNamed:@"icons8-settings"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    viewController2.tabBarItem.image = [UIImage cqresource_imageNamed:@"icons8-settings"];
     UINavigationController *navigationController2 = [[UINavigationController alloc] initWithRootViewController:viewController2];
     [self addChildViewController:navigationController2];
     
     UIViewController *viewController3 = [[CQImproveNameViewController alloc] initWithIdentityType:CQIdentityTypeLi];
     viewController3.tabBarItem.title = NSLocalizedString(@"完善里资料", nil);
-    viewController3.tabBarItem.image = [[UIImage cqdemokit_xcassetImageNamed:@"icons8-settings"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    viewController3.tabBarItem.image = [UIImage cqresource_imageNamed:@"icons8-settings"];
     UINavigationController *navigationController3 = [[UINavigationController alloc] initWithRootViewController:viewController3];
     [self addChildViewController:navigationController3];
     

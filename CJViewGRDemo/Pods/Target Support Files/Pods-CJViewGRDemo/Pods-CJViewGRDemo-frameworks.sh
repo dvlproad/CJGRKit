@@ -176,18 +176,34 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/CJBaseUIKit-Swift/CJBaseUIKit_Swift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CJBaseUIKit/CJBaseUIKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CJGRKit/CJGRKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJViewElement-Swift/CJViewElement_Swift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJViewGR-Swift/CJViewGR_Swift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CQDemoKit-Swift/CQDemoKit_Swift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CQDemoKit/CQDemoKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CQDemoResource/CQDemoResource.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/TSDemo_GRKit/TSDemo_GRKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/TSDemo_GRKit-Swift/TSDemo_GRKit_Swift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/UIPathCJHelper/UIPathCJHelper.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/CJBaseUIKit-Swift/CJBaseUIKit_Swift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CJBaseUIKit/CJBaseUIKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CJGRKit/CJGRKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJViewElement-Swift/CJViewElement_Swift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJViewGR-Swift/CJViewGR_Swift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CQDemoKit-Swift/CQDemoKit_Swift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CQDemoKit/CQDemoKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CQDemoResource/CQDemoResource.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/TSDemo_GRKit/TSDemo_GRKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/TSDemo_GRKit-Swift/TSDemo_GRKit_Swift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/UIPathCJHelper/UIPathCJHelper.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

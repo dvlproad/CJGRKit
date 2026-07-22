@@ -44,10 +44,13 @@ source 'https://gitee.com/dvlproad/dvlproadSpecs'  #这里要增加的是这条�
 inhibit_all_warnings! #inhibit_warnings参数能够有效的抑制CocoaPods引入的第三方代码库产生的warning。
 
 target 'CJViewGRDemo' do
-    pod 'CQDemoKit',          '~> 0.8.0',          :subspecs => ['BaseVC']
+    pod 'CQDemoKit',          '~> 0.9.10',          :subspecs => ['BaseVC']
 #    pod 'CJViewElement-Swift',:path => '../../CJViewCreatorSDK',  :subspecs => ['LayoutInputView']
     pod 'CJViewElement-Swift',:'~> 0.0.1',        :subspecs => ['LayoutInputView', 'ComponentConfigModel']
-        
+    
+    pod 'TSDemo_GRKit-Swift', :path => '../'
+    pod 'TSDemo_GRKit',       :path => '../'
     pod 'CJViewGR-Swift',     :path => '../'
+    pod 'CJGRKit',            :path => '../'
     pod 'SnapKit'
 end

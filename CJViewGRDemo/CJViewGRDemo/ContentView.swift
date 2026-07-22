@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import CJBaseUIKit_Swift
+import TSDemo_GRKit
 
 struct ContentView: View {
     var body: some View {
@@ -19,12 +21,17 @@ struct ContentView: View {
                     StickerEditorDemoPage()
                 }
 
-                NavigationLink("Layout Input + Gesture Demo") {
+                NavigationLink("Layout Input + Gesture Demo1") {
                     LayoutInputGestureDemoPage()
                 }
 
-                NavigationLink("Layout Model + Gesture Demo") {
+                NavigationLink("Layout Model + Gesture Demo2") {
                     LayoutInputGestureDemoPage2()
+                }
+                
+                NavigationLink("ImageGRHome") {
+                    ImageGRHomeViewController()
+                        .asSwiftUI()
                 }
             }
             .navigationTitle("CJViewGR Demo")

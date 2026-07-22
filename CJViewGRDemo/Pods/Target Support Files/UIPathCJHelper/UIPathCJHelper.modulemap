@@ -1,0 +1,6 @@
+framework module UIPathCJHelper {
+  umbrella header "UIPathCJHelper-umbrella.h"
+
+  export *
+  module * { export * }
+}

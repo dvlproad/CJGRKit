@@ -1,0 +1,6 @@
+framework module TSDemo_GRKit {
+  umbrella header "TSDemo_GRKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

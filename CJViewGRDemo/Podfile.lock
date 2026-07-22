@@ -1,4 +1,42 @@
 PODS:
+  - CJBaseUIKit-Swift/UIView/as (0.0.2)
+  - CJBaseUIKit/UIView/CJDragAction (0.9.0)
+  - CJGRKit (0.2.4):
+    - CJGRKit/CGRectCJAdjustHelper (= 0.2.4)
+    - CJGRKit/CGRectCJSubHelper (= 0.2.4)
+    - CJGRKit/CJGRScrollView (= 0.2.4)
+    - CJGRKit/CJGRView (= 0.2.4)
+    - CJGRKit/Extension (= 0.2.4)
+  - CJGRKit/CGRectCJAdjustHelper (0.2.4)
+  - CJGRKit/CGRectCJSubHelper (0.2.4)
+  - CJGRKit/CJGRScrollView (0.2.4):
+    - CJGRKit/CJGRScrollView/Base (= 0.2.4)
+    - CJGRKit/CJGRScrollView/Image (= 0.2.4)
+    - CJGRKit/CJGRScrollView/MaskImage (= 0.2.4)
+  - CJGRKit/CJGRScrollView/Base (0.2.4):
+    - Masonry
+  - CJGRKit/CJGRScrollView/Image (0.2.4):
+    - CJGRKit/CGRectCJSubHelper
+    - CJGRKit/CJGRScrollView/Base
+  - CJGRKit/CJGRScrollView/MaskImage (0.2.4):
+    - CJGRKit/CJGRScrollView/Image
+  - CJGRKit/CJGRView (0.2.4):
+    - CJGRKit/CJGRView/Base (= 0.2.4)
+    - CJGRKit/CJGRView/BaseAdjustGRView (= 0.2.4)
+    - CJGRKit/CJGRView/ImageAdjustGRView (= 0.2.4)
+    - CJGRKit/CJGRView/MaskImageAdjustGRView (= 0.2.4)
+  - CJGRKit/CJGRView/Base (0.2.4):
+    - CJGRKit/CGRectCJAdjustHelper
+  - CJGRKit/CJGRView/BaseAdjustGRView (0.2.4):
+    - CJGRKit/CJGRView/Base
+  - CJGRKit/CJGRView/ImageAdjustGRView (0.2.4):
+    - CJGRKit/CGRectCJSubHelper
+    - CJGRKit/CJGRView/BaseAdjustGRView
+  - CJGRKit/CJGRView/MaskImageAdjustGRView (0.2.4):
+    - CJGRKit/CJGRView/ImageAdjustGRView
+    - UIPathCJHelper
+  - CJGRKit/Extension (0.2.4):
+    - CJGRKit/CGRectCJAdjustHelper
   - CJViewElement-Swift/ComponentConfigModel (0.0.1):
     - CJViewElement-Swift/Model
   - CJViewElement-Swift/Extension (0.0.1)
@@ -8,59 +46,118 @@ PODS:
   - CJViewGR-Swift (0.0.1):
     - CJViewGR-Swift/Extension (= 0.0.1)
   - CJViewGR-Swift/Extension (0.0.1)
-  - CQDemoKit/BaseUIKit (0.8.0):
+  - CQDemoKit-Swift/BaseVC (0.0.2)
+  - CQDemoKit/BaseUIKit (0.9.10):
     - Masonry
-  - CQDemoKit/BaseUtil (0.8.0)
-  - CQDemoKit/BaseVC (0.8.0):
-    - CQDemoKit/BaseVC/Base (= 0.8.0)
-    - CQDemoKit/BaseVC/Collection (= 0.8.0)
-    - CQDemoKit/BaseVC/ScrollView (= 0.8.0)
-    - CQDemoKit/BaseVC/TabBar (= 0.8.0)
-    - CQDemoKit/BaseVC/TableView (= 0.8.0)
-    - CQDemoKit/BaseVC/TextView (= 0.8.0)
-  - CQDemoKit/BaseVC/Base (0.8.0):
+  - CQDemoKit/BaseUtil (0.9.10)
+  - CQDemoKit/BaseVC (0.9.10):
+    - CQDemoKit/BaseVC/Base (= 0.9.10)
+    - CQDemoKit/BaseVC/Collection (= 0.9.10)
+    - CQDemoKit/BaseVC/ScrollView (= 0.9.10)
+    - CQDemoKit/BaseVC/TabBar (= 0.9.10)
+    - CQDemoKit/BaseVC/TableView (= 0.9.10)
+  - CQDemoKit/BaseVC/Base (0.9.10):
     - CQDemoKit/BaseUIKit
     - Masonry
-  - CQDemoKit/BaseVC/Collection (0.8.0):
+  - CQDemoKit/BaseVC/Collection (0.9.10):
     - CQDemoKit/BaseVC/Base
-  - CQDemoKit/BaseVC/ScrollView (0.8.0):
+  - CQDemoKit/BaseVC/ScrollView (0.9.10):
     - CQDemoKit/BaseVC/Base
-  - CQDemoKit/BaseVC/TabBar (0.8.0):
+  - CQDemoKit/BaseVC/TabBar (0.9.10):
     - CQDemoKit/Helper
-  - CQDemoKit/BaseVC/TableView (0.8.0):
+  - CQDemoKit/BaseVC/TableView (0.9.10):
     - CQDemoKit/BaseVC/Base
-  - CQDemoKit/BaseVC/TextView (0.8.0):
-    - CQDemoKit/BaseUtil
-    - CQDemoKit/BaseVC/Base
-  - CQDemoKit/Helper (0.8.0)
+  - CQDemoKit/Demo_Resource (0.9.10):
+    - CQDemoKit/Demo_Resource/GitUtil (= 0.9.10)
+    - CQDemoKit/Demo_Resource/ImageModel (= 0.9.10)
+    - CQDemoKit/Demo_Resource/InFramework (= 0.9.10)
+    - CQDemoKit/Demo_Resource/RandomUtil (= 0.9.10)
+    - CQDemoKit/Demo_Resource/ResourceInfoUtil (= 0.9.10)
+    - CQDemoKit/Demo_Resource/SandboxFileUtil (= 0.9.10)
+    - CQDemoKit/Demo_Resource/SandboxPathUtil (= 0.9.10)
+    - CQDemoKit/Demo_Resource/SandboxPhotoUtil (= 0.9.10)
+  - CQDemoKit/Demo_Resource/GitUtil (0.9.10)
+  - CQDemoKit/Demo_Resource/ImageModel (0.9.10)
+  - CQDemoKit/Demo_Resource/InFramework (0.9.10)
+  - CQDemoKit/Demo_Resource/RandomUtil (0.9.10)
+  - CQDemoKit/Demo_Resource/ResourceInfoUtil (0.9.10)
+  - CQDemoKit/Demo_Resource/SandboxFileUtil (0.9.10):
+    - CQDemoKit/Demo_Resource/SandboxPathUtil
+    - CQDemoKit/Helper
+  - CQDemoKit/Demo_Resource/SandboxPathUtil (0.9.10):
+    - CQDemoKit/Demo_Resource/ResourceInfoUtil
+  - CQDemoKit/Demo_Resource/SandboxPhotoUtil (0.9.10):
+    - CQDemoKit/Demo_Resource/ResourceInfoUtil
+  - CQDemoKit/Helper (0.9.10)
+  - CQDemoResource/Core (0.3.0):
+    - CQDemoKit/Demo_Resource
+  - CQDemoResource/Images (0.3.0):
+    - CQDemoResource/Core
   - Masonry (1.1.0)
   - SnapKit (5.7.1)
+  - TSDemo_GRKit (0.0.1):
+    - CJBaseUIKit/UIView/CJDragAction
+    - CJGRKit
+    - CQDemoKit/BaseUtil
+    - CQDemoKit/BaseVC
+    - CQDemoResource/Images
+  - TSDemo_GRKit-Swift (0.0.1):
+    - CJBaseUIKit-Swift/UIView/as
+    - CQDemoKit-Swift/BaseVC
+    - CQDemoKit/BaseVC
+    - CQDemoKit/Demo_Resource
+    - CQDemoResource/Images
+    - TSDemo_GRKit
+  - UIPathCJHelper (0.1.0)
 
 DEPENDENCIES:
+  - CJGRKit (from `../`)
   - CJViewElement-Swift/ComponentConfigModel (~> 0.0.1)
   - CJViewElement-Swift/LayoutInputView (~> 0.0.1)
   - CJViewGR-Swift (from `../`)
-  - CQDemoKit/BaseVC (~> 0.8.0)
+  - CQDemoKit/BaseVC (~> 0.9.10)
   - SnapKit
+  - TSDemo_GRKit (from `../`)
+  - TSDemo_GRKit-Swift (from `../`)
 
 SPEC REPOS:
+  https://gitee.com/dvlproad/dvlproadSpecs:
+    - UIPathCJHelper
   https://github.com/CocoaPods/Specs.git:
+    - CJBaseUIKit
+    - CJBaseUIKit-Swift
     - CJViewElement-Swift
     - CQDemoKit
+    - CQDemoKit-Swift
+    - CQDemoResource
     - Masonry
     - SnapKit
 
 EXTERNAL SOURCES:
+  CJGRKit:
+    :path: "../"
   CJViewGR-Swift:
+    :path: "../"
+  TSDemo_GRKit:
+    :path: "../"
+  TSDemo_GRKit-Swift:
     :path: "../"
 
 SPEC CHECKSUMS:
+  CJBaseUIKit: 082b23d89703a9ff17f6b17f33c23569c2e67581
+  CJBaseUIKit-Swift: 432f05b09106994c16a4cf582c6a728c3e59316e
+  CJGRKit: c5cdc1d38798a3a43d776cfcb5296f48234ff1fe
   CJViewElement-Swift: b91ce13dec653ce1842751102d899be5ea474993
-  CJViewGR-Swift: 22a6cb1bba996a2d7e0853dc537a4d4b74c2b36b
-  CQDemoKit: 1fea1039a960befe72d4452ff17827e2828b9501
+  CJViewGR-Swift: d079f917d23cbba3582848e1bac268a1cf684a04
+  CQDemoKit: 9f8aa6a4170962f9621b08748ac66f2d88d25f35
+  CQDemoKit-Swift: 054d1ddf8e358a1328423315e24aa37e48f2e1ee
+  CQDemoResource: 4b414e6919d4a6f72c2ec7fba3ef69bdb82714eb
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
+  TSDemo_GRKit: 571b1f8f823bd11f3a62bd2cebfdbeeeb27c6440
+  TSDemo_GRKit-Swift: 22820d75a5ba08c98313959195b3d7681bafb6ab
+  UIPathCJHelper: f06a25a414a889098be70a89a33f939ddd9eb805
 
-PODFILE CHECKSUM: 069269f11f55fd9acae29dd33e8b816ec1c68192
+PODFILE CHECKSUM: 3a24ef4b10476bf08fc8c83cd60a0ace4ff10fab
 
 COCOAPODS: 1.16.2

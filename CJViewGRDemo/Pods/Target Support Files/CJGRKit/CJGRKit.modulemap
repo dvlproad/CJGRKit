@@ -1,0 +1,6 @@
+framework module CJGRKit {
+  umbrella header "CJGRKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

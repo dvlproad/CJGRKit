@@ -1,6 +1,14 @@
 ${PODS_ROOT}/Target Support Files/Pods-CJViewGRDemo/Pods-CJViewGRDemo-frameworks.sh
+${BUILT_PRODUCTS_DIR}/CJBaseUIKit-Swift/CJBaseUIKit_Swift.framework
+${BUILT_PRODUCTS_DIR}/CJBaseUIKit/CJBaseUIKit.framework
+${BUILT_PRODUCTS_DIR}/CJGRKit/CJGRKit.framework
 ${BUILT_PRODUCTS_DIR}/CJViewElement-Swift/CJViewElement_Swift.framework
 ${BUILT_PRODUCTS_DIR}/CJViewGR-Swift/CJViewGR_Swift.framework
+${BUILT_PRODUCTS_DIR}/CQDemoKit-Swift/CQDemoKit_Swift.framework
 ${BUILT_PRODUCTS_DIR}/CQDemoKit/CQDemoKit.framework
+${BUILT_PRODUCTS_DIR}/CQDemoResource/CQDemoResource.framework
 ${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework
 ${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
+${BUILT_PRODUCTS_DIR}/TSDemo_GRKit/TSDemo_GRKit.framework
+${BUILT_PRODUCTS_DIR}/TSDemo_GRKit-Swift/TSDemo_GRKit_Swift.framework
+${BUILT_PRODUCTS_DIR}/UIPathCJHelper/UIPathCJHelper.framework

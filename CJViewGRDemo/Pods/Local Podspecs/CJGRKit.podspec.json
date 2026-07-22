@@ -1,0 +1,102 @@
+{
+  "name": "CJGRKit",
+  "version": "0.2.4",
+  "summary": "可进行各种手势(缩放、拖动(含位置调整))的基于UIView或UIScrollView的视图基类",
+  "homepage": "https://github.com/dvlproad/CJGRKit.git",
+  "license": {
+    "type": "Copyright",
+    "text": "              © 2008-2020 dvlproad. All rights reserved.\n"
+  },
+  "authors": {
+    "dvlproad": ""
+  },
+  "description": "各种手势，可按需独立引入：\n• CJGRKit/CGRectCJSubHelper - 帮助类\n• CJGRKit/CGRectCJAdjustHelper - 调整移动区域的帮助类\n• CJGRKit/Extension - 扩展方法\n• CJGRKit/CJGRView - 自定义的形同 UIScrollView 能够进行拖动和缩放的视图\n• CJGRKit/CJGRScrollView - 继承系统的 UIScrollView，增加其他限制\n\n每个子库可独立引入，详见各子库描述。",
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source": {
+    "git": "https://github.com/dvlproad/CJGRKit.git",
+    "tag": "CJGRKit_0.2.4"
+  },
+  "frameworks": "UIKit",
+  "requires_arc": true,
+  "subspecs": [
+    {
+      "name": "CGRectCJSubHelper",
+      "source_files": "CJGRKit/CGRectCJSubHelper/*.{h,m}"
+    },
+    {
+      "name": "CGRectCJAdjustHelper",
+      "source_files": "CJGRKit/CGRectCJAdjustHelper/*.{h,m}"
+    },
+    {
+      "name": "Extension",
+      "source_files": "CJGRKit/Extension/**/*.{h,m}",
+      "dependencies": {
+        "CJGRKit/CGRectCJAdjustHelper": []
+      }
+    },
+    {
+      "name": "CJGRView",
+      "subspecs": [
+        {
+          "name": "Base",
+          "source_files": "CJGRKit/CJGRView/Base/**/*.{h,m}",
+          "dependencies": {
+            "CJGRKit/CGRectCJAdjustHelper": []
+          }
+        },
+        {
+          "name": "BaseAdjustGRView",
+          "source_files": "CJGRKit/CJGRView/BaseAdjustGRView/**/*.{h,m}",
+          "dependencies": {
+            "CJGRKit/CJGRView/Base": []
+          }
+        },
+        {
+          "name": "ImageAdjustGRView",
+          "source_files": "CJGRKit/CJGRView/ImageAdjustGRView/**/*.{h,m}",
+          "dependencies": {
+            "CJGRKit/CJGRView/BaseAdjustGRView": [],
+            "CJGRKit/CGRectCJSubHelper": []
+          }
+        },
+        {
+          "name": "MaskImageAdjustGRView",
+          "source_files": "CJGRKit/CJGRView/MaskImageAdjustGRView/**/*.{h,m}",
+          "dependencies": {
+            "CJGRKit/CJGRView/ImageAdjustGRView": [],
+            "UIPathCJHelper": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "CJGRScrollView",
+      "subspecs": [
+        {
+          "name": "Base",
+          "source_files": "CJGRKit/CJGRScrollView/Base/**/*.{h,m}",
+          "dependencies": {
+            "Masonry": []
+          }
+        },
+        {
+          "name": "Image",
+          "source_files": "CJGRKit/CJGRScrollView/Image/**/*.{h,m}",
+          "dependencies": {
+            "CJGRKit/CJGRScrollView/Base": [],
+            "CJGRKit/CGRectCJSubHelper": []
+          }
+        },
+        {
+          "name": "MaskImage",
+          "source_files": "CJGRKit/CJGRScrollView/MaskImage/**/*.{h,m}",
+          "dependencies": {
+            "CJGRKit/CJGRScrollView/Image": []
+          }
+        }
+      ]
+    }
+  ]
+}
