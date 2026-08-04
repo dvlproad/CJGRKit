@@ -20,9 +20,9 @@
 #import "CJImageNormalAdjustGRView.h"
 #import "CJMaskImageAdjustGRView.h"
 #import "CQMaskImageAdjustGRView.h"
+#import "UIView+CJFreeDrag.h"
 #import "UIView+CJKeepBounds.h"
-#import "UIView+CJDragAction.h"
-#import "UIView+CJPanAction.h"
+#import "UIView+CJPanDown.h"
 
 FOUNDATION_EXPORT double CJGRKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char CJGRKitVersionString[];

@@ -11,22 +11,21 @@
 		02CBA704FEAFFEEF21FDA373A221C941 /* CJViewElement-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C8E881EA575CED19CDD47FA6E5093DBA /* CJViewElement-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		031EC414850E476C01BAF0D34934D1B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8193349D819536E58C58A34C1B7DF545 /* Foundation.framework */; };
 		0352E42E20A3ADDF4EED9F117138E6FD /* MySwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875E9E9C3A7D192ACB9B56B6C423E0E4 /* MySwiftUIView.swift */; };
+		0494CD873BEA3228D4C539E2167D7744 /* CJImageClipAdjustGRView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AC4E471BF0ABC30C85C8BF6DB5FA9F /* CJImageClipAdjustGRView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		05B12D4CFCDCCE59AC0174C712E5B18E /* CJUIKitAlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA4EBD4F51F044D6F6E88FA6DD107D9 /* CJUIKitAlertUtil.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		0631BBC05F9B407F6D08F45305787D93 /* Masonry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B06A97FAFF51C11752B55AA3357A4D /* Masonry-dummy.m */; };
 		064D909CD827405E8DCC309DB1B7775A /* ConstraintLayoutSupportDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218C5034959E015FE0517629204A2ED8 /* ConstraintLayoutSupportDSL.swift */; };
 		082AA4EEC94A61B791F6B7AD42299ECE /* CJUIKitCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 34324265012288BD35EAAF91B28C7052 /* CJUIKitCollectionViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		088B89579EF5874C09FEFD1066E26573 /* MASViewAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E938608413EA62057D0245E0DB4F819 /* MASViewAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08B1CE2F0B958AD6D57A50DF4E3EE125 /* TSGRScrollViewHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F959442C6CD2A93B100FC4319F44DE6 /* TSGRScrollViewHomeViewController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		08C861EACE208AF0E1C6ACFE52A2AB75 /* CJMaskImageAdjustGRView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3086DB896F55BEA8D06A522362CA7E /* CJMaskImageAdjustGRView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		09836C98AE5A894CD1BD71F8CB1C2FF3 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 32F55E091F270A674764C1552B72B797 /* PrivacyInfo.xcprivacy */; };
 		09D143A2663FEB7D5C63CBBC32647737 /* CQTSImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA6BA9E061FADE50E40D72B3EB7CB59 /* CQTSImageLoader.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		09E1F569A93FAD4B9149E30B9301F44A /* ConstraintPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6D2B7110B43D1144F3EF7761FCF1D7 /* ConstraintPriority.swift */; };
-		0B7AEA5570E8D24403FBE52A63B96A41 /* UIView+CJPanAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A276CD4B5D74F9DE4541340310A3119 /* UIView+CJPanAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0C68FF574BB461652D4DB5561AA49489 /* CJImageClipAdjustGRView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A4B9ABCB88EA4CAD048991BE5E31730 /* CJImageClipAdjustGRView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0CA7A132ABE7018DE9295456732F38BB /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132A7BD0F0FEE95E263FCE048CE8714 /* ConstraintAttributes.swift */; };
 		0CC0968C8182790E0F3933020DA1C326 /* cqts_jpg_bg_05.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9392D8A67FEEC0A52DD985B63F8A4598 /* cqts_jpg_bg_05.jpg */; };
 		0D28E9ADD9A7CE280EB32DD2D286E769 /* CQTSSuspendWindowFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F82E978DB2FE872EB23CC4D9320C1A /* CQTSSuspendWindowFactory.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		0DE5DB9C6227B3416778D8417DD95EA9 /* ConstraintView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1AF2B96FECC4D71B6D5653D0F9EB0E /* ConstraintView+Extensions.swift */; };
-		0F05BC03BF142E96BC261C7C51D0CE19 /* CJGRScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26630E7F6A970005DBAF05DEE8689C2B /* CJGRScrollView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		0FE7ED830516AD963F91803C70F53F1C /* NSArray+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F4C48183CF88D7C0DA682BE7DE2C30D /* NSArray+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1194E62AA3F6F506799B1A43B16942B5 /* ConstraintDirectionalInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CFAA85B95E32B9441D483BC01F079C /* ConstraintDirectionalInsets.swift */; };
 		11FCB52905DCE8C267590FC7F578B6C1 /* TSImageNormalAdjustGRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E606421C0F3DEE4C3965F5FAA20117 /* TSImageNormalAdjustGRViewController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -35,15 +34,12 @@
 		13A936CB064994436D0A6447D8DB192B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8193349D819536E58C58A34C1B7DF545 /* Foundation.framework */; };
 		13BCA69DCC8186DA686F04C188E7A02B /* UIButton+CQTSMoreProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 51BB4A7CB42F08E3E4FD28BBF1DDF7FC /* UIButton+CQTSMoreProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		15A28778D4B18E5BE91C742AA685368E /* ImageGRHomeViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BFDF2467516DE6A5A4806537098CC9C /* ImageGRHomeViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		16243434E4EDC819EA2B828B03E2FC0D /* CJAdjustGRView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4748C7CA06276E2278BA172D3D612A43 /* CJAdjustGRView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		166292D09D593D929AA5EAF7D050373A /* CQCommentsPopView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0EA90D3DAEA53F7DA838F2CFC8D825FE /* CQCommentsPopView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		166B192AC8CB43F93EC3F03FAEEA4176 /* CQTSSandboxFileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA3002BF1297100491FEDCC98D67245 /* CQTSSandboxFileUtil.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		1671D3726F8F31814E6B1EBE36CECA1F /* CQTSGitUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FDA0192F588374E977F2FEF48A6B9EC /* CQTSGitUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		16F44EED7F67C4FB26DCDB12C043BA96 /* UIView+CJDragAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F825011352D1AEBEE49BA0D0A61099 /* UIView+CJDragAction.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		1795D413E5016D22A407393D40FE6435 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8193349D819536E58C58A34C1B7DF545 /* Foundation.framework */; };
 		17E5CAC8F660AE7A2589F4F9B0F4A91C /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5667A1E2AB302694D6492087533A1A /* NSLayoutConstraint+MASDebugAdditions.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		19A2074D7A292528C83BA06B9DDCD458 /* ViewPandownViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 060EE1B98F0BC2A9B4A9256BC4C8146F /* ViewPandownViewController1.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		19A5E149C8B403E750E620F5EED1D931 /* CJImageNormalAdjustGRView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E95B3DE202F41120AEEDABA83CCC979 /* CJImageNormalAdjustGRView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		1B27391F98C17DE0311A6B965FD13741 /* CQTSGitUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7EAD5EB21DD4F88F3DA40E1A5F29CF /* CQTSGitUtil.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		1D2576C08A437997731187A640D6C6FF /* CJHostingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB20FA732C26231FACEBC28A5EEE65B9 /* CJHostingView.swift */; };
 		1D7267ADB07DEF67389AC62AA83049C9 /* CJFontComponentConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F11F9831C7D782519299B129919A515 /* CJFontComponentConfigModel.swift */; };
@@ -62,14 +58,16 @@
 		25FFC173BE1794EAD69363ABF86B5B1D /* CJUIKitBaseCollectionHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9E9FAE8E786AC767FFD7940B7A565E /* CJUIKitBaseCollectionHomeViewController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		26C043F70C809B0E6BB187CD18251EF1 /* CQDemoResource-CQDemoResource in Resources */ = {isa = PBXBuildFile; fileRef = E8D0D7F2B9FF326830475E10FB918698 /* CQDemoResource-CQDemoResource */; };
 		26FB9EB31D85581D9DA2BAAFCCA73D6E /* CJLayoutInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBA9B2D6540F775948D50B482741BB7 /* CJLayoutInputView.swift */; };
-		277FAE9B54F959159032056A05E6DD2B /* UIView+CJKeepBounds.m in Sources */ = {isa = PBXBuildFile; fileRef = 959D227C7005C2C28B8E34AB69735405 /* UIView+CJKeepBounds.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		2780106F484016C077620BFD7AC23597 /* CGRectCJSubHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = B03795341F1E2511182E314E98E8D6BF /* CGRectCJSubHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		282A9807EE1B81C8942B97BB0ED28298 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF4CA3AF5536D14B4E015504E7AEEC0 /* UIKit.framework */; };
 		2870422EF56145EB692D44DE39481C69 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF4CA3AF5536D14B4E015504E7AEEC0 /* UIKit.framework */; };
 		299C9F2582832FB4ABCC9454D9A4FF7F /* CQTSSwitchViewFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 024C306A8F5AAEFE9680B497D004A58F /* CQTSSwitchViewFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B2EB369550CE92CEEFCBFD3D32B8A3F /* ConstraintInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027111DA5ECFD719523A6BA2E954D9AF /* ConstraintInsetTarget.swift */; };
 		2BABA2DBAFA32AA45EE14E79D7C33387 /* CQTSMediaPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD0C9AE1354B93C65C9A892C1831F14 /* CQTSMediaPickerViewController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		2C85CEC2903D3E8779B5B9C4A1B4BCBB /* UISwitch+CQTSMoreProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BE25E34E5DC5DBB4885A67A46343C60 /* UISwitch+CQTSMoreProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C924941BF688B81000BF9BAE9ED6E7F /* CJGRView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BC1D7B8E64E244B32DFE5E18A9B165 /* CJGRView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		2CB1CC583AE0710B63615E4758A58850 /* UIView+addFillingSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D113A9B196F990B14B7A42698F7EA18 /* UIView+addFillingSubview.swift */; };
+		2DDB72B1FD102C2DECD7BA94579DE6C6 /* CJImageGRScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2856A0D69C77B78802AB229F99B965CB /* CJImageGRScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2EE602664F8187A2FCB5D9FAF6A5B370 /* CQDMModuleModel.h in Headers */ = {isa = PBXBuildFile; fileRef = F0DE7DF59271B09BF7AC2487BE53B7C1 /* CQDMModuleModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2F009BF949032B9B3CF8535EE9F859D2 /* cqts_jpg_bg_03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE2D7D5686C7F8F3C6F371F795E1A30E /* cqts_jpg_bg_03.jpg */; };
 		2FD79DE71E65CA08C7E3958F2C6B24A7 /* Bundle+cjViewElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D625E6C318DB040CDF81278AA9ABD5 /* Bundle+cjViewElement.swift */; };
@@ -94,10 +92,11 @@
 		41F6CD4E01897533C2C9EB881A69F7A9 /* CQTSLocImageDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 490CC3D7A562FFA7879A51E95B21C999 /* CQTSLocImageDataModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		422F0102F0C17D905C161AAB0963C2CA /* CJUIKitBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AED331791BC6C7DE1C62906F8A5162 /* CJUIKitBaseViewController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		43912E7CE09AE070881D26E3B0316729 /* cqts_jpg_bg_02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FBC79BDDC6968D84EB4B7B5819497FD9 /* cqts_jpg_bg_02.jpg */; };
-		43A39E913B1714091F6CE1B4FE1C57C9 /* CJImageGRScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2856A0D69C77B78802AB229F99B965CB /* CJImageGRScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43C1F819FD2D5C506EC6874CB51DBB3B /* cqts_jpg_avatar_08.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E9C6B02A680646C4380E7435D755F878 /* cqts_jpg_avatar_08.jpg */; };
 		441C7F7AD9E8EEC626E23131014DBAF7 /* MyUIKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B9BDFC75D542F74DE610147B2B4070 /* MyUIKitView.swift */; };
+		443851D542F336AE6E7F15791D66CB0D /* CJAdjustGRView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE813722A6A195AA5F839605C776ED5C /* CJAdjustGRView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		448B594BB0CC5B768922607D874DAB77 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8193349D819536E58C58A34C1B7DF545 /* Foundation.framework */; };
+		4500DA18B2DB6D0FB57028E55E729E81 /* CQMaskImageAdjustGRView.h in Headers */ = {isa = PBXBuildFile; fileRef = EFAF222A474F3825E79E83FB96627A35 /* CQMaskImageAdjustGRView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		456D20D3D376402F37394465F884301E /* cqts_placeholder_jpg_01.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 603212B41B761DD46F6BA1B9093D8ACD /* cqts_placeholder_jpg_01.jpeg */; };
 		460D33BBEDCC0D1DB9328103DFE132EA /* CQTSResourceInfoUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = FE936549DC085FB9F1B1421CC0FAC3B6 /* CQTSResourceInfoUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		473C03F482FD0560067433E59BA53443 /* DragViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F9137768E8963C366BBB1A0022E8D4 /* DragViewController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -120,9 +119,9 @@
 		521764FD405547E2948EA13AF0C47F6D /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = A6B3568A98C5FBE4AE82F425E10B18CC /* View+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		532C38E5E578F9F11A551C18F76D4FB8 /* TSDemo_GRKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4AB788DA9FD5DA1062B26C4EAC6465 /* TSDemo_GRKit-dummy.m */; };
 		5365CA79A2C4C87C965DA028281DF322 /* GestureTestCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2E3FDBAC245F7AA51B186FA018C491 /* GestureTestCard.swift */; };
+		53817157FEA8E1DB10A76E6FE159C32C /* CJGRKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0768705E423C68155762CB0712353C13 /* CJGRKit-dummy.m */; };
 		55ACF83AE442FEBC3A9BD9F947A6ACF7 /* CQTSResourceInfoUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E133754FFCD7D9D26F3DA85DEEC25E4 /* CQTSResourceInfoUtil.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		55EE14B226C3FEFB7D71DFB071FD73FE /* CJUIKitToastUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A664ABAE2A16CB3BBC792C09A6977AAD /* CJUIKitToastUtil.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		563A663036ADF5A170C921C823CE52BF /* UIView+CJKeepBounds.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DC3596E2B6C9B6EA19A6DE877CD17DF /* UIView+CJKeepBounds.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		566F90D259B10482D653B5BD9A3AA83A /* CJViewGRExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1563EA65AA209C9E5A24A41FC3C128C2 /* CJViewGRExtension.swift */; };
 		56A64E74F069EBEB8B65E4320ED46CC5 /* CQTSRipeButtonCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 897FE1BEBB2A44A30B623751B093CB92 /* CQTSRipeButtonCollectionView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		574FC2E78B0A969B5C6F9D6B29028F7E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF4CA3AF5536D14B4E015504E7AEEC0 /* UIKit.framework */; };
@@ -132,12 +131,13 @@
 		58311858FAC95E21D70759593C63952E /* CQDemoKit-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DFECB6FB48F227A86F9B1FEAF40C0543 /* CQDemoKit-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5922A6A0AE7152CF436356B3556F1835 /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB871E57585950B2A3EB431B3065EC54 /* ConstraintItem.swift */; };
 		59F34874DA4ABB2F5C4E09EA6865936B /* ConstraintLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC16C8633E644B556B0E36E9B194699C /* ConstraintLayoutGuide.swift */; };
+		59F671797E7785A33E7DA64A39D5979D /* CJGRScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F1B4E60E03D56136156C0160B566A96 /* CJGRScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5BAEC902A88AE38FC688D956AF343E22 /* Color+CJHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F9EF06A56347550D6EBEFC6A15571A /* Color+CJHex.swift */; };
 		5CDD39F728506B9DB55AD244DE8C8203 /* CJImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AE164B0B5B5FEB19126D9ACD99B385 /* CJImageExtension.swift */; };
-		5D28528350DD2DDDC6C12C1D6D05FFC5 /* CGRectCJSubHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = B03795341F1E2511182E314E98E8D6BF /* CGRectCJSubHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5F06F937D98B169B210C6997061E9FA3 /* CJTextListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333D1AB5E1871181840804C451029D3A /* CJTextListRow.swift */; };
-		60AB5495F40F377C852C89D2369D6CB5 /* CJImageGRScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EBC676826A544B18DBF579B951A250 /* CJImageGRScrollView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		62720FBB16CAE87D46B7BDF85B113534 /* CQTSSuspendWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 72D15390F25472D87BD022382237BA37 /* CQTSSuspendWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		62909336A3586782A6A721DD1D848697 /* UIView+CJKeepBounds.h in Headers */ = {isa = PBXBuildFile; fileRef = FE5E2D02DE25DAE9137CEE08685501B5 /* UIView+CJKeepBounds.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		62B242A9B5B6ABBD37933ADD600467A8 /* CGRectCJSubHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C613E1DFA283CBE004B2BB31EE0EA30 /* CGRectCJSubHelper.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		62CADB9F94FB70A48FE83F2C4424E927 /* CQTSIconDataModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BEC880907EFA8B60D296EB8317D49BE /* CQTSIconDataModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		633EBCA19820F9450DC15E5188194176 /* TSDemo_GRKit-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 80C09A046E8F78DBE557AAFB0A165963 /* TSDemo_GRKit-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		64BD945D44C006F38CEA43A4C6EB5B86 /* CQTSSwiftUIBaseTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2A005B8F2CBA911584466C34E8FF32 /* CQTSSwiftUIBaseTabBarView.swift */; };
@@ -163,15 +163,15 @@
 		777FAE4A014573DE21D166B006525812 /* NSError+CQTSErrorString.m in Sources */ = {isa = PBXBuildFile; fileRef = 6569852164B2B6F9457BF46917400B32 /* NSError+CQTSErrorString.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		79444F290B1C2B781219ABD0644785E2 /* CQTSSwiftUIBaseHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6336F6122271551A47A732735BC66 /* CQTSSwiftUIBaseHomeView.swift */; };
 		7AAFDF8C3D4563CE6AE712A91149743D /* CJBaseUIKit-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 540F7AC5521E074023229B4ECE1BBD1C /* CJBaseUIKit-Swift-dummy.m */; };
-		7AC338D461DD5C700BF18F64A5A8CE12 /* CQMaskImageAdjustGRView.h in Headers */ = {isa = PBXBuildFile; fileRef = EFAF222A474F3825E79E83FB96627A35 /* CQMaskImageAdjustGRView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7AEE00344998EC4BDB18A8F5E08D19F7 /* CJGRKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0768705E423C68155762CB0712353C13 /* CJGRKit-dummy.m */; };
 		7AF516B98D45391B909D507D0244104C /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE6721F883D8BA1DAA1C5D2E5075831 /* ConstraintDescription.swift */; };
+		7B7CF4FF5A944497D1BC6C6E32E33163 /* UIView+CJFreeDrag.h in Headers */ = {isa = PBXBuildFile; fileRef = 32B8182FF6100DD6D80418714A6853DD /* UIView+CJFreeDrag.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7CC5CEEE2B084ECA41FA85938B463348 /* CJUIKitRandomUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A35049F579DE3BE02D488BFE2ADE0D3 /* CJUIKitRandomUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7CE2DA9F2DBF7B67AADF784E5C14AFA9 /* CQDMSectionDataModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 983B560130D5A009BC6E9184A0F673DC /* CQDMSectionDataModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D42390CDB4FA147504B03DA2A174A0C /* ConstraintViewDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2170EC3DCFF8766BB1582293CB61EEA0 /* ConstraintViewDSL.swift */; };
+		7D5FC3738F897ED130279B0EC006649E /* CJGRKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A8EB04A3308CE48AC3F90BA749C2209 /* CJGRKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E2B4CA4B5C4A30ABA22A79007E26603 /* Pods-CJViewGRDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E13E80E14DD03031DDAF8AA7944E4E8 /* Pods-CJViewGRDemo-dummy.m */; };
 		80B04982DD740C9A943DA64D9FE7EB56 /* CJGRCornerViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DAACCB3D988A2E7FFDFD2EED1C20D7 /* CJGRCornerViewModifier.swift */; };
-		80BB0195235CCA740D325902835ABA59 /* CGRectCJAdjustHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3294204721425CD815499C453F24C35D /* CGRectCJAdjustHelper.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		80F55EBFFBA0F6B2F0F3958CE8821BD3 /* UIView+CJFreeDrag.m in Sources */ = {isa = PBXBuildFile; fileRef = 508F818D8B3C174D9AE2ECB26768374D /* UIView+CJFreeDrag.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		85466D78CC05BA935CF423A0F7154C53 /* CJFontScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CC45DC66D03CD5A0DFAF00DFBAB4F /* CJFontScrollView.swift */; };
 		85AB27233EDA01690567D3715AB531DD /* cqts_jpg_long_vertical_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 43B6BFDAC86AECEA3286A5A544A0292A /* cqts_jpg_long_vertical_1.jpg */; };
 		864F50F11A8314B140B5FF99D7D6BD28 /* CQDMTabBarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFC5E333D1F92FFD63E075237629EF4 /* CQDMTabBarModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -188,6 +188,7 @@
 		8B480974B59444E43A8C50CE3BE5A772 /* CQTSSegmentViewFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 33EC9D947DA8CBE904F96A4BD63E27A1 /* CQTSSegmentViewFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8BABA32F7B94A25D8E9208C0A8D90B2E /* ConstraintMakerRelatable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59A7AFAEFA1108799610C87E2BF6072 /* ConstraintMakerRelatable+Extensions.swift */; };
 		8C16DD0D31CFF95252AC4B4A1313CCEB /* CQTSAssetSourceUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CC0EC129C09B8F810CECD90A1788367 /* CQTSAssetSourceUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8C3AB99F0DC80FF289241FDBC8940192 /* CJMaskImageAdjustGRView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0674898CB2224D0A8610FEF625778DE4 /* CJMaskImageAdjustGRView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8C6ED793E086014B1B22027AF8146B6F /* CQTSRipeImageCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = D9078B74768D5A6DF8567A4BEBAFCC38 /* CQTSRipeImageCollectionViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8CC3F70C13CBAF9E0287191A441C65E7 /* CJColorScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DEEDEDCCBA9A4F906BAFE11591149E /* CJColorScrollView.swift */; };
 		8D00CB26BF358B7191F282723F88C0D7 /* Masonry-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D3389690D33B3D5C5D9BCF11D7246F3 /* Masonry-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -205,12 +206,12 @@
 		93C85F160DF691F036466A395EA1ADA7 /* CQTSSandboxFileUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 173D13BE9A5D405F9082E238FECD1072 /* CQTSSandboxFileUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		93EC04F2CEDB4C9EC59CFBF1848373F8 /* CQTSBorderStateButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 820D10CF2D06CE0E03D37332FD733251 /* CQTSBorderStateButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		941111427165F093586CD043B8DACDD8 /* CQDemoResource-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 27E91658D093DB24088394D117BFB176 /* CQDemoResource-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		94864F66C2177B47BAB4925DFAB3013F /* CGRectCJSubHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C613E1DFA283CBE004B2BB31EE0EA30 /* CGRectCJSubHelper.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		9516F62A479EC599B6077B018C3A0D14 /* CJTitleValueRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E648D9AD61F6F5D27E2775DEDD285E78 /* CJTitleValueRow.swift */; };
 		957132C0FCE17F79E31C7C483A81C2BC /* cqts_jpg_02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B5B586ECA240D7079A817145CD62A62 /* cqts_jpg_02.jpg */; };
 		966EADEAA7E46FBF2D0C6A7F68911EA7 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 721C33DDF904B29B88B8006850D42D2F /* ViewController+MASAdditions.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		983A0E490F18A1716C20B636D1630428 /* CJBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A0DA04FE5E3F4C4E46A650905B6E3 /* CJBackgroundView.swift */; };
-		9907EF426A6CABF3E6561803CD1861EB /* CGRectCJAdjustHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 37CBFEDE34C375E41FAF6372A21CE836 /* CGRectCJAdjustHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		98D9EF8B9952CB679422924885EF2811 /* CGRectCJAdjustHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3294204721425CD815499C453F24C35D /* CGRectCJAdjustHelper.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		98E014A4B8566BEF4CDB20BFD443EE12 /* CJImageNormalAdjustGRView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E95B3DE202F41120AEEDABA83CCC979 /* CJImageNormalAdjustGRView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		991C75E1BBA14480F45FE315DD752115 /* CQTSRadioButtonsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 437AF00C4E0211E0BD94228C28A0AC80 /* CQTSRadioButtonsView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99782476807C54C107B299BD9803C135 /* CJSettingTitleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A6D94C08ED1975395358FFBCBDD748 /* CJSettingTitleRow.swift */; };
 		9A4BD3BEB26D76A9A7B8C405438C1446 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF4CA3AF5536D14B4E015504E7AEEC0 /* UIKit.framework */; };
@@ -225,10 +226,10 @@
 		A0B115EBEFE9C131FB584343D010C5FF /* CJUIKitCollectionViewHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F19FF7680C4705A4331ECB3FCCB9679 /* CJUIKitCollectionViewHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A1BD3F9B53448257A517B24B58F16092 /* cqts_jpg_avatar_02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 472D7C38C34104467F3FD234A65654EA /* cqts_jpg_avatar_02.jpg */; };
 		A2AE962EFEEBA2D5D22BA94FC359D323 /* ViewPandownViewController2.h in Headers */ = {isa = PBXBuildFile; fileRef = ED14DB2B47EA56E2B386CF67C9B636CA /* ViewPandownViewController2.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A331EDBDB4884E6880BAF444A3A8D355 /* CJMaskImageAdjustGRView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3086DB896F55BEA8D06A522362CA7E /* CJMaskImageAdjustGRView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		A3E003969E05E81B2D4E91FCEC42BCAF /* CQDMModuleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 932ADF3D24DB5090FB0BCBA519915B62 /* CQDMModuleModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		A5F1C2D8D1447475E04D013BAC7128C7 /* View+asUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8AE89051B5F581AD762CC2A722B3AF /* View+asUIKit.swift */; };
 		A73AEDD5614DBA185612196710D59AE2 /* CQDemoKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C46B6342109F0F70C0C5D382E78A21F5 /* CQDemoKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A74B5D7EDD5C6DB5393C69E8A4856F8E /* CJGRKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A8EB04A3308CE48AC3F90BA749C2209 /* CJGRKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A798F2D8EA1F21352E2A6D854C64A160 /* View+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = A599F7A70EE274EC4BA10AABF87E10D9 /* View+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A820A3734304F6E9DC24BD20E00182A6 /* CQTSSegmentViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 199F67C4614D2AE7E6081C3C5A570A3A /* CQTSSegmentViewFactory.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		A8D0656EA8F0E5E898F56987116D7C4D /* UIImageView+CQTSBaseUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = B605771FDB351D89EB5C1C2BF6614A07 /* UIImageView+CQTSBaseUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -237,6 +238,7 @@
 		AABEF13464BA7F4621BD94736C1D057C /* ConstraintMakerPrioritizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7CB312D759401D12283A30BD720E76 /* ConstraintMakerPrioritizable.swift */; };
 		AADF250CCCE8F4A4F074E10DBDBD4032 /* CJUIKitRandomUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C178F04BAF9777EC3D312F5B0C0CD12 /* CJUIKitRandomUtil.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		AD566A0E48074C2CDBB0695E84964C31 /* TSImageClipAdjustGRViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A71F94FC1C559167C80AD504B62F9D03 /* TSImageClipAdjustGRViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AD82EF9A01EBABE4B5B8E6AEB791F07A /* CQMaskImageAdjustGRView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7A9BF2911686771D1BC7B2453BC8FD /* CQMaskImageAdjustGRView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		AE224EDB6D044C0FE86B086E950FC2F9 /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A6516D548A5A945501F15AFD537B9D /* Debugging.swift */; };
 		AF6E7CA86CCDA4826DB68EC3DA5A3851 /* CQTSRadioButtonsView.m in Sources */ = {isa = PBXBuildFile; fileRef = D211A4C55D2D112FBA66E09D9BFE3D8B /* CQTSRadioButtonsView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		AF760C78F1C7E11BF7CB9E9B29903530 /* ConstraintInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD3AC89763E00651DFF76018E6A7320 /* ConstraintInsets.swift */; };
@@ -249,7 +251,7 @@
 		B3C19985B9F8AE8E87270F4E024EFE4B /* cqts_jpg_avatar_06.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A23CCE11AEF11152356914E8CFB96760 /* cqts_jpg_avatar_06.jpg */; };
 		B416B3CE33C9E2DCD0535B5FDB55EC00 /* CQTSRipeButton.h in Headers */ = {isa = PBXBuildFile; fileRef = C0F3DA350A248127BD04870018BA7A35 /* CQTSRipeButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B42E4CFB0968690F275A11ABBC06525C /* cqts_heic_01.HEIC in Resources */ = {isa = PBXBuildFile; fileRef = A49A37A93D57089FCECEE53A4666E0E4 /* cqts_heic_01.HEIC */; };
-		B6CD953CAA00713A42BC814B33953729 /* CQMaskImageAdjustGRView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7A9BF2911686771D1BC7B2453BC8FD /* CQMaskImageAdjustGRView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		B4A37BD7CD7C2A0F6610F458028A6FCE /* UIView+CJPanDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 41EE6B9B3749226963722991DB8A5538 /* UIView+CJPanDown.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		B6E6C9608D8C3A68E24D2B642961CBD3 /* cqts_jpg_avatar_05.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1490E0179A324C931F01D73FE936A2E3 /* cqts_jpg_avatar_05.jpg */; };
 		B784A9BE17C63F3B7F1B126B6B74BE55 /* TSImageClipAdjustGRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C47451F138E52606993435BF5578BE /* TSImageClipAdjustGRViewController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		B81539B4C84CBEE9F617D8CBF0997737 /* cqts_bmp_01.bmp in Resources */ = {isa = PBXBuildFile; fileRef = C56E07C095CD82061536B8B9C1EF2159 /* cqts_bmp_01.bmp */; };
@@ -260,7 +262,6 @@
 		BA2FB695DEB0D179253EEB8DFCE3578B /* SnapKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6B3793832A2CEEE265E55372B25B00 /* SnapKit-dummy.m */; };
 		BAA632CD0E689B6E604A485D42B0DF21 /* MASConstraint+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 75011BF29BC7F185C88B419E79931DAB /* MASConstraint+Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BAA76C0C2754599C725732053561F838 /* CJUIKitAlertUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = C19611D9966422228CDAFE306D79E8C7 /* CJUIKitAlertUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BB96AB084E4E8D362B30A25A758B25E9 /* CJImageNormalAdjustGRView.h in Headers */ = {isa = PBXBuildFile; fileRef = 97A117C22158F4F9FC9B4642EEE15DC3 /* CJImageNormalAdjustGRView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BBCF413FF70727E8BC33FF47067B7EF1 /* CQTSSandboxPathUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 321AD43037977588DFA8ACB7F9C91C75 /* CQTSSandboxPathUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BC2C01940B66194EE289C440E3E83228 /* CJUIKitToastUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = BDEF29A321CB67E736E0F64775650C1E /* CJUIKitToastUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BC8432F61CB23885E796CF183138655D /* CJFontModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AF284470465C36F2FAE3ACC3ABF4AA /* CJFontModel.swift */; };
@@ -278,50 +279,44 @@
 		C2616D5B303ACC005EEA188F3C560FB4 /* CJVerticalTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075DE0503B17290AE0917B1CAD89F67C /* CJVerticalTextView.swift */; };
 		C3A3BD760DD017DBA546975DF4AB4AE7 /* CQTSContainerViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B8AA0C0D360EEB90A00425EBC29BD4 /* CQTSContainerViewFactory.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		C4A1831C3C9CF97F8E377FC97CAB7079 /* CQTSSuspendWindowFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AC8ACC6E38DCC0C03DC6DCF451EA1C1 /* CQTSSuspendWindowFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C5445D6E6764CFF249870BEB15E835BB /* CJImageClipAdjustGRView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A4B9ABCB88EA4CAD048991BE5E31730 /* CJImageClipAdjustGRView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C58F8C4BB4EFA587732BAC98F30B1DBF /* CJUIKitBaseScrollViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = EA83AE86A6B0DF8044CAA0F7EAC72067 /* CJUIKitBaseScrollViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C66D6B0A681A6A0B6FE5CA64C743C4E8 /* ImageGRHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66381D659793B1ED68A12E9858BBB3DC /* ImageGRHomeViewController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		C6A4302ACE006C4E2CDD481287E2916B /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE35F427BFC966AC7DDA1FF99516CDA /* Typealiases.swift */; };
 		C6F45595676957ADBEC18EB3F23EAEC4 /* LayoutConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6131C1EECE1DBA64B5B75BAD116C2092 /* LayoutConstraintItem.swift */; };
 		C718592EB4672067B5713B190E9437B0 /* UIImageView+CQTSBaseUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AB74E6383F52557DF3AE9231FDB61D /* UIImageView+CQTSBaseUtil.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		C7B5363B7A3D313AC770DB99029ABDB9 /* CGRectCJAdjustHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 37CBFEDE34C375E41FAF6372A21CE836 /* CGRectCJAdjustHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C89CDBCA7BE46A362E0B02B8E8271BEA /* cqts_jpg_04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F9F553B07963A2158FCEEB03C80D3DA0 /* cqts_jpg_04.jpg */; };
 		C99C11BEFBD214B96E448C736A9EB65A /* CQTSRipeButtonCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 3355F3B55658B919DB3D85D5B3A6E5E8 /* CQTSRipeButtonCollectionViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CAC2F00B340DB7D5E70BBC8678B0F3DF /* CJColorPickerIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CB0DEBBE92EB310FCAD490F2DD717B /* CJColorPickerIcon.swift */; };
-		CAE550F86D6F2CC14D74A26D1639ED9F /* UIView+CJPanAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 24BC27B9EC007A7DE498CC748FD80DFA /* UIView+CJPanAction.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		CB4E9CFE4E1C489E163F4BC50F4C337A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8193349D819536E58C58A34C1B7DF545 /* Foundation.framework */; };
 		CB984202B9B6BBAF2AA9D23567581630 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF4CA3AF5536D14B4E015504E7AEEC0 /* UIKit.framework */; };
 		CC1BE574C97ACF4FB4788EEF064964BA /* StickerEditorDemoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDF9DF712F9BB1BACCFDBBA8B1CEC63 /* StickerEditorDemoPage.swift */; };
-		CC29171E30E8B80BB88F2400B83A9A89 /* CJGRView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BC1D7B8E64E244B32DFE5E18A9B165 /* CJGRView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		CC4FED2FF6E47A12B8847E88F098B126 /* CQTSRipeTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F3CEF7A663647A48F7A517106869323 /* CQTSRipeTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD234E55AA84187F8B6D9B80B3AB8334 /* CJTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0990FC6BE2CDD482129191AAC2EE086 /* CJTextView.swift */; };
 		CE593943A9E7CF83822CF60304BCAD43 /* ConstraintConstantTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5919B6CB3F047C58293F4F89D08FD7 /* ConstraintConstantTarget.swift */; };
 		D018033044784AAE13CBC3EB0884389D /* TSDemo_GRKit-TSDemo_GRKit in Resources */ = {isa = PBXBuildFile; fileRef = 241C75209BFE3FCF47B3CB3E7A6626CA /* TSDemo_GRKit-TSDemo_GRKit */; };
-		D04DAF7EDAC7634AA129B8E1407FA09E /* CJAdjustGRView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE813722A6A195AA5F839605C776ED5C /* CJAdjustGRView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D0633746D8CD3CA928925D75FDBB8169 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F88E49F399A1F5E49110D2FFCD1DCE38 /* NSArray+MASAdditions.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D0BE9A23D81291515608AD794B42DDD9 /* CQTSAssetModelGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2054A281229B8BC16AE585FA8764B7 /* CQTSAssetModelGetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D16EB2C3C606DE1AD5C91B83ECF7C640 /* CJViewGR-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B8A628B85E2158557AFF7F80D04DCF4 /* CJViewGR-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D2A50146EBE104318FC5CA35CB45B0E7 /* CJGRScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F1B4E60E03D56136156C0160B566A96 /* CJGRScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D2B6069F7912D51A5B85709D8FB7AC1D /* CJTextColorSettingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1523C32528F8094086626B680895793D /* CJTextColorSettingRow.swift */; };
 		D3F564059870712417DF20BBCB03BD2A /* CQDemoAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78D6EE4DCCE770DB6C29ED4683549976 /* CQDemoAssets.xcassets */; };
 		D4218DA55B2BA45937589200CC0DF1FB /* ConstraintMakerExtendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B3FB8356513F2711850D3DDACB960A /* ConstraintMakerExtendable.swift */; };
 		D4DF9DA8FB67EF92738F547E178DE275 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF4CA3AF5536D14B4E015504E7AEEC0 /* UIKit.framework */; };
-		D64A03BFBE11FA19036B146E2EB83331 /* UIView+CJDragAction.h in Headers */ = {isa = PBXBuildFile; fileRef = F9A951056088E8350C1EBA04FEEE3864 /* UIView+CJDragAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D659D494FF89129E1322B00B0B27727B /* CJViewElement-Swift-CJViewElement-Swift in Resources */ = {isa = PBXBuildFile; fileRef = 02994253EF546A96B2E0986444609FFA /* CJViewElement-Swift-CJViewElement-Swift */; };
 		D69335E06533F11D384E7EB7A29F2049 /* CQDemoResource-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AADCA5E21F7FD6571257669388FC60 /* CQDemoResource-dummy.m */; };
 		D696DC56F688CFF027428B2533C6846E /* cqts_jpg_01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D5292191B139C4E2F816B9A43175388F /* cqts_jpg_01.jpg */; };
 		D6CCF8FFD9165D8B9BB7AB29104A497E /* CQTSMediaPickerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = AF06FAC2D0B67CCCBD1D1B41BAD1D1E4 /* CQTSMediaPickerViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D7C0F02BB3BACA5B0C091DED88FC4736 /* CJImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04691CD726B93A06B08A8E5BF67F05BC /* CJImageModel.swift */; };
 		D90D564A0B6FAE7C6189C4DBCE705B55 /* MASLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = BFD59E36BC9276EF0A0C4359A286F27F /* MASLayoutConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D95C4914BED5B9CC01B949722808EEF0 /* CJGRView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1713FA15559E8EF459B4B9AEB2907637 /* CJGRView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D9D064CEFB5C197CA9516306BA3FAF7C /* cqts_wp_01.webp in Resources */ = {isa = PBXBuildFile; fileRef = 3952E0A9F02802D906ACC3FCE8FB8CF3 /* cqts_wp_01.webp */; };
 		DA323D5BAE5BB3E31F302AC21894E5EA /* CJViewElement-Swift.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB6536B771E2AD982A3DA0319E45B23F /* CJViewElement-Swift.xcassets */; };
 		DAABEB3D153A8595564B197D9E20FA7C /* BasicGestureDemoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06927872CB2D97D3AD078251D68E2914 /* BasicGestureDemoPage.swift */; };
-		DAC2FE2645B475F3E5D5890D98189548 /* CJGRView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1713FA15559E8EF459B4B9AEB2907637 /* CJGRView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB4A3EC7A5E1C6F06BD6977883BD2408 /* NSLayoutConstraint+MASDebugAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 225DFC4283BFCE07CFD1C7754D53BE01 /* NSLayoutConstraint+MASDebugAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DBA4803F4765E1650B8C6841157F5D73 /* ConstraintPriorityTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96F55B8D56BF3F096A502E3F6A03CC8 /* ConstraintPriorityTarget.swift */; };
 		DBF7C2564DD56C1834759ABC58822E04 /* CQDemoKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C72BDE1B5B648E280305C0C0E422BBA /* CQDemoKit-dummy.m */; };
 		DD02A27F2FD333DA9CD4F5EE1796392D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8193349D819536E58C58A34C1B7DF545 /* Foundation.framework */; };
 		DF52305EC535AF98D806149C0F988A7E /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F46CEB70E3D52CAFB6A795784E7636A /* MASLayoutConstraint.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		E236EEB80C221175C8E7E8111866EA81 /* CJImageClipAdjustGRView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AC4E471BF0ABC30C85C8BF6DB5FA9F /* CJImageClipAdjustGRView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E2452B6345731504AD8FE1AD95A93B35 /* CJPositionSizeSettingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5716AC5AA12937B8B7BD6E5636CCD7A7 /* CJPositionSizeSettingRow.swift */; };
 		E32CF5778705296D30A6B3DE99645E59 /* CJTextColorDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834D5EC50FEAA15FC7384FA3CFE898FF /* CJTextColorDataModel.swift */; };
 		E33769E7BD763296DA644227F90C0E3E /* CQTSIconDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF33C2B791E60B56EE0CBFAD6146DCF /* CQTSIconDataModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -329,8 +324,10 @@
 		E387D2A2FE64A98CE97221D23896C038 /* MASUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = CB37CD5B1EB3D2D739C3DD80C24E58F7 /* MASUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E3D779DEE753C0B0D33BA8E73A980265 /* ConstraintLayoutGuide+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9035D145C143384B9E6B10AFEC06FE24 /* ConstraintLayoutGuide+Extensions.swift */; };
 		E40AE965A4D9EFAFE8D36662B3198AF0 /* CJUnknownComponentConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4076EE588823B34B3C70CEFEE0B579F1 /* CJUnknownComponentConfigModel.swift */; };
+		E40E99DB36F7DE0BB9F9EF45FC36C286 /* CJImageNormalAdjustGRView.h in Headers */ = {isa = PBXBuildFile; fileRef = 97A117C22158F4F9FC9B4642EEE15DC3 /* CJImageNormalAdjustGRView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E5AC7DE9A0BEC3D7D7968C0BB4BD2A75 /* CQTSRipeBaseCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 686EF1F0B6CC2369F7644E92DF686C41 /* CQTSRipeBaseCollectionViewDataSource.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E6A0110B9527B32F1E29CFD73B28D9B8 /* cqts_jpg_avatar_03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 703C66F9757546E51B4E135B1CF2AC4B /* cqts_jpg_avatar_03.jpg */; };
+		E7343D43C7C041A950D475416AC3EEA3 /* CJGRScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26630E7F6A970005DBAF05DEE8689C2B /* CJGRScrollView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E91357F800B4E158FBE29B7E93E8B48D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8193349D819536E58C58A34C1B7DF545 /* Foundation.framework */; };
 		E977993386DE0D8BFEE3507C881D9848 /* UIImage+CQTSInFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = E8AFD0824D1CAD6899FDF317594B428B /* UIImage+CQTSInFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA082B865842AF9C620BAF7454DFF4AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8193349D819536E58C58A34C1B7DF545 /* Foundation.framework */; };
@@ -340,7 +337,9 @@
 		ED43A33B1C506AF6F9B95844ADA43746 /* MASCompositeConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C1899ACC61F07DB2FF71931621F9DBB /* MASCompositeConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ED8BCC871217AF39C389EE65EAAA57F9 /* CJBaseUIKit-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F24BD4A2E87A522E309AF75B075D1F /* CJBaseUIKit-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EDFF6A6176B2402191DA4EABE5B61C67 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8193349D819536E58C58A34C1B7DF545 /* Foundation.framework */; };
+		EE256695D5F80E46473AB218AE9BEFB4 /* UIView+CJKeepBounds.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FF532D80EA0DB40DD54B817EBC67EE /* UIView+CJKeepBounds.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		EE4A498BE9D1B924B87AA31E6EBCB107 /* CJBackgroundSettingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58A07145820F2D5CA217602F6D5BB35 /* CJBackgroundSettingRow.swift */; };
+		EEB0AFBC9D83548413D669916EB93B90 /* CJImageGRScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EBC676826A544B18DBF579B951A250 /* CJImageGRScrollView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		EEF9984C9B3E4F261C8AB5D838D02268 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E06718AA847C04EF76411CAAC2F43B /* MASViewConstraint.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		EF1CB33D95082BA74CC29C3F8B99FEB3 /* CQTSRipeBaseCollectionViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7F191F953B6E47EBBC3665E1ED795D /* CQTSRipeBaseCollectionViewDelegate.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		EF436956F6C65B3BBDC3F26728201C7C /* cqts_png_01.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFB59170CA0671D2A9934E45F163469 /* cqts_png_01.png */; };
@@ -349,6 +348,8 @@
 		F1666A92132EF9A60C1C57A08F9D2682 /* CJViewGR-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA1B7889E6AC4BEACC941DAF1AD9C85 /* CJViewGR-Swift-dummy.m */; };
 		F2C2D8EFD6B814F6AAE1478AC0DB935E /* CQTSNetImageDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5247F07B8B96056F145A611070C15C6B /* CQTSNetImageDataModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F37924B1B86762488340C0468B30FBD4 /* CQTSLocImageDataModel.h in Headers */ = {isa = PBXBuildFile; fileRef = FE4C8785CD3C42F48186F33423EF459D /* CQTSLocImageDataModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F397DCB87E769048C948ACBEFE535AE4 /* CJAdjustGRView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4748C7CA06276E2278BA172D3D612A43 /* CJAdjustGRView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F3AEDAA8C6F43A2581775CE1E7E32A2C /* UIView+CJPanDown.h in Headers */ = {isa = PBXBuildFile; fileRef = 75C1A8F4516C5F3E4917547B34A4B417 /* UIView+CJPanDown.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F587D776C5EAB26549E2B6EE936D3D9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8193349D819536E58C58A34C1B7DF545 /* Foundation.framework */; };
 		F5CA2C5101F88A2B9AA43DFAB45536C3 /* CJVEVerticalTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C009A3FBF975DB571612827C5ED3462 /* CJVEVerticalTextView.swift */; };
 		F605DEDAD6C70A134789E8A5AFA59B0A /* CQTSBorderStateButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BC623F82B416FE0A4C5681E8E38C937F /* CQTSBorderStateButton.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -356,7 +357,6 @@
 		F68BC06D35BCE0F443B6C07FE25F2418 /* TSGRSwiftUIMainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8D700A6F21891D3E5DF22EAA894D67 /* TSGRSwiftUIMainPage.swift */; };
 		F6F33E8B268F3D41075374D95B8088DC /* UILayoutSupport+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C078698B93EEAB2DBB3E82E45BC78A /* UILayoutSupport+Extensions.swift */; };
 		F7F4F37818B378E42A680864AD4A4054 /* ViewPandownViewController1.h in Headers */ = {isa = PBXBuildFile; fileRef = 19E1BC27D3BA7F779A5810C0F6310F8B /* ViewPandownViewController1.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F833946EB12B27E06AE3023010E78D00 /* CJMaskImageAdjustGRView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0674898CB2224D0A8610FEF625778DE4 /* CJMaskImageAdjustGRView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F839715BD79B5B791F8AFF4C2D82C845 /* CJUIKitBaseCollectionHomeViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CCC6A875C704DC0895BB5D0069A81DE /* CJUIKitBaseCollectionHomeViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F845B19E7C863ED48AE1FC5F625F6E91 /* MASConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E27AE1D64DDD29670BA75C298E8F220 /* MASConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F8A82204D3EC508E20B9D6D33924CDE9 /* CQTSSwiftUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FFE5BB12ABAB7B546AE1216651117 /* CQTSSwiftUIModel.swift */; };
@@ -646,9 +646,9 @@
 		22103C750EE963AFD0A7AE16D2A4E4BE /* DragViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = DragViewController.xib; path = TSDemo_GRKit/BaseGR/AdjustDemo/DragViewController.xib; sourceTree = "<group>"; };
 		225DFC4283BFCE07CFD1C7754D53BE01 /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+MASDebugAdditions.h"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
 		22AB484E587D0A369D405F6F01C19755 /* UIPathCJHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UIPathCJHelper.release.xcconfig; sourceTree = "<group>"; };
+		23FF532D80EA0DB40DD54B817EBC67EE /* UIView+CJKeepBounds.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+CJKeepBounds.m"; path = "CJGRKit/Extension/KeepBounds/UIView+CJKeepBounds.m"; sourceTree = "<group>"; };
 		241C75209BFE3FCF47B3CB3E7A6626CA /* TSDemo_GRKit-TSDemo_GRKit */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "TSDemo_GRKit-TSDemo_GRKit"; path = TSDemo_GRKit.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		24AE6739317B36E874BC6CD1F431EBEE /* TSMaskImageAdjustGRViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TSMaskImageAdjustGRViewController.h; sourceTree = "<group>"; };
-		24BC27B9EC007A7DE498CC748FD80DFA /* UIView+CJPanAction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+CJPanAction.m"; path = "CJGRKit/Extension/Pandown/UIView+CJPanAction.m"; sourceTree = "<group>"; };
 		24CB0DEBBE92EB310FCAD490F2DD717B /* CJColorPickerIcon.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CJColorPickerIcon.swift; path = "CJViewElement-Swift/CommonSettingRow/ElementView/CJColorPickerIcon.swift"; sourceTree = "<group>"; };
 		24FE2E7E73E97A38979A362E5F41078F /* CJBaseUIKit-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "CJBaseUIKit-Swift.modulemap"; sourceTree = "<group>"; };
 		25AADCA5E21F7FD6571257669388FC60 /* CQDemoResource-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CQDemoResource-dummy.m"; sourceTree = "<group>"; };
@@ -669,12 +669,12 @@
 		2CE2E4602522FB622AE5699D4C48E357 /* CQDemoResource-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CQDemoResource-prefix.pch"; sourceTree = "<group>"; };
 		2D5B072342B2BF7300418015BEB6809A /* CJBackgroundComponentConfigModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CJBackgroundComponentConfigModel.swift; path = "CJViewElement-Swift/ComponentConfigModel/CJBackgroundComponentConfigModel.swift"; sourceTree = "<group>"; };
 		2D7F191F953B6E47EBBC3665E1ED795D /* CQTSRipeBaseCollectionViewDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CQTSRipeBaseCollectionViewDelegate.m; path = CQDemoKit/Demo_DataSourceAndDelegate/CQTSRipeBaseCollectionViewDelegate.m; sourceTree = "<group>"; };
-		2DC3596E2B6C9B6EA19A6DE877CD17DF /* UIView+CJKeepBounds.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+CJKeepBounds.h"; path = "CJGRKit/Extension/KeepBounds/UIView+CJKeepBounds.h"; sourceTree = "<group>"; };
 		2F4AB788DA9FD5DA1062B26C4EAC6465 /* TSDemo_GRKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TSDemo_GRKit-dummy.m"; sourceTree = "<group>"; };
 		3132A7BD0F0FEE95E263FCE048CE8714 /* ConstraintAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintAttributes.swift; path = Sources/ConstraintAttributes.swift; sourceTree = "<group>"; };
 		31444DFC657C51AB0A99D907F71B6B61 /* CQDemoResource */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CQDemoResource; path = CQDemoResource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		321AD43037977588DFA8ACB7F9C91C75 /* CQTSSandboxPathUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CQTSSandboxPathUtil.h; path = CQDemoKit/Demo_Resource/SandboxUtil/CQTSSandboxPathUtil.h; sourceTree = "<group>"; };
 		3294204721425CD815499C453F24C35D /* CGRectCJAdjustHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGRectCJAdjustHelper.m; path = CJGRKit/CGRectCJAdjustHelper/CGRectCJAdjustHelper.m; sourceTree = "<group>"; };
+		32B8182FF6100DD6D80418714A6853DD /* UIView+CJFreeDrag.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+CJFreeDrag.h"; path = "CJGRKit/Extension/FreeDrag/UIView+CJFreeDrag.h"; sourceTree = "<group>"; };
 		32F55E091F270A674764C1552B72B797 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = Sources/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		333D1AB5E1871181840804C451029D3A /* CJTextListRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CJTextListRow.swift; path = "CJViewElement-Swift/CommonSettingRow/List/CJTextListRow.swift"; sourceTree = "<group>"; };
 		3355F3B55658B919DB3D85D5B3A6E5E8 /* CQTSRipeButtonCollectionViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CQTSRipeButtonCollectionViewCell.h; path = CQDemoKit/Demo_RipeView/RipeCollectionView/CQTSRipeButtonCollectionViewCell.h; sourceTree = "<group>"; };
@@ -685,7 +685,6 @@
 		35B3FB8356513F2711850D3DDACB960A /* ConstraintMakerExtendable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerExtendable.swift; path = Sources/ConstraintMakerExtendable.swift; sourceTree = "<group>"; };
 		35D625E6C318DB040CDF81278AA9ABD5 /* Bundle+cjViewElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Bundle+cjViewElement.swift"; path = "CJViewElement-Swift/Extension/Bundle+cjViewElement.swift"; sourceTree = "<group>"; };
 		37CBFEDE34C375E41FAF6372A21CE836 /* CGRectCJAdjustHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGRectCJAdjustHelper.h; path = CJGRKit/CGRectCJAdjustHelper/CGRectCJAdjustHelper.h; sourceTree = "<group>"; };
-		37F825011352D1AEBEE49BA0D0A61099 /* UIView+CJDragAction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+CJDragAction.m"; path = "CJGRKit/Extension/PanEnable/UIView+CJDragAction.m"; sourceTree = "<group>"; };
 		3952E0A9F02802D906ACC3FCE8FB8CF3 /* cqts_wp_01.webp */ = {isa = PBXFileReference; includeInIndex = 1; name = cqts_wp_01.webp; path = CQDemoResource/Resources/webp/cqts_wp_01.webp; sourceTree = "<group>"; };
 		3AA517DED6ECA3AD7B3F54CE812067C0 /* ConstraintOffsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintOffsetTarget.swift; path = Sources/ConstraintOffsetTarget.swift; sourceTree = "<group>"; };
 		3AE6721F883D8BA1DAA1C5D2E5075831 /* ConstraintDescription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDescription.swift; path = Sources/ConstraintDescription.swift; sourceTree = "<group>"; };
@@ -700,6 +699,7 @@
 		3FE89A6EDBB86D7E9FCAE69B97C3CD9C /* ConstraintMakerRelatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerRelatable.swift; path = Sources/ConstraintMakerRelatable.swift; sourceTree = "<group>"; };
 		400B08F871DE614F3BA222EAA7957F59 /* ConstraintConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConfig.swift; path = Sources/ConstraintConfig.swift; sourceTree = "<group>"; };
 		4076EE588823B34B3C70CEFEE0B579F1 /* CJUnknownComponentConfigModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CJUnknownComponentConfigModel.swift; path = "CJViewElement-Swift/ComponentConfigModel/CJUnknownComponentConfigModel.swift"; sourceTree = "<group>"; };
+		41EE6B9B3749226963722991DB8A5538 /* UIView+CJPanDown.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+CJPanDown.m"; path = "CJGRKit/Extension/PanDown/UIView+CJPanDown.m"; sourceTree = "<group>"; };
 		4218DC9C297E284C91B072F226D65292 /* TSGRViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TSGRViewController.m; sourceTree = "<group>"; };
 		437AF00C4E0211E0BD94228C28A0AC80 /* CQTSRadioButtonsView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CQTSRadioButtonsView.h; path = CQDemoKit/BaseUIKit/Button/CQTSRadioButtonsView.h; sourceTree = "<group>"; };
 		4399946CB1BBF89368DA334DEE20CFB8 /* ResourceBundle-TSDemo_GRKit-TSDemo_GRKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-TSDemo_GRKit-TSDemo_GRKit-Info.plist"; sourceTree = "<group>"; };
@@ -723,6 +723,7 @@
 		4DE92DA7BF5EA0116E0819749BB593C2 /* MASConstraintMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraintMaker.h; path = Masonry/MASConstraintMaker.h; sourceTree = "<group>"; };
 		4F118CEE283C87BC07F3D08561F221B2 /* TSViewGRExtensionHomeViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TSViewGRExtensionHomeViewController.m; sourceTree = "<group>"; };
 		4FBA9B2D6540F775948D50B482741BB7 /* CJLayoutInputView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CJLayoutInputView.swift; path = "CJViewElement-Swift/LayoutInputView/CJLayoutInputView.swift"; sourceTree = "<group>"; };
+		508F818D8B3C174D9AE2ECB26768374D /* UIView+CJFreeDrag.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+CJFreeDrag.m"; path = "CJGRKit/Extension/FreeDrag/UIView+CJFreeDrag.m"; sourceTree = "<group>"; };
 		511054D689F2CF8CC8258D5828B309D9 /* CJBorderSettingRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CJBorderSettingRow.swift; path = "CJViewElement-Swift/CommonSettingRow/Base/CJBorderSettingRow.swift"; sourceTree = "<group>"; };
 		51163B58AC2FD5E63091A5783B891BC2 /* CQDemoKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CQDemoKit.release.xcconfig; sourceTree = "<group>"; };
 		51BB4A7CB42F08E3E4FD28BBF1DDF7FC /* UIButton+CQTSMoreProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+CQTSMoreProperty.h"; path = "CQDemoKit/BaseUIKit/Button/UIButton+CQTSMoreProperty.h"; sourceTree = "<group>"; };
@@ -756,7 +757,6 @@
 		67AF284470465C36F2FAE3ACC3ABF4AA /* CJFontModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CJFontModel.swift; path = "CJViewElement-Swift/ElementModel/BackgroundOrColor/CJFontModel.swift"; sourceTree = "<group>"; };
 		686EF1F0B6CC2369F7644E92DF686C41 /* CQTSRipeBaseCollectionViewDataSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CQTSRipeBaseCollectionViewDataSource.m; path = CQDemoKit/Demo_DataSourceAndDelegate/CQTSRipeBaseCollectionViewDataSource.m; sourceTree = "<group>"; };
 		688C46E9967A07AF227089F2D8D9357C /* CQTSAssetSourceUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CQTSAssetSourceUtil.m; path = CQDemoResource/DataSource/CQTSAssetSourceUtil.m; sourceTree = "<group>"; };
-		6A276CD4B5D74F9DE4541340310A3119 /* UIView+CJPanAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+CJPanAction.h"; path = "CJGRKit/Extension/Pandown/UIView+CJPanAction.h"; sourceTree = "<group>"; };
 		6A8ECE7B9F106DFDDBCFD7033036495E /* SnapKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SnapKit-Info.plist"; sourceTree = "<group>"; };
 		6B381F6DEBDDDD9C0B9107BD19368D27 /* CQDemoKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CQDemoKit-Info.plist"; sourceTree = "<group>"; };
 		6BA1B7889E6AC4BEACC941DAF1AD9C85 /* CJViewGR-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CJViewGR-Swift-dummy.m"; sourceTree = "<group>"; };
@@ -782,6 +782,7 @@
 		72D15390F25472D87BD022382237BA37 /* CQTSSuspendWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CQTSSuspendWindow.h; path = CQDemoKit/BaseVC/Base/BaseWindow/CQTSSuspendWindow.h; sourceTree = "<group>"; };
 		745C61793E04FF113D97B8FA64649A7B /* CJGRViewModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CJGRViewModifier.swift; path = "CJViewGR-Swift/View/CJGRViewModifier.swift"; sourceTree = "<group>"; };
 		75011BF29BC7F185C88B419E79931DAB /* MASConstraint+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MASConstraint+Private.h"; path = "Masonry/MASConstraint+Private.h"; sourceTree = "<group>"; };
+		75C1A8F4516C5F3E4917547B34A4B417 /* UIView+CJPanDown.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+CJPanDown.h"; path = "CJGRKit/Extension/PanDown/UIView+CJPanDown.h"; sourceTree = "<group>"; };
 		75DAACCB3D988A2E7FFDFD2EED1C20D7 /* CJGRCornerViewModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CJGRCornerViewModifier.swift; path = "CJViewGR-Swift/View/CJGRCornerViewModifier.swift"; sourceTree = "<group>"; };
 		776BAB800B8DD974508C6851206E60A2 /* TSGRScrollViewHomeViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TSGRScrollViewHomeViewController.h; path = TSDemo_GRKit/TSGRScrollViewHomeViewController.h; sourceTree = "<group>"; };
 		78D6EE4DCCE770DB6C29ED4683549976 /* CQDemoAssets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = CQDemoAssets.xcassets; path = CQDemoResource/Resources/CQDemoAssets.xcassets; sourceTree = "<group>"; };
@@ -840,7 +841,6 @@
 		93D67D97E9E48DE3D91B31AC2EFACBAE /* TSMaskImageAdjustGRViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TSMaskImageAdjustGRViewController.m; sourceTree = "<group>"; };
 		9497D37E174AD201E90F1FEDCF031E52 /* CJSwiftUIAsUIView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CJSwiftUIAsUIView.swift; path = "CJBaseUIKit-Swift/UIView/as/CJSwiftUIAsUIView.swift"; sourceTree = "<group>"; };
 		956913ADDA88E11EDF0437E198AE471E /* UIBezierPathCJHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = UIBezierPathCJHelper.h; path = UIPathCJHelper/UIBezierPathCJHelper/UIBezierPathCJHelper.h; sourceTree = "<group>"; };
-		959D227C7005C2C28B8E34AB69735405 /* UIView+CJKeepBounds.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+CJKeepBounds.m"; path = "CJGRKit/Extension/KeepBounds/UIView+CJKeepBounds.m"; sourceTree = "<group>"; };
 		95A8E4C4FE1AA578F42E880B784CD76D /* CJBaseUIKit-Swift */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "CJBaseUIKit-Swift"; path = CJBaseUIKit_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95AB74E6383F52557DF3AE9231FDB61D /* UIImageView+CQTSBaseUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+CQTSBaseUtil.m"; path = "CQDemoKit/BaseUIKit/ImageLoader/UIImageView+CQTSBaseUtil.m"; sourceTree = "<group>"; };
 		96CFAA85B95E32B9441D483BC01F079C /* ConstraintDirectionalInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDirectionalInsets.swift; path = Sources/ConstraintDirectionalInsets.swift; sourceTree = "<group>"; };
@@ -998,13 +998,13 @@
 		F88A1360F69BCCD5EDF9A0877D47AB12 /* Pods-CJViewGRDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CJViewGRDemo.modulemap"; sourceTree = "<group>"; };
 		F88E49F399A1F5E49110D2FFCD1DCE38 /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MASAdditions.m"; path = "Masonry/NSArray+MASAdditions.m"; sourceTree = "<group>"; };
 		F8FADA8AFB49333D4DDF1C3A9FD4DAD0 /* CJViewGR-Swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CJViewGR-Swift-Info.plist"; sourceTree = "<group>"; };
-		F9A951056088E8350C1EBA04FEEE3864 /* UIView+CJDragAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+CJDragAction.h"; path = "CJGRKit/Extension/PanEnable/UIView+CJDragAction.h"; sourceTree = "<group>"; };
 		F9ECD383F1675696F4C10E4A4E68E52A /* CJFontSettingRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CJFontSettingRow.swift; path = "CJViewElement-Swift/CommonSettingRow/Base/CJFontSettingRow.swift"; sourceTree = "<group>"; };
 		F9F553B07963A2158FCEEB03C80D3DA0 /* cqts_jpg_04.jpg */ = {isa = PBXFileReference; includeInIndex = 1; name = cqts_jpg_04.jpg; path = CQDemoResource/Resources/jpg/cqts_jpg_04.jpg; sourceTree = "<group>"; };
 		FBC79BDDC6968D84EB4B7B5819497FD9 /* cqts_jpg_bg_02.jpg */ = {isa = PBXFileReference; includeInIndex = 1; name = cqts_jpg_bg_02.jpg; path = CQDemoResource/Resources/jpg/cqts_jpg_bg_02.jpg; sourceTree = "<group>"; };
 		FDEB69D5F4D9FEBA18C72620487027C3 /* CJUIKitBaseScrollViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CJUIKitBaseScrollViewController.m; path = CQDemoKit/BaseVC/ScrollView/CJUIKitBaseScrollViewController.m; sourceTree = "<group>"; };
 		FE2D7D5686C7F8F3C6F371F795E1A30E /* cqts_jpg_bg_03.jpg */ = {isa = PBXFileReference; includeInIndex = 1; name = cqts_jpg_bg_03.jpg; path = CQDemoResource/Resources/jpg/cqts_jpg_bg_03.jpg; sourceTree = "<group>"; };
 		FE4C8785CD3C42F48186F33423EF459D /* CQTSLocImageDataModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CQTSLocImageDataModel.h; path = CQDemoKit/Demo_Resource/ImageModel/CQTSLocImageDataModel.h; sourceTree = "<group>"; };
+		FE5E2D02DE25DAE9137CEE08685501B5 /* UIView+CJKeepBounds.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+CJKeepBounds.h"; path = "CJGRKit/Extension/KeepBounds/UIView+CJKeepBounds.h"; sourceTree = "<group>"; };
 		FE936549DC085FB9F1B1421CC0FAC3B6 /* CQTSResourceInfoUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CQTSResourceInfoUtil.h; path = CQDemoKit/Demo_Resource/CQTSResourceInfoUtil.h; sourceTree = "<group>"; };
 		FF3086DB896F55BEA8D06A522362CA7E /* CJMaskImageAdjustGRView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CJMaskImageAdjustGRView.m; path = CJGRKit/CJGRView/MaskImageAdjustGRView/CJMaskImageAdjustGRView.m; sourceTree = "<group>"; };
 		FF588C921000745112C78D079D80D00C /* Masonry.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Masonry.modulemap; sourceTree = "<group>"; };
@@ -1157,16 +1157,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		03B6C9AD45413F34BDF6B5C74173CF3A /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				B2E118821156EE2F38A91A9B4DDC6AE4 /* KeepBounds */,
-				3499475CE238445D641ABF67E3CD0688 /* Pandown */,
-				6ACECB6A50A77DFD98F6325237AF7051 /* PanEnable */,
-			);
-			name = Extension;
-			sourceTree = "<group>";
-		};
 		03D98D4726BE68802D99BC96EF2E896C /* CJGRView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1255,6 +1245,16 @@
 				EA6D61E9D0D753922E9EFB754025A1E0 /* RipeCollectionView */,
 			);
 			name = Demo_RipeView;
+			sourceTree = "<group>";
+		};
+		21F855A382750646BF3DB6CD4BEAA4B4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				ECA63DD4B1F4B1C0339E22DE539EAD45 /* FreeDrag */,
+				7FA55ECFCA3D4AFB783C96836F7E571B /* KeepBounds */,
+				60F2558D404C1F9C5C8C0D672AACF333 /* PanDown */,
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 		21FCA1826EAE6BEEC362B3162281B740 /* UIPathCJHelper */ = {
@@ -1378,15 +1378,6 @@
 				9DA3002BF1297100491FEDCC98D67245 /* CQTSSandboxFileUtil.m */,
 			);
 			name = SandboxFileUtil;
-			sourceTree = "<group>";
-		};
-		3499475CE238445D641ABF67E3CD0688 /* Pandown */ = {
-			isa = PBXGroup;
-			children = (
-				6A276CD4B5D74F9DE4541340310A3119 /* UIView+CJPanAction.h */,
-				24BC27B9EC007A7DE498CC748FD80DFA /* UIView+CJPanAction.m */,
-			);
-			name = Pandown;
 			sourceTree = "<group>";
 		};
 		39B0BC46659BCCDD393831DB1631A8D1 /* AdjustDemo */ = {
@@ -1582,6 +1573,15 @@
 			name = Pod;
 			sourceTree = "<group>";
 		};
+		60F2558D404C1F9C5C8C0D672AACF333 /* PanDown */ = {
+			isa = PBXGroup;
+			children = (
+				75C1A8F4516C5F3E4917547B34A4B417 /* UIView+CJPanDown.h */,
+				41EE6B9B3749226963722991DB8A5538 /* UIView+CJPanDown.m */,
+			);
+			name = PanDown;
+			sourceTree = "<group>";
+		};
 		61F6B9F5302A9403A22D4CBD646C3FD4 /* LayoutInputView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1620,15 +1620,6 @@
 				9C178F04BAF9777EC3D312F5B0C0CD12 /* CJUIKitRandomUtil.m */,
 			);
 			name = RandomUtil;
-			sourceTree = "<group>";
-		};
-		6ACECB6A50A77DFD98F6325237AF7051 /* PanEnable */ = {
-			isa = PBXGroup;
-			children = (
-				F9A951056088E8350C1EBA04FEEE3864 /* UIView+CJDragAction.h */,
-				37F825011352D1AEBEE49BA0D0A61099 /* UIView+CJDragAction.m */,
-			);
-			name = PanEnable;
 			sourceTree = "<group>";
 		};
 		6BC5E5C04F9E506BE29416DE774F12FC /* CGRectCJAdjustHelper */ = {
@@ -1763,6 +1754,15 @@
 			);
 			name = "Support Files";
 			path = "CJViewGRDemo/Pods/Target Support Files/CJGRKit";
+			sourceTree = "<group>";
+		};
+		7FA55ECFCA3D4AFB783C96836F7E571B /* KeepBounds */ = {
+			isa = PBXGroup;
+			children = (
+				FE5E2D02DE25DAE9137CEE08685501B5 /* UIView+CJKeepBounds.h */,
+				23FF532D80EA0DB40DD54B817EBC67EE /* UIView+CJKeepBounds.m */,
+			);
+			name = KeepBounds;
 			sourceTree = "<group>";
 		};
 		83307D654CFE2551BCA351A825F6ADF0 /* SnapKit */ = {
@@ -1973,15 +1973,6 @@
 				28B45B8365FBA46366F5CE4E66CD6BAE /* UIPathCJHelper */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		B2E118821156EE2F38A91A9B4DDC6AE4 /* KeepBounds */ = {
-			isa = PBXGroup;
-			children = (
-				2DC3596E2B6C9B6EA19A6DE877CD17DF /* UIView+CJKeepBounds.h */,
-				959D227C7005C2C28B8E34AB69735405 /* UIView+CJKeepBounds.m */,
-			);
-			name = KeepBounds;
 			sourceTree = "<group>";
 		};
 		B4463819A12CB75910BDBED41E2C0424 /* ScrollView */ = {
@@ -2203,7 +2194,7 @@
 				C84193BEB5D4F1E2DD73E3BB54F3EA21 /* CGRectCJSubHelper */,
 				75040ABD70B73BBBF379E5A1017B318E /* CJGRScrollView */,
 				03D98D4726BE68802D99BC96EF2E896C /* CJGRView */,
-				03B6C9AD45413F34BDF6B5C74173CF3A /* Extension */,
+				21F855A382750646BF3DB6CD4BEAA4B4 /* Extension */,
 				DB16DCC46D6D01F8B9071B2B1847BB51 /* Pod */,
 				7B9F5083ABC4D8AA9A4575273033B521 /* Support Files */,
 			);
@@ -2380,6 +2371,15 @@
 			path = "../Target Support Files/CQDemoResource";
 			sourceTree = "<group>";
 		};
+		ECA63DD4B1F4B1C0339E22DE539EAD45 /* FreeDrag */ = {
+			isa = PBXGroup;
+			children = (
+				32B8182FF6100DD6D80418714A6853DD /* UIView+CJFreeDrag.h */,
+				508F818D8B3C174D9AE2ECB26768374D /* UIView+CJFreeDrag.m */,
+			);
+			name = FreeDrag;
+			sourceTree = "<group>";
+		};
 		F4802310946398D04F99DFCF661B5AC2 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -2444,27 +2444,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2839AABF3FBC1C0FF09D3C07774F8395 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9907EF426A6CABF3E6561803CD1861EB /* CGRectCJAdjustHelper.h in Headers */,
-				5D28528350DD2DDDC6C12C1D6D05FFC5 /* CGRectCJSubHelper.h in Headers */,
-				16243434E4EDC819EA2B828B03E2FC0D /* CJAdjustGRView.h in Headers */,
-				A74B5D7EDD5C6DB5393C69E8A4856F8E /* CJGRKit-umbrella.h in Headers */,
-				D2A50146EBE104318FC5CA35CB45B0E7 /* CJGRScrollView.h in Headers */,
-				DAC2FE2645B475F3E5D5890D98189548 /* CJGRView.h in Headers */,
-				C5445D6E6764CFF249870BEB15E835BB /* CJImageClipAdjustGRView.h in Headers */,
-				43A39E913B1714091F6CE1B4FE1C57C9 /* CJImageGRScrollView.h in Headers */,
-				BB96AB084E4E8D362B30A25A758B25E9 /* CJImageNormalAdjustGRView.h in Headers */,
-				F833946EB12B27E06AE3023010E78D00 /* CJMaskImageAdjustGRView.h in Headers */,
-				7AC338D461DD5C700BF18F64A5A8CE12 /* CQMaskImageAdjustGRView.h in Headers */,
-				D64A03BFBE11FA19036B146E2EB83331 /* UIView+CJDragAction.h in Headers */,
-				563A663036ADF5A170C921C823CE52BF /* UIView+CJKeepBounds.h in Headers */,
-				0B7AEA5570E8D24403FBE52A63B96A41 /* UIView+CJPanAction.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		28598A0DC82562530FE845B04871B875 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -2517,6 +2496,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED8BCC871217AF39C389EE65EAAA57F9 /* CJBaseUIKit-Swift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BD381E8E2C897A7FB36E524A1D6858B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7B5363B7A3D313AC770DB99029ABDB9 /* CGRectCJAdjustHelper.h in Headers */,
+				2780106F484016C077620BFD7AC23597 /* CGRectCJSubHelper.h in Headers */,
+				F397DCB87E769048C948ACBEFE535AE4 /* CJAdjustGRView.h in Headers */,
+				7D5FC3738F897ED130279B0EC006649E /* CJGRKit-umbrella.h in Headers */,
+				59F671797E7785A33E7DA64A39D5979D /* CJGRScrollView.h in Headers */,
+				D95C4914BED5B9CC01B949722808EEF0 /* CJGRView.h in Headers */,
+				0C68FF574BB461652D4DB5561AA49489 /* CJImageClipAdjustGRView.h in Headers */,
+				2DDB72B1FD102C2DECD7BA94579DE6C6 /* CJImageGRScrollView.h in Headers */,
+				E40E99DB36F7DE0BB9F9EF45FC36C286 /* CJImageNormalAdjustGRView.h in Headers */,
+				8C3AB99F0DC80FF289241FDBC8940192 /* CJMaskImageAdjustGRView.h in Headers */,
+				4500DA18B2DB6D0FB57028E55E729E81 /* CQMaskImageAdjustGRView.h in Headers */,
+				7B7CF4FF5A944497D1BC6C6E32E33163 /* UIView+CJFreeDrag.h in Headers */,
+				62909336A3586782A6A721DD1D848697 /* UIView+CJKeepBounds.h in Headers */,
+				F3AEDAA8C6F43A2581775CE1E7E32A2C /* UIView+CJPanDown.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2738,8 +2738,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13FAC2D34022B6BBF78297DE981F32BE /* Build configuration list for PBXNativeTarget "CJGRKit" */;
 			buildPhases = (
-				2839AABF3FBC1C0FF09D3C07774F8395 /* Headers */,
-				17B08642732DEE80A23369DB588DC74C /* Sources */,
+				9BD381E8E2C897A7FB36E524A1D6858B /* Headers */,
+				BDC16F8A6AFAC9549F6EEA08CC1FE9F1 /* Sources */,
 				675671169EEBEAC7FC19D4E0CA12E883 /* Frameworks */,
 				C069DAFB2CD509F25250132A0B738D1B /* Resources */,
 			);
@@ -3157,27 +3157,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		17B08642732DEE80A23369DB588DC74C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				80BB0195235CCA740D325902835ABA59 /* CGRectCJAdjustHelper.m in Sources */,
-				94864F66C2177B47BAB4925DFAB3013F /* CGRectCJSubHelper.m in Sources */,
-				D04DAF7EDAC7634AA129B8E1407FA09E /* CJAdjustGRView.m in Sources */,
-				7AEE00344998EC4BDB18A8F5E08D19F7 /* CJGRKit-dummy.m in Sources */,
-				0F05BC03BF142E96BC261C7C51D0CE19 /* CJGRScrollView.m in Sources */,
-				CC29171E30E8B80BB88F2400B83A9A89 /* CJGRView.m in Sources */,
-				E236EEB80C221175C8E7E8111866EA81 /* CJImageClipAdjustGRView.m in Sources */,
-				60AB5495F40F377C852C89D2369D6CB5 /* CJImageGRScrollView.m in Sources */,
-				19A5E149C8B403E750E620F5EED1D931 /* CJImageNormalAdjustGRView.m in Sources */,
-				08C861EACE208AF0E1C6ACFE52A2AB75 /* CJMaskImageAdjustGRView.m in Sources */,
-				B6CD953CAA00713A42BC814B33953729 /* CQMaskImageAdjustGRView.m in Sources */,
-				16F44EED7F67C4FB26DCDB12C043BA96 /* UIView+CJDragAction.m in Sources */,
-				277FAE9B54F959159032056A05E6DD2B /* UIView+CJKeepBounds.m in Sources */,
-				CAE550F86D6F2CC14D74A26D1639ED9F /* UIView+CJPanAction.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1F9DF8DA777C1887BCC24C94711E79F4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3370,6 +3349,27 @@
 				D0BE9A23D81291515608AD794B42DDD9 /* CQTSAssetModelGetter.m in Sources */,
 				235FE6D4A194013CD41CFA9B60C53EFC /* CQTSAssetSourceUtil.m in Sources */,
 				3455A59BAEC265868A964CFBA0610711 /* UIImage+CQDemoResource.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDC16F8A6AFAC9549F6EEA08CC1FE9F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98D9EF8B9952CB679422924885EF2811 /* CGRectCJAdjustHelper.m in Sources */,
+				62B242A9B5B6ABBD37933ADD600467A8 /* CGRectCJSubHelper.m in Sources */,
+				443851D542F336AE6E7F15791D66CB0D /* CJAdjustGRView.m in Sources */,
+				53817157FEA8E1DB10A76E6FE159C32C /* CJGRKit-dummy.m in Sources */,
+				E7343D43C7C041A950D475416AC3EEA3 /* CJGRScrollView.m in Sources */,
+				2C924941BF688B81000BF9BAE9ED6E7F /* CJGRView.m in Sources */,
+				0494CD873BEA3228D4C539E2167D7744 /* CJImageClipAdjustGRView.m in Sources */,
+				EEB0AFBC9D83548413D669916EB93B90 /* CJImageGRScrollView.m in Sources */,
+				98E014A4B8566BEF4CDB20BFD443EE12 /* CJImageNormalAdjustGRView.m in Sources */,
+				A331EDBDB4884E6880BAF444A3A8D355 /* CJMaskImageAdjustGRView.m in Sources */,
+				AD82EF9A01EBABE4B5B8E6AEB791F07A /* CQMaskImageAdjustGRView.m in Sources */,
+				80F55EBFFBA0F6B2F0F3958CE8821BD3 /* UIView+CJFreeDrag.m in Sources */,
+				EE256695D5F80E46473AB218AE9BEFB4 /* UIView+CJKeepBounds.m in Sources */,
+				B4A37BD7CD7C2A0F6610F458028A6FCE /* UIView+CJPanDown.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
