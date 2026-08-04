@@ -25,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationItem.title = NSLocalizedString(@"UIView首页(Drag+Popup+Animate)", nil);
+    self.navigationItem.title = NSLocalizedString(@"UIView(FreeDrag+KeepBounds、Pandown)", nil);
     self.view.backgroundColor = [UIColor whiteColor];
     
     NSString *bundleName = @"TSDemo_GRKit";

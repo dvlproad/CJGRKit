@@ -35,7 +35,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.navigationItem.title = NSLocalizedString(@"视图：缩放+位置调整+蒙版", nil);
+    self.navigationItem.title = NSLocalizedString(@"CJGRView视图：缩放+位置调整+蒙版", nil);
 
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     
