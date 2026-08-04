@@ -17,6 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithFrame:(CGRect)frame NS_DESIGNATED_INITIALIZER;
 - (instancetype)initWithClippingViewCreateBlock:(UIView *(^ _Nullable)(void))clippingViewCreateBlock NS_UNAVAILABLE;
 
+/// 静止时（非手势中）裁剪框外蒙层的透明度（默认 1.0 即完全遮住，看不到框外图片；设为 0.7 左右可看到框外图片）
+@property (nonatomic, assign) CGFloat restMaskOpacity;
+
 /// 是否显示照片的呗遮挡区域
 - (void)showOther:(BOOL)show;
 

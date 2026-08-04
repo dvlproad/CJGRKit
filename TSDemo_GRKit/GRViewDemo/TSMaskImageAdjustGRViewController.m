@@ -29,7 +29,43 @@
     // Do any additional setup after loading the view.
     
     __weak typeof(self) weakSelf = self;
-    UIView *buttonsView = [[CQTSRadioButtonsView alloc] initWithTitles:@[@"竖直长图", @"水平宽图", @"随机图"] alongAxis:MASAxisTypeHorizontal fixedSpacing:10 didSelectItemAtIndexHandle:^(NSInteger index) {
+    
+    UIView *buttonsContainerView = [self buildButtonsContainerView];
+    [self.view addSubview:buttonsContainerView];
+    [buttonsContainerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(self.mas_bottomLayoutGuide).mas_offset(-10);
+        make.left.mas_equalTo(self.view).mas_offset(20);
+        make.right.mas_equalTo(self.view).mas_offset(-20);
+    }];
+    
+    CQMaskImageAdjustGRView *imageScaleView = [[CQMaskImageAdjustGRView alloc] initWithFrame:CGRectZero];
+    imageScaleView.backgroundColor = [UIColor blackColor];
+    [self.view addSubview:imageScaleView];
+    [imageScaleView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(self.view);
+        make.left.mas_equalTo(self.view).mas_offset(20);
+        make.top.mas_equalTo(self.mas_topLayoutGuide).mas_offset(10);
+        make.bottom.mas_equalTo(buttonsContainerView.mas_top).mas_offset(-10);
+    }];
+    self.imageScaleView = imageScaleView;
+    imageScaleView.pinchMaxScale =  2;
+    
+    
+    NSInteger trySelIndex = random();
+    NSArray<NSString *> *folderNames = @[@"png", @"jpg"];
+    UIImage *localImageRandom = [CQTSAssetSourceUtil localImageAtIndex:trySelIndex folderNames:folderNames];
+    imageScaleView.image = localImageRandom;
+    [imageScaleView updateFrameByImage:localImageRandom];
+}
+
+#pragma mark - Build
+
+/// 单选按钮容器：后续要调整按钮时，只需改这个方法里的布局
+- (UIView *)buildButtonsContainerView {
+    __weak typeof(self) weakSelf = self;
+    
+    // 选图
+    CQTSRadioButtonsView *buttonsView = [[CQTSRadioButtonsView alloc] initWithTitles:@[@"竖直长图", @"水平宽图", @"随机图"] alongAxis:MASAxisTypeHorizontal fixedSpacing:10 didSelectItemAtIndexHandle:^(NSInteger index) {
         UIImage *image = nil;
         switch (index) {
             case 0:
@@ -48,58 +84,53 @@
         weakSelf.imageScaleView.image = image;
         [weakSelf.imageScaleView updateFrameByImage:image];
     }];
-    [self.view addSubview:buttonsView];
     
-    __weak typeof(self) weakSelf3 = weakSelf;
+    // 蒙层形状预览
+    CQTSRadioButtonsView *maskButtonsView = [[CQTSRadioButtonsView alloc] initWithTitles:@[@"矩形预览", @"圆形预览"] alongAxis:MASAxisTypeHorizontal fixedSpacing:10 didSelectItemAtIndexHandle:^(NSInteger index) {
+        [weakSelf.imageScaleView updateMaskWithRectPathType:(index == 0 ? CJRectPathTypeRectangle : CJRectPathTypeCircle)];
+    }];
+    
+    // 框外蒙层透明度
+    CQTSRadioButtonsView *opacityButtonsView = [[CQTSRadioButtonsView alloc] initWithTitles:@[@"框外隐藏", @"框外可见"] alongAxis:MASAxisTypeHorizontal fixedSpacing:10 didSelectItemAtIndexHandle:^(NSInteger index) {
+        weakSelf.imageScaleView.restMaskOpacity = (index == 0 ? 1.0 : 0.3); // 静止时框外蒙层透明度
+        weakSelf.imageScaleView.maskLayer.opacity = weakSelf.imageScaleView.restMaskOpacity; // 立即生效
+    }];
+    
     UIButton *clipButton = [CQTSButtonFactory themeBGButtonWithTitle:@"开始裁剪(注:裁剪非本示例测试点)" actionBlock:^(UIButton * _Nonnull bButton) {
-        [weakSelf3 beginClip];
+        [weakSelf beginClip];
     }];
-    [self.view addSubview:clipButton];
-    [clipButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_equalTo(self.mas_bottomLayoutGuide).mas_offset(-20);
-        make.height.mas_equalTo(44);
-        make.centerX.mas_equalTo(self.view);
-        make.left.mas_equalTo(self.view).mas_offset(20);
-    }];
+    
+    UIView *buttonsContainerView = [[UIView alloc] init];
+    [buttonsContainerView addSubview:buttonsView];
+    [buttonsContainerView addSubview:maskButtonsView];
+    [buttonsContainerView addSubview:opacityButtonsView];
+    [buttonsContainerView addSubview:clipButton];
     
     [buttonsView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_equalTo(clipButton.mas_top).mas_offset(-20);
+        make.top.left.right.mas_equalTo(buttonsContainerView);
         make.height.mas_equalTo(44);
-        make.centerX.mas_equalTo(self.view);
-        make.left.mas_equalTo(self.view).mas_offset(20);
     }];
-    
-    __weak typeof(self) weakSelf2 = weakSelf;
-    CQTSRadioButtonsView *maskButtonsView = [[CQTSRadioButtonsView alloc] initWithTitles:@[@"矩形预览", @"圆形预览"] alongAxis:MASAxisTypeHorizontal fixedSpacing:10 didSelectItemAtIndexHandle:^(NSInteger index) {
-        [weakSelf2.imageScaleView updateMaskWithRectPathType:(index == 0 ? CJRectPathTypeRectangle : CJRectPathTypeCircle)];
-    }];
-    [self.view addSubview:maskButtonsView];
-    [maskButtonsView didSelectItemAtIndex:0]; // 默认选中"矩形预览"
     [maskButtonsView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_equalTo(buttonsView.mas_top).mas_offset(-20);
+        make.top.mas_equalTo(buttonsView.mas_bottom).mas_offset(10);
+        make.left.right.mas_equalTo(buttonsContainerView);
         make.height.mas_equalTo(44);
-        make.centerX.mas_equalTo(self.view);
-        make.left.mas_equalTo(self.view).mas_offset(20);
+    }];
+    [opacityButtonsView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(maskButtonsView.mas_bottom).mas_offset(10);
+        make.left.right.mas_equalTo(buttonsContainerView);
+        make.height.mas_equalTo(44);
+    }];
+    [clipButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(opacityButtonsView.mas_bottom).mas_offset(10);
+        make.left.right.mas_equalTo(buttonsContainerView);
+        make.height.mas_equalTo(44);
+        make.bottom.mas_equalTo(buttonsContainerView);
     }];
     
-    CQMaskImageAdjustGRView *imageScaleView = [[CQMaskImageAdjustGRView alloc] initWithFrame:CGRectZero];
-    imageScaleView.backgroundColor = [UIColor blackColor];
-    [self.view addSubview:imageScaleView];
-    [imageScaleView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(self.view);
-        make.left.mas_equalTo(self.view).mas_offset(20);
-        make.top.mas_equalTo(self.mas_topLayoutGuide).mas_offset(20);
-        make.bottom.mas_equalTo(maskButtonsView.mas_top).mas_offset(-20);
-    }];
-    self.imageScaleView = imageScaleView;
-    imageScaleView.pinchMaxScale =  2;
+    [maskButtonsView didSelectItemAtIndex:0]; // 默认选中"矩形预览"
+    [opacityButtonsView didSelectItemAtIndex:0]; // 默认选中"框外隐藏"
     
-    
-    NSInteger trySelIndex = random();
-    NSArray<NSString *> *folderNames = @[@"png", @"jpg"];
-    UIImage *localImageRandom = [CQTSAssetSourceUtil localImageAtIndex:trySelIndex folderNames:folderNames];
-    imageScaleView.image = localImageRandom;
-    [imageScaleView updateFrameByImage:localImageRandom];
+    return buttonsContainerView;
 }
 
 #pragma mark - Clip

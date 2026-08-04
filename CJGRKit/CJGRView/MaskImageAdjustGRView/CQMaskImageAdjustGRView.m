@@ -20,8 +20,10 @@
         return clippingRegionView;
     }];
     if (self) {
+        _restMaskOpacity = 1.0;
+        
         // CJMaskImageAdjustGRView的方法：添加蒙层
-        [self addMaskLayerWithRectPathType:CJRectPathTypeRectangle opacity:1.0]; // 默认遮住不显示裁剪框外的区域
+        [self addMaskLayerWithRectPathType:CJRectPathTypeRectangle opacity:_restMaskOpacity]; // 默认遮住不显示裁剪框外的区域
         
         // CJAdjustGRView的方法：设置拖动和捏合缩放等手势状态发生变化的回调(内部已处理完位置调整等操作)
         [self setupExtraPanStateChangeBlock:^(UIGestureRecognizerState panGRState) {
@@ -49,7 +51,7 @@
 #pragma mark - Event
 /// 是否显示照片的呗遮挡区域
 - (void)showOther:(BOOL)show {
-    self.maskLayer.opacity = show ? 0.4 : 1.0;
+    self.maskLayer.opacity = show ? 0.4 : self.restMaskOpacity;
     self.clippingRegionView.layer.borderWidth = show ? 0.5 : 0;
     self.clippingRegionView.layer.borderColor = [UIColor whiteColor].CGColor;
 }
