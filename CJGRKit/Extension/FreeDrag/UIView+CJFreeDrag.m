@@ -1,12 +1,12 @@
 //
-//  UIView+CJDragAction.m
+//  UIView+CJFreeDrag.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2016/11/05.
 //  Copyright © 2016年 dvlproad. All rights reserved.
 //
 
-#import "UIView+CJDragAction.h"
+#import "UIView+CJFreeDrag.h"
 #import <objc/runtime.h>
 
 @interface UIView ()
@@ -15,7 +15,7 @@
 
 @end
 
-@implementation UIView (CJDragAction)
+@implementation UIView (CJFreeDrag)
 
 static NSString * const cjDragEnableKey = @"cjDragEnableKey";
 static NSString * const cjDragBeginBlockKey = @"cjDragBeginBlockKey";

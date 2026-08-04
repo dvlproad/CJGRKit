@@ -10,7 +10,7 @@
 #import <CQDemoKit/CJUIKitToastUtil.h>
 #import <CQDemoKit/CQTSRipeTableView.h>
 
-#import <CJGRKit/UIView+CJPanAction.h>
+#import <CJGRKit/UIView+CJPanDown.h>
 
 @interface ViewPandownViewController2 () {
     

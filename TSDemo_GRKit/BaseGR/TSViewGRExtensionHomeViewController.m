@@ -38,12 +38,12 @@
     //Drag
     {
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
-        sectionDataModel.theme = @"UIView+CJDragAction";
+        sectionDataModel.theme = @"UIView+CJFreeDrag";
         {
             CQDMModuleModel *dragViewModule = [[CQDMModuleModel alloc] init];
             dragViewModule.title = @"任意视图：位置调整\nDrag And KeepBounds (视图的拖曳和吸附)";
             dragViewModule.content = [@[
-                @"#import <CJGRKit/UIView+CJDragAction.h>",
+                @"#import <CJGRKit/UIView+CJFreeDrag.h>",
                 @"#import <CJGRKit/UIView+CJKeepBounds.h>"
             ] componentsJoinedByString:@"\n"];
             dragViewModule.classEntry = [DragViewController class];
@@ -58,12 +58,12 @@
     // View Pandown
     {
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
-        sectionDataModel.theme = @"UIView+CJPanAction";
+        sectionDataModel.theme = @"UIView+CJPanDown";
         {
             CQDMModuleModel *panModule = [[CQDMModuleModel alloc] init];
             panModule.title = @"View Pandown (仿抖音评论下拉,对列表需自己包装container)";
             panModule.content = [@[
-                @"UIView+CJPanAction 已封装进 View",
+                @"UIView+CJPanDown 已封装进 View",
             ] componentsJoinedByString:@"\n"];
             panModule.classEntry = [ViewPandownViewController1 class];
             [sectionDataModel.values addObject:panModule];
@@ -72,7 +72,7 @@
             CQDMModuleModel *panModule = [[CQDMModuleModel alloc] init];
             panModule.title = @"View Pandown (仿抖音评论下拉,对所有都不需自己包装container)";
             panModule.content = [@[
-                @"UIView+CJPanAction 未封装进 View",
+                @"UIView+CJPanDown 未封装进 View",
             ] componentsJoinedByString:@"\n"];
             panModule.classEntry = [ViewPandownViewController2 class];
             [sectionDataModel.values addObject:panModule];

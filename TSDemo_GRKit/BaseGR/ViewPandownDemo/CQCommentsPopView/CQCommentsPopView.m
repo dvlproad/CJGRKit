@@ -7,7 +7,7 @@
 //
 
 #import "CQCommentsPopView.h"
-#import <CJGRKit/UIView+CJPanAction.h>
+#import <CJGRKit/UIView+CJPanDown.h>
 
 @interface CQCommentsPopView () <UIGestureRecognizerDelegate>
 

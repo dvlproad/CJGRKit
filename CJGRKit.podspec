@@ -14,7 +14,7 @@
   #提交方法： pod repo push dvlproadPublicSpec CJGRKit.podspec --sources=cocoapods,dvlproadPublicSpec --allow-warnings --use-libraries --verbose
 Pod::Spec.new do |s|
   s.name         = "CJGRKit"
-  s.version      = "0.2.6"
+  s.version      = "0.2.7"
   s.summary      = "可进行各种手势(缩放、拖动(含位置调整))的基于UIView或UIScrollView的视图基类"
   s.homepage     = "https://github.com/dvlproad/CJGRKit.git"
 
@@ -33,7 +33,11 @@ Pod::Spec.new do |s|
                  各种手势，可按需独立引入：
                  • CJGRKit/CGRectCJSubHelper - 一个调整小区域的frame使其保持在cage内部，或调整大区域的frame使其包含住小区域的帮助类
                  • CJGRKit/CGRectCJAdjustHelper - 调整移动区域的帮助类
-                 • CJGRKit/KeepBounds - UIView+CJKeepBounds.h 限制本视图不移出其父视图或keyWindow
+
+                 • CJGRKit/Extension/KeepBounds - UIView+CJKeepBounds.h 限制本视图不移出其父视图或keyWindow
+                 • CJGRKit/Extension/FreeDrag - UIView+CJFreeDrag.h 通过pan手势，任意方向自由拖动的视图
+                 • CJGRKit/Extension/PanDown - UIView+CJPanDown.h 下拉回弹的视图拖动
+                 
                  • CJGRKit/CJGRView - 继承系统并添加有手势的 UIView ，能够进行拖动、缩放等手势
                  • CJGRKit/CJGRScrollView - 继承系统并添加有手势的 UIScrollView ，能够进行拖动、缩放等手势
 
@@ -43,7 +47,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "9.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJGRKit.git", :tag => "CJGRKit_0.2.6" }
+  s.source       = { :git => "https://github.com/dvlproad/CJGRKit.git", :tag => "CJGRKit_0.2.7" }
   #s.source_files  = "CJDemoCommon/*.{h,m}"
   #s.source_files = "CJChat/TestOSChinaPod.{h,m}"
 
@@ -72,14 +76,14 @@ Pod::Spec.new do |s|
       keepBounds.dependency "CJGRKit/CGRectCJAdjustHelper"
     end
 
-    # UIView+CJPanAction
-    ss.subspec 'Pandown' do |pandown|
-      pandown.source_files = "CJGRKit/Extension/Pandown/**/*.{h,m}"
+    # 视图拖动 UIView+CJFreeDrag.h-通过给View添加UIPanGestureRecognizer手势，使其可以移动到拖动的位置（任意方向自由拖动）
+    ss.subspec 'FreeDrag' do |freeDrag|
+      freeDrag.source_files = "CJGRKit/Extension/FreeDrag/**/*.{h,m}"
     end
 
-    # UIView+CJDragAction
-    ss.subspec 'PanEnable' do |panEnable|
-      panEnable.source_files = "CJGRKit/Extension/PanEnable/**/*.{h,m}"
+    # UIView+CJPanDown.h 下拉回弹的视图拖动
+    ss.subspec 'PanDown' do |panDown|
+      panDown.source_files = "CJGRKit/Extension/PanDown/**/*.{h,m}"
     end
   end
 

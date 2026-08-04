@@ -1,5 +1,5 @@
 //
-//  UIView+CJDragAction.h
+//  UIView+CJFreeDrag.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2016/11/05.
@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  类目说明：通过给View添加UIPanGestureRecognizer手势，使其可以移动到拖动的位置
  */
-@interface UIView (CJDragAction)
+@interface UIView (CJFreeDrag)
 
 @property (nonatomic, assign) BOOL cjDragEnable;   /**< 是否允许拖曳(默认YES) */
 @property (nonatomic, copy) void(^cjDragBeginBlock)(UIView *view);    /**< 开始拖曳的回调 */

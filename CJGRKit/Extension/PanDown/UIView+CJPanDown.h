@@ -1,5 +1,5 @@
 //
-//  UIView+CJPanAction.h
+//  UIView+CJPanDown.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2019/05/10.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIView (CJPanAction) {
+@interface UIView (CJPanDown) {
     
 }
 @property (nonatomic, assign, readonly) CGRect cjPanStartFrame;   /**< 拖动开始时候视图的frame位置(用于复原等操作) */

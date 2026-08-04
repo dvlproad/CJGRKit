@@ -1,12 +1,12 @@
 //
-//  UIView+CJPanAction.m
+//  UIView+CJPanDown.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2019/05/10.
 //  Copyright © 2019年 dvlproad. All rights reserved.
 //
 
-#import "UIView+CJPanAction.h"
+#import "UIView+CJPanDown.h"
 #import <objc/runtime.h>
 
 @interface UIView () <UIGestureRecognizerDelegate> {
@@ -26,7 +26,7 @@
 @end
 
 
-@implementation UIView (CJPanAction)
+@implementation UIView (CJPanDown)
 
 #pragma mark - runtime:block
 - (void (^)(BOOL, CGPoint))cjPaningOffsetBlock {

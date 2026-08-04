@@ -11,7 +11,7 @@
 #import <CQDemoResource/CQTSAssetSourceUtil.h>
 #import <CQDemoResource/UIImage+CQDemoResource.h>
 
-#import <CJGRKit/UIView+CJDragAction.h>
+#import <CJGRKit/UIView+CJFreeDrag.h>
 #import <CJGRKit/UIView+CJKeepBounds.h>
 
 @interface DragViewController ()
