@@ -17,6 +17,8 @@
 #import "ViewPandownViewController2.h"
 #import "TSImageSourceUtil.h"
 #import "TSImageNormalAdjustGRScrollViewController.h"
+#import "TSMaskClipResultViewController.h"
+#import "UIImage+CJClipUtil.h"
 #import "TSAdjustGRViewController.h"
 #import "TSGRViewController.h"
 #import "TSImageClipAdjustGRViewController.h"

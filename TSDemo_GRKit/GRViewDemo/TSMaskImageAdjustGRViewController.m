@@ -8,8 +8,12 @@
 #import "TSMaskImageAdjustGRViewController.h"
 #import <Masonry/Masonry.h>
 #import <CQDemoKit/CQTSRadioButtonsView.h>
+#import <CQDemoKit/CQTSButtonFactory.h>
 #import <CQDemoResource/CQTSAssetSourceUtil.h>
 #import <CJGRKit/CQMaskImageAdjustGRView.h>
+
+#import "UIImage+CJClipUtil.h"
+#import "TSMaskClipResultViewController.h"
 
 @interface TSMaskImageAdjustGRViewController () {
     
@@ -45,19 +49,32 @@
         [weakSelf.imageScaleView updateFrameByImage:image];
     }];
     [self.view addSubview:buttonsView];
-    [buttonsView mas_makeConstraints:^(MASConstraintMaker *make) {
+    
+    __weak typeof(self) weakSelf3 = weakSelf;
+    UIButton *clipButton = [CQTSButtonFactory themeBGButtonWithTitle:@"开始裁剪(注:裁剪非本示例测试点)" actionBlock:^(UIButton * _Nonnull bButton) {
+        [weakSelf3 beginClip];
+    }];
+    [self.view addSubview:clipButton];
+    [clipButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_equalTo(self.mas_bottomLayoutGuide).mas_offset(-20);
         make.height.mas_equalTo(44);
         make.centerX.mas_equalTo(self.view);
         make.left.mas_equalTo(self.view).mas_offset(20);
     }];
     
+    [buttonsView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(clipButton.mas_top).mas_offset(-20);
+        make.height.mas_equalTo(44);
+        make.centerX.mas_equalTo(self.view);
+        make.left.mas_equalTo(self.view).mas_offset(20);
+    }];
+    
     __weak typeof(self) weakSelf2 = weakSelf;
-    CQTSRadioButtonsView *maskButtonsView = [[CQTSRadioButtonsView alloc] initWithTitles:@[@"矩形", @"圆形"] alongAxis:MASAxisTypeHorizontal fixedSpacing:10 didSelectItemAtIndexHandle:^(NSInteger index) {
+    CQTSRadioButtonsView *maskButtonsView = [[CQTSRadioButtonsView alloc] initWithTitles:@[@"矩形预览", @"圆形预览"] alongAxis:MASAxisTypeHorizontal fixedSpacing:10 didSelectItemAtIndexHandle:^(NSInteger index) {
         [weakSelf2.imageScaleView updateMaskWithRectPathType:(index == 0 ? CJRectPathTypeRectangle : CJRectPathTypeCircle)];
     }];
     [self.view addSubview:maskButtonsView];
-    [maskButtonsView didSelectItemAtIndex:0]; // 默认选中"矩形"
+    [maskButtonsView didSelectItemAtIndex:0]; // 默认选中"矩形预览"
     [maskButtonsView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_equalTo(buttonsView.mas_top).mas_offset(-20);
         make.height.mas_equalTo(44);
@@ -83,6 +100,20 @@
     UIImage *localImageRandom = [CQTSAssetSourceUtil localImageAtIndex:trySelIndex folderNames:folderNames];
     imageScaleView.image = localImageRandom;
     [imageScaleView updateFrameByImage:localImageRandom];
+}
+
+#pragma mark - Clip
+
+/// 开始裁剪：按当前蒙层形状（矩形/圆形）裁剪，并跳转到结果页展示
+- (void)beginClip {
+    CJRectPathType pathType = self.imageScaleView.clearRectangleType;
+    UIImage *clipResultImage = [UIImage cj_clipImage:self.imageScaleView.imageView.image
+                                         inPixelRect:[self.imageScaleView getClippingPixelRect]
+                                            pathType:pathType];
+    
+    TSMaskClipResultViewController *resultVC = [[TSMaskClipResultViewController alloc] init];
+    resultVC.clipImage = clipResultImage;
+    [self.navigationController pushViewController:resultVC animated:YES];
 }
 
 
