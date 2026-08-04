@@ -7,6 +7,7 @@
 //
 
 #import "ImageGRHomeViewController.h"
+#import <CQDemoKit/CJUIKitToastUtil.h>
 
 // 图片视图：缩放+位置调整+蒙版：使用CJGRView
 #import "TSGRViewController.h"
@@ -59,6 +60,14 @@
             module.classEntry = [TSAdjustGRViewController class];
             [sectionDataModel.values addObject:module];
         }
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    
+    // CJImageNormalAdjustGRView
+    {
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
+        sectionDataModel.theme = @"缩放+位置调整+蒙版：使用CJGRView";
         {
             CQDMModuleModel *module = [[CQDMModuleModel alloc] init];
             module.title = @"图片视图(普通)：缩放+位置调整(CJImageNormalAdjustGRView)";
@@ -70,9 +79,17 @@
             module.classEntry = [TSImageNormalAdjustGRViewController class];
             [sectionDataModel.values addObject:module];
         }
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    
+    // CJImageClipAdjustGRView CJMaskImageAdjustGRView
+    {
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
+        sectionDataModel.theme = @"图片裁剪：拖动图片裁剪（蒙层固定）";
         {
             CQDMModuleModel *module = [[CQDMModuleModel alloc] init];
-            module.title = @"图片视图(裁剪)：缩放+位置调整(CJImageClipAdjustGRView)";
+            module.title = @"图片视图(图片裁剪：拖动图片裁剪（蒙层固定）)：缩放+位置调整(CJImageClipAdjustGRView)";
             module.content = [@[
                 @"继承于 CJAdjustGRView : CJGRView",
                 @"使用场景2：拖动图片进行裁剪",
@@ -83,12 +100,45 @@
         }
         {
             CQDMModuleModel *module = [[CQDMModuleModel alloc] init];
-            module.title = @"图片视图(裁剪)：缩放+位置调整+蒙版(CJMaskImageAdjustGRView)";
+            module.title = @"图片视图(图片裁剪：拖动图片裁剪（蒙层固定）)：缩放+位置调整+蒙版(CJMaskImageAdjustGRView)";
             module.content = [@[
                 @"继承于 CJImageClipAdjustGRView",
                 @"有蒙版"
             ] componentsJoinedByString:@"\n"];
             module.classEntry = [TSMaskImageAdjustGRViewController class];
+            [sectionDataModel.values addObject:module];
+        }
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    // 其他裁剪
+    {
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
+        sectionDataModel.theme = @"图片裁剪：其他裁剪";
+        {
+            CQDMModuleModel *module = [[CQDMModuleModel alloc] init];
+            module.title = @"画框裁剪（图定框动）";
+            module.content = [@[
+                @"截图选区域",
+                @"截取图片中某块区域（去边缘杂物、截局部）",
+                @"临时示例： TSImageFilterDemo"
+                @"见《图片裁剪的交互方式与选型.md》",
+            ] componentsJoinedByString:@"\n"];
+            module.actionBlock = ^{
+                [CJUIKitToastUtil showMessage:@"见《图片裁剪的交互方式与选型.md》"];
+            };
+            [sectionDataModel.values addObject:module];
+        }
+        {
+            CQDMModuleModel *module = [[CQDMModuleModel alloc] init];
+            module.title = @"可调框裁剪";
+            module.content = [@[
+                @"相册/图片编辑（自由构图，比例可选）",
+                @"见《图片裁剪的交互方式与选型.md》",
+            ] componentsJoinedByString:@"\n"];
+            module.actionBlock = ^{
+                [CJUIKitToastUtil showMessage:@"见《图片裁剪的交互方式与选型.md》"];
+            };
             [sectionDataModel.values addObject:module];
         }
         [sectionDataModels addObject:sectionDataModel];
