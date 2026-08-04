@@ -18,28 +18,28 @@ public struct TSSwiftUIGRHome: View {
             CQTSSwiftUIBaseHomeView(
                 title: "手势(SwiftUI)",
                 sectionDataModels: [
-                    CQDMSwiftSectionDataModel(
+                    CQDMSwiftUISectionDataModel(
                         theme: "手势功能",
                         values: [
-                            CQDMSwiftModuleModel(
+                            CQDMSwiftUIModuleModel(
                                 title: "Basic Gesture Demo",
                                 viewGetterHandle: {
                                     AnyView(BasicGestureDemoPage())
                                 }
                             ),
-                            CQDMSwiftModuleModel(
+                            CQDMSwiftUIModuleModel(
                                 title: "Sticker Editor Demo",
                                 viewGetterHandle: {
                                     AnyView(StickerEditorDemoPage())
                                 }
                             ),
-                            CQDMSwiftModuleModel(
+                            CQDMSwiftUIModuleModel(
                                 title: "Layout Input + Gesture Demo1",
                                 viewGetterHandle: {
                                     AnyView(LayoutInputGestureDemoPage())
                                 }
                             ),
-                            CQDMSwiftModuleModel(
+                            CQDMSwiftUIModuleModel(
                                 title: "Layout Model + Gesture Demo2",
                                 viewGetterHandle: {
                                     AnyView(LayoutInputGestureDemoPage2())

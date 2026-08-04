@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param imageUrl             该网络图片的地址
  *  @param completed            设置完成的回调(返回的图片是将imageUrl得到的图片根据指定的方式处理后的图)
  */
-- (void)cqdm_setImageWithUrl:(NSString *)imageUrl
+- (void)cqts_setImageWithUrl:(NSString *)imageUrl
                    completed:(void(^ _Nullable)(UIImage * _Nullable bDealImage, NSURL * _Nullable imageURL))completedBlock;
 
 @end

@@ -177,7 +177,6 @@ code_sign_if_enabled() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/CJBaseUIKit-Swift/CJBaseUIKit_Swift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/CJBaseUIKit/CJBaseUIKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJGRKit/CJGRKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJViewElement-Swift/CJViewElement_Swift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJViewGR-Swift/CJViewGR_Swift.framework"
@@ -192,7 +191,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/CJBaseUIKit-Swift/CJBaseUIKit_Swift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/CJBaseUIKit/CJBaseUIKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJGRKit/CJGRKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJViewElement-Swift/CJViewElement_Swift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJViewGR-Swift/CJViewGR_Swift.framework"

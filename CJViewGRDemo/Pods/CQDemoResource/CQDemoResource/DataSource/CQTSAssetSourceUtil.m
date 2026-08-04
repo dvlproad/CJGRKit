@@ -158,23 +158,64 @@ UIImage *imageUrlRandom = [CQTSAssetSourceUtil imageUrlAtIndex:trySelIndex folde
         }
     }
     
+    if ([folderNames containsObject:@"icon"]) {
+        NSArray *sourceImageNames = @[
+            @"cqts_arrowDown_dark.png",
+            
+            @"cqts_backBarButtonItem_blue.png",
+            @"cqts_backBarButtonItem_gray.png",
+            
+            @"cqts_icon_check_blue01_yes.png",
+            @"cqts_icon_check_blue02_no.png",
+            @"cqts_icon_check_blue02_yes.png",
+            @"cqts_icon_check_white01_yes.png",
+            
+            @"cqts_icon_knock.png",
+            @"cqts_icon_nodata_01.png",
+            
+            // arrow
+            @"cqts_arrow_back_red.png",
+            @"cqts_arrow_go_blue_L.png",
+            @"cqts_arrow_go_blue_R.png",
+            @"cqts_arrow_go_white_L.png",
+            @"cqts_arrow_go_white_R.png",
+            @"cqts_arrow_tip_red.png",
+            @"cqts_arrowUD_red_down.png",
+            @"cqts_arrowUD_red_up.png",
+        ];
+        for (NSString *sourceImageName in sourceImageNames) {
+            NSDictionary *dict = @{
+                @"folderName": @"icon",
+                @"assetName": sourceImageName
+            };
+            [resultDictionarys addObject:dict];
+        }
+    }
+    
     if ([folderNames containsObject:@"jpg"]) {
         NSArray *sourceImageNames = @[
+            @"cqts_jpg_bg_01.jpg",
+            @"cqts_jpg_bg_02.jpg",
+            @"cqts_jpg_bg_03.jpg",
+            @"cqts_jpg_bg_04.jpg",
+            @"cqts_jpg_bg_05.jpg",
+            
             @"cqts_jpg_01.jpg",
             @"cqts_jpg_02.jpg",
             @"cqts_jpg_03.jpg",
             @"cqts_jpg_04.jpg",
-            @"cqts_jpg_05.jpg",
-            @"cqts_jpg_06.jpg",
-            @"cqts_jpg_07.jpg",
-            @"cqts_jpg_08.jpg",
-            @"cqts_jpg_09.jpg",
-            @"cqts_jpg_10.jpg",
+            
+            @"cqts_jpg_avatar_01.jpg",
+            @"cqts_jpg_avatar_02.jpg",
+            @"cqts_jpg_avatar_03.jpg",
+            @"cqts_jpg_avatar_04.jpg",
+            @"cqts_jpg_avatar_05.jpg",
+            @"cqts_jpg_avatar_06.jpg",
+            @"cqts_jpg_avatar_07.jpg",
+            @"cqts_jpg_avatar_08.jpg",
+            
             @"cqts_jpg_long_horizontal_1.jpg",
             @"cqts_jpg_long_vertical_1.jpg",
-            @"cqts_jpg_bgCar.jpg",
-            @"cqts_jpg_bgSky.jpg",
-            @"cqts_jpg_bgRichu.jpg",
         ];
         for (NSString *sourceImageName in sourceImageNames) {
             NSDictionary *dict = @{
@@ -201,13 +242,27 @@ UIImage *imageUrlRandom = [CQTSAssetSourceUtil imageUrlAtIndex:trySelIndex folde
     
     if ([folderNames containsObject:@"png"]) {
         NSArray *sourceImageNames = @[
-            @"cqts_icon_01.png",
-            @"cqts_icon_02.png",
-            @"cqts_icon_03.png",
+            @"cqts_png_01.png",
+            
+            @"cqts_png_avatar_01.png",
         ];
         for (NSString *sourceImageName in sourceImageNames) {
             NSDictionary *dict = @{
                 @"folderName": @"png",
+                @"assetName": sourceImageName
+            };
+            [resultDictionarys addObject:dict];
+        }
+    }
+    
+    if ([folderNames containsObject:@"bmp"]) {
+        NSArray *sourceImageNames = @[
+            @"cqts_bmp_01.bmp",
+            @"cqts_bmp_02.bmp",
+        ];
+        for (NSString *sourceImageName in sourceImageNames) {
+            NSDictionary *dict = @{
+                @"folderName": @"bmp",
                 @"assetName": sourceImageName
             };
             [resultDictionarys addObject:dict];
@@ -321,6 +376,20 @@ UIImage *imageUrlRandom = [CQTSAssetSourceUtil imageUrlAtIndex:trySelIndex folde
         for (NSString *sourceImageName in sourceImageNames) {
             NSDictionary *dict = @{
                 @"folderName": @"zip",
+                @"assetName": sourceImageName
+            };
+            [resultDictionarys addObject:dict];
+        }
+    }
+    
+    if ([folderNames containsObject:@"plist"]) {
+        NSArray *sourceImageNames = @[
+            @"cqts_area.plist",
+            @"cqts_city.plist"
+        ];
+        for (NSString *sourceImageName in sourceImageNames) {
+            NSDictionary *dict = @{
+                @"folderName": @"plist",
                 @"assetName": sourceImageName
             };
             [resultDictionarys addObject:dict];

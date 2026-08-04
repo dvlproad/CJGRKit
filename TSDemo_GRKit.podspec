@@ -40,10 +40,10 @@ Pod::Spec.new do |s|
   
   s.dependency 'CQDemoKit/BaseVC'
   s.dependency 'CQDemoKit/BaseUtil'
+  s.dependency 'CQDemoKit/Demo_RipeView'
   s.dependency 'CQDemoResource/Images'
   #
   s.dependency 'CJGRKit'
-  s.dependency 'CJBaseUIKit/UIView/CJDragAction'
 
   # # 基础工具
   # s.subspec 'BaseUtil' do |ss|

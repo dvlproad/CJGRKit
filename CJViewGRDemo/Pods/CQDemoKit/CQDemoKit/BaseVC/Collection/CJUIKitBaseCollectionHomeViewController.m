@@ -206,7 +206,7 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
     //cell.imageView.image = nil;   // 1.解决图片重用问题(建议换在cell内部处理）
     
     if (moduleModel.imageUrl.length > 0) {
-        [cell.imageView cqdm_setImageWithUrl:moduleModel.imageUrl completed:nil];
+        [cell.imageView cqts_setImageWithUrl:moduleModel.imageUrl completed:nil];
     } else {
         UIImage *image = moduleModel.normalImage ? moduleModel.normalImage : [UIImage imageNamed:@"icon"];
         cell.imageView.image = image;

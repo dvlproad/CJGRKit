@@ -1,6 +1,6 @@
 {
   "name": "CJGRKit",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "summary": "可进行各种手势(缩放、拖动(含位置调整))的基于UIView或UIScrollView的视图基类",
   "homepage": "https://github.com/dvlproad/CJGRKit.git",
   "license": {
@@ -16,7 +16,7 @@
   },
   "source": {
     "git": "https://github.com/dvlproad/CJGRKit.git",
-    "tag": "CJGRKit_0.2.5"
+    "tag": "CJGRKit_0.2.6"
   },
   "frameworks": "UIKit",
   "requires_arc": true,
@@ -30,11 +30,24 @@
       "source_files": "CJGRKit/CGRectCJAdjustHelper/*.{h,m}"
     },
     {
-      "name": "KeepBounds",
-      "source_files": "CJGRKit/Extension/**/*.{h,m}",
-      "dependencies": {
-        "CJGRKit/CGRectCJAdjustHelper": []
-      }
+      "name": "Extension",
+      "subspecs": [
+        {
+          "name": "KeepBounds",
+          "source_files": "CJGRKit/Extension/KeepBounds/**/*.{h,m}",
+          "dependencies": {
+            "CJGRKit/CGRectCJAdjustHelper": []
+          }
+        },
+        {
+          "name": "Pandown",
+          "source_files": "CJGRKit/Extension/Pandown/**/*.{h,m}"
+        },
+        {
+          "name": "PanEnable",
+          "source_files": "CJGRKit/Extension/PanEnable/**/*.{h,m}"
+        }
+      ]
     },
     {
       "name": "CJGRView",

@@ -7,7 +7,7 @@
 
 #import "TSAdjustGRViewController.h"
 #import <Masonry/Masonry.h>
-#import <CQDemoKit/CQTSContainerViewFactory.h>
+#import <CQDemoKit/CQTSRadioButtonsView.h>
 #import <CQDemoResource/CQTSAssetSourceUtil.h>
 #import <CJGRKit/CJAdjustGRView.h>
 #import <CJGRKit/CGRectCJSubHelper.h>   // 用于裁剪区域及拖动限制区域的获取
@@ -26,16 +26,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UIView *buttonsView = [CQTSContainerViewFactory twoButtonsViewAlongAxis:MASAxisTypeVertical title1:@"使用场景1：拖动图片进行裁剪" actionBlock1:^(UIButton * _Nonnull bButton) {
-        [self useType1];
-        
-    } title2:@"使用场景2：一个可进行拖动和缩放的图片视图本身" actionBlock2:^(UIButton * _Nonnull bButton) {
-        [self useType2];
+    UIView *buttonsView = [[CQTSRadioButtonsView alloc] initWithTitles:@[@"使用场景1：拖动图片进行裁剪", @"使用场景2：一个可进行拖动和缩放的图片视图本身"] alongAxis:MASAxisTypeVertical fixedSpacing:10 didSelectItemAtIndexHandle:^(NSInteger index) {
+        if (index == 0) {
+            [self useType1];
+        } else {
+            [self useType2];
+        }
     }];
     [self.view addSubview:buttonsView];
     [buttonsView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_equalTo(self.mas_bottomLayoutGuide).mas_offset(-20);
-        make.height.mas_equalTo(50*2+10*1);
+        make.height.mas_equalTo(44*2+10*1);
         make.centerX.mas_equalTo(self.view);
         make.left.mas_equalTo(self.view).mas_offset(20);
     }];

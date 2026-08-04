@@ -7,6 +7,7 @@
 
 #import "TSGRViewController.h"
 #import <CQDemoKit/CJUIKitToastUtil.h>
+#import <CQDemoResource/CQTSAssetSourceUtil.h>
 #import <CJGRKit/CJGRView.h>
 
 @interface TSGRViewController () {
@@ -27,7 +28,7 @@
         UIImageView *imageView = [[UIImageView alloc] init];
         imageView.contentMode = UIViewContentModeScaleAspectFit;
         
-        UIImage *image = [UIImage imageNamed:@"bmp1.bmp"];
+        UIImage *image = [CQTSAssetSourceUtil localImageAtIndex:0 folderNames:@[@"jpg"]];
         imageView.image = image;
         
         return imageView;

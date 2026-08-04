@@ -13,7 +13,7 @@ struct CJViewGRDemoApp: App {
     var body: some Scene {
         WindowGroup {
 //            ContentView()
-            TSGRSwiftUIMainViewController()
+            TSGRSwiftUIMainPage()
         }
     }
 }

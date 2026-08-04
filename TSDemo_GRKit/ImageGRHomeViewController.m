@@ -10,7 +10,6 @@
 
 // 图片视图：缩放+位置调整+蒙版：使用CJGRView
 #import "TSGRViewController.h"
-#import "DragViewController.h"
 #import "TSAdjustGRViewController.h"
 #import "TSImageClipAdjustGRViewController.h"
 #import "TSImageNormalAdjustGRViewController.h"
@@ -53,19 +52,6 @@
         }
         {
             CQDMModuleModel *module = [[CQDMModuleModel alloc] init];
-            module.title = @"任意视图：位置调整";
-            module.content = [@[
-                @"#import <CJBaseUIKit/UIView+CJDragAction.h>",
-                @"#import <CJGRKit/UIView+CJKeepBounds.h>"
-            ] componentsJoinedByString:@"\n"];
-            module.classEntry = [DragViewController class];
-            module.isCreateByXib = YES;
-            module.xibBundleName = @"TSDemo_GRKit";
-            
-            [sectionDataModel.values addObject:module];
-        }
-        {
-            CQDMModuleModel *module = [[CQDMModuleModel alloc] init];
             module.title = @"任意视图：缩放+位置调整(CJAdjustGRView)";
             module.content = [@[
                 @"继承于 CJGRView",
@@ -103,24 +89,6 @@
                 @"有蒙版"
             ] componentsJoinedByString:@"\n"];
             module.classEntry = [TSMaskImageAdjustGRViewController class];
-            [sectionDataModel.values addObject:module];
-        }
-        [sectionDataModels addObject:sectionDataModel];
-    }
-    
-    
-    // 缩放+位置调整：使用CJGRScrollView
-    {
-        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
-        sectionDataModel.theme = @"缩放+位置调整：使用CJGRScrollView";
-        {
-            CQDMModuleModel *module = [[CQDMModuleModel alloc] init];
-            module.title = @"图片视图(普通)：缩放+位置调整(CJImageGRScrollView 类似 CJImageNormalAdjustGRView)";
-            module.content = [@[
-                @"使用场景1：一个可进行拖动和缩放的图片视图本身",
-                @"图片普通调整（缩放、拖动）视图，没有裁剪框。场景：如图片拼接里的位置、大小调整。"
-                ] componentsJoinedByString:@"\n"];
-            module.classEntry = [TSImageNormalAdjustGRScrollViewController class];
             [sectionDataModel.values addObject:module];
         }
         [sectionDataModels addObject:sectionDataModel];

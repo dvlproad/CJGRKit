@@ -29,8 +29,8 @@
   "dependencies": {
     "CQDemoKit/BaseVC": [],
     "CQDemoKit/BaseUtil": [],
+    "CQDemoKit/Demo_RipeView": [],
     "CQDemoResource/Images": [],
-    "CJGRKit": [],
-    "CJBaseUIKit/UIView/CJDragAction": []
+    "CJGRKit": []
   }
 }

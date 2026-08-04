@@ -7,7 +7,7 @@
 
 #import "TSImageClipAdjustGRViewController.h"
 #import <Masonry/Masonry.h>
-#import <CQDemoKit/CQTSContainerViewFactory.h>
+#import <CQDemoKit/CQTSRadioButtonsView.h>
 #import "TSImageSourceUtil.h"
 #import <CJGRKit/CJImageClipAdjustGRView.h>
 
@@ -26,20 +26,16 @@
     
     self.navigationItem.title = NSLocalizedString(@"使用场景2：拖动图片进行裁剪", nil);
     
-    UIView *buttonsView = [CQTSContainerViewFactory twoButtonsViewAlongAxis:MASAxisTypeVertical title1:@"竖直长图" actionBlock1:^(UIButton * _Nonnull bButton) {
-        UIImage *image = [TSImageSourceUtil longVertical01];
-        self.imageScaleView.image = image;
-        [self.imageScaleView updateFrameByImage:image];
-        
-    } title2:@"水平宽图" actionBlock2:^(UIButton * _Nonnull bButton) {
-        UIImage *image = [TSImageSourceUtil longHorizontal01];
-        self.imageScaleView.image = image;
-        [self.imageScaleView updateFrameByImage:image];
+    __weak typeof(self) weakSelf = self;
+    UIView *buttonsView = [[CQTSRadioButtonsView alloc] initWithTitles:@[@"竖直长图", @"水平宽图"] alongAxis:MASAxisTypeVertical fixedSpacing:10 didSelectItemAtIndexHandle:^(NSInteger index) {
+        UIImage *image = index == 0 ? [TSImageSourceUtil longVertical01] : [TSImageSourceUtil longHorizontal01];
+        weakSelf.imageScaleView.image = image;
+        [weakSelf.imageScaleView updateFrameByImage:image];
     }];
     [self.view addSubview:buttonsView];
     [buttonsView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_equalTo(self.mas_bottomLayoutGuide).mas_offset(-20);
-        make.height.mas_equalTo(50*2+10*1);
+        make.height.mas_equalTo(44*2+10*1);
         make.centerX.mas_equalTo(self.view);
         make.left.mas_equalTo(self.view).mas_offset(20);
     }];

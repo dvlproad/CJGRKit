@@ -14,7 +14,7 @@
   #提交方法： pod repo push dvlproadPublicSpec CJGRKit.podspec --sources=cocoapods,dvlproadPublicSpec --allow-warnings --use-libraries --verbose
 Pod::Spec.new do |s|
   s.name         = "CJGRKit"
-  s.version      = "0.2.5"
+  s.version      = "0.2.6"
   s.summary      = "可进行各种手势(缩放、拖动(含位置调整))的基于UIView或UIScrollView的视图基类"
   s.homepage     = "https://github.com/dvlproad/CJGRKit.git"
 
@@ -43,7 +43,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "9.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJGRKit.git", :tag => "CJGRKit_0.2.5" }
+  s.source       = { :git => "https://github.com/dvlproad/CJGRKit.git", :tag => "CJGRKit_0.2.6" }
   #s.source_files  = "CJDemoCommon/*.{h,m}"
   #s.source_files = "CJChat/TestOSChinaPod.{h,m}"
 
@@ -65,9 +65,22 @@ Pod::Spec.new do |s|
   end
 
   # UIView+CJKeepBounds.h 限制本视图不移出其父视图或keyWindow
-  s.subspec 'KeepBounds' do |ss| # 当前只有 UIView+CJKeepBounds.h
-    ss.source_files = "CJGRKit/Extension/**/*.{h,m}"
-    ss.dependency "CJGRKit/CGRectCJAdjustHelper"
+  s.subspec 'Extension' do |ss|
+    # UIView+CJKeepBounds.h 限制本视图不移出其父视图或keyWindow
+    ss.subspec 'KeepBounds' do |keepBounds|
+      keepBounds.source_files = "CJGRKit/Extension/KeepBounds/**/*.{h,m}"
+      keepBounds.dependency "CJGRKit/CGRectCJAdjustHelper"
+    end
+
+    # UIView+CJPanAction
+    ss.subspec 'Pandown' do |pandown|
+      pandown.source_files = "CJGRKit/Extension/Pandown/**/*.{h,m}"
+    end
+
+    # UIView+CJDragAction
+    ss.subspec 'PanEnable' do |panEnable|
+      panEnable.source_files = "CJGRKit/Extension/PanEnable/**/*.{h,m}"
+    end
   end
 
   # 继承系统并添加有手势的 UIView ，能够进行拖动、缩放等手势

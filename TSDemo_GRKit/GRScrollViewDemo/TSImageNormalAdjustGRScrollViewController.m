@@ -7,7 +7,7 @@
 
 #import "TSImageNormalAdjustGRScrollViewController.h"
 #import <Masonry/Masonry.h>
-#import <CQDemoKit/CQTSContainerViewFactory.h>
+#import <CQDemoKit/CQTSRadioButtonsView.h>
 #import <CQDemoResource/CQTSAssetSourceUtil.h>
 #import <CJGRKit/CJImageGRScrollView.h>
 
@@ -26,18 +26,23 @@
     
     self.navigationItem.title = NSLocalizedString(@"使用场景1：一个可进行拖动和缩放的图片视图本身", nil);
     
-    UIView *buttonsView = [CQTSContainerViewFactory twoButtonsViewAlongAxis:MASAxisTypeVertical title1:@"竖直长图" actionBlock1:^(UIButton * _Nonnull bButton) {
-        UIImage *image = [UIImage cqresource_imageNamed:@"cqts_jpg_long_vertical_1.jpg"];
-        self.imageScaleView.image = image;
-        
-    } title2:@"水平宽图" actionBlock2:^(UIButton * _Nonnull bButton) {
-        UIImage *image = [UIImage cqresource_imageNamed:@"cqts_jpg_long_horizontal_1.jpg"];
-        self.imageScaleView.image = image;
+    __weak typeof(self) weakSelf = self;
+    UIView *buttonsView = [[CQTSRadioButtonsView alloc] initWithTitles:@[@"竖直长图", @"水平宽图"] alongAxis:MASAxisTypeVertical fixedSpacing:10 didSelectItemAtIndexHandle:^(NSInteger index) {
+        UIImage *image = nil;
+        switch (index) {
+            case 0:
+                image = [UIImage cqresource_imageNamed:@"cqts_jpg_long_vertical_1.jpg"];
+                break;
+            case 1:
+                image = [UIImage cqresource_imageNamed:@"cqts_jpg_long_horizontal_1.jpg"];
+                break;
+        }
+        weakSelf.imageScaleView.image = image;
     }];
     [self.view addSubview:buttonsView];
     [buttonsView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_equalTo(self.mas_bottomLayoutGuide).mas_offset(-20);
-        make.height.mas_equalTo(50*2+10*1);
+        make.height.mas_equalTo(44*2+10*1);
         make.centerX.mas_equalTo(self.view);
         make.left.mas_equalTo(self.view).mas_offset(20);
     }];

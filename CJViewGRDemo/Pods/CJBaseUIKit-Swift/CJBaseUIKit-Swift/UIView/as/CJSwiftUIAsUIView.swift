@@ -39,6 +39,15 @@ open class CJSwiftUIAsUIViewController<Content: View>: UIViewController {
 
 import SwiftUI
 
+// MARK: - SwiftUI View 扩展（转换为 UIView）
+@available(iOS 13.0, *)
+extension View {
+    /// 转换为 UIView（其实是将其包装在一个新建的 UIView 中）
+    public func cj_asUIView() -> UIView {
+        return CJSwiftUIAsUIView(swiftUIView: self)
+    }
+}
+
 // 即使你为本类加了 @objc，在 Objective-C 中也无法直接使用，因为 SwiftUI 的 View 类型无法在 Objective-C 中表示。还有初始化方法中的泛型方法也无法暴露给 Objective-C。
 @available(iOS 13.0, *)
 open class CJSwiftUIAsUIView: UIView {

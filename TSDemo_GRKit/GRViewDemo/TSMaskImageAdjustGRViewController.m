@@ -7,7 +7,7 @@
 
 #import "TSMaskImageAdjustGRViewController.h"
 #import <Masonry/Masonry.h>
-#import <CQDemoKit/CQTSContainerViewFactory.h>
+#import <CQDemoKit/CQTSRadioButtonsView.h>
 #import <CQDemoResource/CQTSAssetSourceUtil.h>
 #import <CJGRKit/CQMaskImageAdjustGRView.h>
 
@@ -24,27 +24,30 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UIView *buttonsView = [CQTSContainerViewFactory threeButtonsViewAlongAxis:MASAxisTypeVertical title1:@"竖直长图" actionBlock1:^(UIButton * _Nonnull bButton) {
-        UIImage *image = [UIImage cqresource_imageNamed:@"cqts_jpg_long_vertical_1.jpg"];
-        self.imageScaleView.image = image;
-        [self.imageScaleView updateFrameByImage:image];
-        
-    } title2:@"水平宽图" actionBlock2:^(UIButton * _Nonnull bButton) {
-        UIImage *image = [UIImage cqresource_imageNamed:@"cqts_jpg_long_horizontal_1.jpg"];
-        self.imageScaleView.image = image;
-        [self.imageScaleView updateFrameByImage:image];
-        
-    } title3:@"随机图" actionBlock3:^(UIButton * _Nonnull bButton) {
-        NSInteger trySelIndex = random();
-        NSArray<NSString *> *folderNames = @[@"png", @"jpg"];
-        UIImage *localImageRandom = [CQTSAssetSourceUtil localImageAtIndex:trySelIndex folderNames:folderNames];
-        self.imageScaleView.image = localImageRandom;
-        [self.imageScaleView updateFrameByImage:localImageRandom];
+    __weak typeof(self) weakSelf = self;
+    UIView *buttonsView = [[CQTSRadioButtonsView alloc] initWithTitles:@[@"竖直长图", @"水平宽图", @"随机图"] alongAxis:MASAxisTypeVertical fixedSpacing:10 didSelectItemAtIndexHandle:^(NSInteger index) {
+        UIImage *image = nil;
+        switch (index) {
+            case 0:
+                image = [UIImage cqresource_imageNamed:@"cqts_jpg_long_vertical_1.jpg"];
+                break;
+            case 1:
+                image = [UIImage cqresource_imageNamed:@"cqts_jpg_long_horizontal_1.jpg"];
+                break;
+            case 2: {
+                NSInteger trySelIndex = random();
+                NSArray<NSString *> *folderNames = @[@"png", @"jpg"];
+                image = [CQTSAssetSourceUtil localImageAtIndex:trySelIndex folderNames:folderNames];
+                break;
+            }
+        }
+        weakSelf.imageScaleView.image = image;
+        [weakSelf.imageScaleView updateFrameByImage:image];
     }];
     [self.view addSubview:buttonsView];
     [buttonsView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_equalTo(self.mas_bottomLayoutGuide).mas_offset(-20);
-        make.height.mas_equalTo(50*2+10*1);
+        make.height.mas_equalTo(44*3+10*2);
         make.centerX.mas_equalTo(self.view);
         make.left.mas_equalTo(self.view).mas_offset(20);
     }];

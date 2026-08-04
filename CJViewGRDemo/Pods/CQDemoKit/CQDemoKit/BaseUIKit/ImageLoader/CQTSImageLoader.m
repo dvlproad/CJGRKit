@@ -77,7 +77,7 @@
 /// 获取图片缓存目录，如果没有则创建一个
 + (NSString *)__imageCacheDirectory {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-    NSString *diskCachePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"cqdemo_imageCache"];
+    NSString *diskCachePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"cqts_imageCache"];
     
     // 如果目录imageCache不存在，创建目录
     if (![[NSFileManager defaultManager] fileExistsAtPath:diskCachePath]) {
