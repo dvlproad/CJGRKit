@@ -25,6 +25,13 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)addMaskLayerWithRectPathType:(CJRectPathType)rectPathType opacity:(CGFloat)opacity;
 
+/*
+ *  更新蒙层的裁剪形状（矩形/圆形），复用已有蒙层layer，用于切换预览形状
+ *
+ *  @param rectPathType     裁剪的形状
+ */
+- (void)updateMaskWithRectPathType:(CJRectPathType)rectPathType;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -25,7 +25,7 @@
     // Do any additional setup after loading the view.
     
     __weak typeof(self) weakSelf = self;
-    UIView *buttonsView = [[CQTSRadioButtonsView alloc] initWithTitles:@[@"竖直长图", @"水平宽图", @"随机图"] alongAxis:MASAxisTypeVertical fixedSpacing:10 didSelectItemAtIndexHandle:^(NSInteger index) {
+    UIView *buttonsView = [[CQTSRadioButtonsView alloc] initWithTitles:@[@"竖直长图", @"水平宽图", @"随机图"] alongAxis:MASAxisTypeHorizontal fixedSpacing:10 didSelectItemAtIndexHandle:^(NSInteger index) {
         UIImage *image = nil;
         switch (index) {
             case 0:
@@ -47,7 +47,20 @@
     [self.view addSubview:buttonsView];
     [buttonsView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_equalTo(self.mas_bottomLayoutGuide).mas_offset(-20);
-        make.height.mas_equalTo(44*3+10*2);
+        make.height.mas_equalTo(44);
+        make.centerX.mas_equalTo(self.view);
+        make.left.mas_equalTo(self.view).mas_offset(20);
+    }];
+    
+    __weak typeof(self) weakSelf2 = weakSelf;
+    CQTSRadioButtonsView *maskButtonsView = [[CQTSRadioButtonsView alloc] initWithTitles:@[@"矩形", @"圆形"] alongAxis:MASAxisTypeHorizontal fixedSpacing:10 didSelectItemAtIndexHandle:^(NSInteger index) {
+        [weakSelf2.imageScaleView updateMaskWithRectPathType:(index == 0 ? CJRectPathTypeRectangle : CJRectPathTypeCircle)];
+    }];
+    [self.view addSubview:maskButtonsView];
+    [maskButtonsView didSelectItemAtIndex:0]; // 默认选中"矩形"
+    [maskButtonsView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(buttonsView.mas_top).mas_offset(-20);
+        make.height.mas_equalTo(44);
         make.centerX.mas_equalTo(self.view);
         make.left.mas_equalTo(self.view).mas_offset(20);
     }];
@@ -59,7 +72,7 @@
         make.centerX.mas_equalTo(self.view);
         make.left.mas_equalTo(self.view).mas_offset(20);
         make.top.mas_equalTo(self.mas_topLayoutGuide).mas_offset(20);
-        make.bottom.mas_equalTo(buttonsView.mas_top).mas_offset(-20);
+        make.bottom.mas_equalTo(maskButtonsView.mas_top).mas_offset(-20);
     }];
     self.imageScaleView = imageScaleView;
     imageScaleView.pinchMaxScale =  2;
