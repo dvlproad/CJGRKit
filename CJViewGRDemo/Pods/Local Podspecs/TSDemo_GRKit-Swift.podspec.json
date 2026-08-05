@@ -20,6 +20,7 @@
   "dependencies": {
     "CQDemoKit/Demo_Resource": [],
     "CQDemoKit/BaseVC": [],
+    "CQDemoKit-Swift/as": [],
     "CQDemoKit-Swift/BaseVC": [],
     "CQDemoResource/Images": [],
     "CJBaseUIKit-Swift/UIView/as": [],

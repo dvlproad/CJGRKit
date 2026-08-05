@@ -29,13 +29,13 @@ public extension View {
               showCornerButton: showCornerButton,
               onDelete: nil,
               onUpdate: nil,
-                      onMinimize: nil,
-                      onSelect: nil,
-                      onTransformEnded: nil,
-                      baseScale: 1,
-                      baseRotation: .zero,
-                      minScale: minScale,
-                      maxScale: maxScale)
+              onMinimize: nil,
+              onSelect: nil,
+              onTransformEnded: nil,
+              baseScale: 1,
+              baseRotation: .zero,
+              minScale: minScale,
+              maxScale: maxScale)
     }
 
     // 为视图添加完整贴纸编辑能力。showCornerButton 通常由外部选中态控制；

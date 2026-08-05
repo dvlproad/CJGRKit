@@ -60,6 +60,7 @@ PODS:
   - CJViewGR-Swift (0.0.1):
     - CJViewGR-Swift/Extension (= 0.0.1)
   - CJViewGR-Swift/Extension (0.0.1)
+  - CQDemoKit-Swift/as (0.0.5)
   - CQDemoKit-Swift/BaseVC (0.0.5)
   - CQDemoKit/BaseUIKit (0.9.15):
     - CQDemoKit/BaseUIKit/Button (= 0.9.15)
@@ -153,6 +154,7 @@ PODS:
     - CJBaseUIKit-Swift/UIView/as
     - CJViewElement-Swift
     - CJViewGR-Swift
+    - CQDemoKit-Swift/as
     - CQDemoKit-Swift/BaseVC
     - CQDemoKit/BaseVC
     - CQDemoKit/Demo_Resource
@@ -203,7 +205,7 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
   TSDemo_GRKit: 8c102c39e13ea97693c11520017e250754b0f4a2
-  TSDemo_GRKit-Swift: 6eaae22e1cc235ea77c8d4383c12ae6569762130
+  TSDemo_GRKit-Swift: 6115c7b9fbd4066d5c701670ff009ecea2e4f73a
   UIPathCJHelper: f06a25a414a889098be70a89a33f939ddd9eb805
 
 PODFILE CHECKSUM: 3a24ef4b10476bf08fc8c83cd60a0ace4ff10fab

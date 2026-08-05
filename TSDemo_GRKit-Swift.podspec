@@ -42,6 +42,8 @@ Pod::Spec.new do |s|
 
   s.dependency 'CQDemoKit/Demo_Resource'  # 需要使用 UIImage+CQTSInFramework.h
   s.dependency 'CQDemoKit/BaseVC'
+  
+  s.dependency 'CQDemoKit-Swift/as'
   s.dependency 'CQDemoKit-Swift/BaseVC'
 #  s.dependency 'CQDemoKit-Swift/as'
   

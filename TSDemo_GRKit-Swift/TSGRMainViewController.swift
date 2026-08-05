@@ -8,6 +8,7 @@
 import UIKit
 import SwiftUI
 import CQDemoKit
+import CQDemoKit_Swift
 import TSDemo_GRKit
 
 @objc public class TSGRMainViewController: CJUIKitBaseTabBarViewController {
@@ -58,7 +59,7 @@ import TSDemo_GRKit
             model.title = NSLocalizedString("手势(SwiftUI)", comment: "")
             model.normalImage = UIImage(systemName: "safari")
             model.viewControllerGetterHandle = {
-                return CJGRSwiftUIHostViewController(rootView: TSSwiftUIGRHome())
+                return TSSwiftUIGRHome().cqts_embedToUIViewController()
             }
             tabBarModels.append(model)
         }
