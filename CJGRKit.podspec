@@ -14,7 +14,7 @@
   #提交方法： pod repo push dvlproadPublicSpec CJGRKit.podspec --sources=cocoapods,dvlproadPublicSpec --allow-warnings --use-libraries --verbose
 Pod::Spec.new do |s|
   s.name         = "CJGRKit"
-  s.version      = "0.2.8"
+  s.version      = "0.3.0"
   s.summary      = "可进行各种手势(缩放、拖动(含位置调整))的基于UIView或UIScrollView的视图基类"
   s.homepage     = "https://github.com/dvlproad/CJGRKit.git"
 
@@ -48,7 +48,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "9.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJGRKit.git", :tag => "CJGRKit_0.2.8" }
+  s.source       = { :git => "https://github.com/dvlproad/CJGRKit.git", :tag => "CJGRKit_0.3.0" }
   #s.source_files  = "CJDemoCommon/*.{h,m}"
   #s.source_files = "CJChat/TestOSChinaPod.{h,m}"
 

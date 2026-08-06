@@ -1,13 +1,13 @@
 Pod::Spec.new do |s|
   # 上传到私有库
   #验证方法1：pod lib lint CJFeatureGRView.podspec --sources='https://github.com/CocoaPods/Specs.git,https://gitee.com/dvlproad/dvlproadSpecs' --allow-warnings --use-libraries --verbose
-  #验证方法2：pod lib lint CJFeatureGRView.podspec --sources=master,dvlproad --allow-warnings --use-libraries --verbose
-  #提交方法： pod repo push dvlproad CJFeatureGRView.podspec --sources=master,dvlproad --allow-warnings --use-libraries --verbose
+  #验证方法2：pod lib lint CJFeatureGRView.podspec --sources=cocoapods,gitee-dvlproad-dvlproadspecs --allow-warnings --use-libraries --verbose
+  #提交方法： pod repo push gitee-dvlproad-dvlproadspecs CJFeatureGRView.podspec --sources=cocoapods,gitee-dvlproad-dvlproadspecs --allow-warnings --use-libraries --verbose
 
   s.name         = "CJFeatureGRView"
   s.version      = "0.1.0"
   s.summary      = "基于 CJGRKit 手势能力的业务组件库（图片调整、图片裁剪）"
-  s.homepage     = "https://github.com/dvlproad/CJFeatureGRView.git"
+  s.homepage     = "https://github.com/dvlproad/CJGRKit.git"
 
   s.license      = {
     :type => 'MIT',
@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "9.0"
 
-  s.source       = { :git => "https://github.com/dvlproad/CJFeatureGRView.git", :tag => "CJFeatureGRView_0.1.0" }
+  s.source       = { :git => "https://github.com/dvlproad/CJGRKit.git", :tag => "CJFeatureGRView_0.1.0" }
 
   s.frameworks = "UIKit"
 
