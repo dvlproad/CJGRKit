@@ -1,0 +1,6 @@
+framework module CJFeatureGRView {
+  umbrella header "CJFeatureGRView-umbrella.h"
+
+  export *
+  module * { export * }
+}

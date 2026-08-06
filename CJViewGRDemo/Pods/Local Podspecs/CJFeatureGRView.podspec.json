@@ -1,0 +1,46 @@
+{
+  "name": "CJFeatureGRView",
+  "version": "0.1.0",
+  "summary": "基于 CJGRKit 手势能力的业务组件库（图片调整、图片裁剪）",
+  "homepage": "https://github.com/dvlproad/CJFeatureGRView.git",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "dvlproad": "dvlproad@163.com"
+  },
+  "description": "CJFeatureGRView - 基于 CJGRKit 手势能力的业务组件库\n\n• CJFeatureGRView/ImageAdjustGRView - CJImageAdjustGRView.h 图片调整（缩放、拖动）视图，有裁剪窗口无蒙层\n• CJFeatureGRView/MaskImageAdjustGRView - CJMaskImageAdjustGRView.h 图片裁剪编辑完整组件（继承基类 + 镂空蒙层）\n• CJFeatureGRView/ScrollViewer - 单图查看器（CJScrollViewer 通用查看器基类 + CJImageScrollViewer 图片查看器；只读缩放/滚动 + 双击放大/单击/长按/下拉关闭，零 CJGRKit 依赖）\n\n依赖 CJGRKit 的原子手势/几何能力（GR、KeepCoveredBounds、Geometry/SubHelper）。",
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source": {
+    "git": "https://github.com/dvlproad/CJFeatureGRView.git",
+    "tag": "CJFeatureGRView_0.1.0"
+  },
+  "frameworks": "UIKit",
+  "requires_arc": true,
+  "subspecs": [
+    {
+      "name": "ImageAdjustGRView",
+      "source_files": "CJFeatureGRView/ImageAdjustGRView/**/*.{h,m}",
+      "dependencies": {
+        "CJGRKit/AnyGR": [],
+        "CJGRKit/KeepBounds/KeepCoveredBounds": [],
+        "CJGRKit/Geometry/SubHelper": []
+      }
+    },
+    {
+      "name": "MaskImageAdjustGRView",
+      "source_files": "CJFeatureGRView/MaskImageAdjustGRView/**/*.{h,m}",
+      "dependencies": {
+        "CJFeatureGRView/ImageAdjustGRView": [],
+        "UIPathCJHelper": []
+      }
+    },
+    {
+      "name": "ScrollViewer",
+      "source_files": "CJFeatureGRView/ScrollViewer/**/*.{h,m}"
+    }
+  ]
+}

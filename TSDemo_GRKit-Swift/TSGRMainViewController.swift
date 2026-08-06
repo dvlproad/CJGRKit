@@ -32,35 +32,35 @@ import TSDemo_GRKit
 
         do {
             let model = CQDMTabBarModel()
-            model.title = NSLocalizedString("GRExtension", comment: "")
-            model.normalImage = UIImage(systemName: "cart")
-            model.classEntry = TSViewGRExtensionHomeViewController.self
-            tabBarModels.append(model)
-        }
-
-        do {
-            let model = CQDMTabBarModel()
             model.title = NSLocalizedString("手势(UIKit)", comment: "")
-            model.normalImage = UIImage(systemName: "house")
-            model.classEntry = ImageGRHomeViewController.self
-            tabBarModels.append(model)
-        }
-
-        do {
-            let model = CQDMTabBarModel()
-            model.title = NSLocalizedString("手势(UIKit)", comment: "")
-            model.normalImage = UIImage(systemName: "house")
-            model.classEntry = TSGRScrollViewHomeViewController.self
+            model.normalImage = UIImage(systemName: "hand.draw")
+            model.classEntry = TSAnyGRHomeViewController.self
             tabBarModels.append(model)
         }
 
         do {
             let model = CQDMTabBarModel()
             model.title = NSLocalizedString("手势(SwiftUI)", comment: "")
-            model.normalImage = UIImage(systemName: "safari")
+            model.normalImage = UIImage(systemName: "hand.tap")
             model.viewControllerGetterHandle = {
                 return TSSwiftUIGRHome().cqts_embedToUIViewController()
             }
+            tabBarModels.append(model)
+        }
+
+        do {
+            let model = CQDMTabBarModel()
+            model.title = NSLocalizedString("编辑裁剪", comment: "")
+            model.normalImage = UIImage(systemName: "scissors")
+            model.classEntry = TSFeatureEditGRViewController.self
+            tabBarModels.append(model)
+        }
+
+        do {
+            let model = CQDMTabBarModel()
+            model.title = NSLocalizedString("查看", comment: "")
+            model.normalImage = UIImage(systemName: "eye")
+            model.classEntry = TSFeatureLookGRViewController.self
             tabBarModels.append(model)
         }
 

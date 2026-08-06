@@ -52,5 +52,6 @@ target 'CJViewGRDemo' do
     pod 'TSDemo_GRKit',       :path => '../'
     pod 'CJViewGR-Swift',     :path => '../'
     pod 'CJGRKit',            :path => '../'
+    pod 'CJFeatureGRView',    :path => '../'
     pod 'SnapKit'
 end

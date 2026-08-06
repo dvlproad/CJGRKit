@@ -10,7 +10,7 @@
   "authors": {
     "dvlproad": ""
   },
-  "description": "各种手势，可按需独立引入：\n• CJGRKit/CGRectCJSubHelper - 一个调整小区域的frame使其保持在cage内部，或调整大区域的frame使其包含住小区域的帮助类\n• CJGRKit/CGRectCJAdjustHelper - 调整移动区域的帮助类\n\n• CJGRKit/Extension/KeepInBounds - UIView+CJKeepInBounds.h 限制本视图不移出其父视图或keyWindow\n• CJGRKit/Extension/FreeDrag - UIView+CJFreeDrag.h 通过pan手势，任意方向自由拖动的视图\n• CJGRKit/Extension/PanDown - UIView+CJPanDown.h 下拉回弹的视图拖动\n• CJGRKit/Extension/GR - UIView+CJGR.h 给任意UIView添加独立的拖动、捏合缩放、旋转手势\n• CJGRKit/Extension/Corner - UIView+CJGRCorner.h 给任意UIView添加角按钮编辑层\n• CJGRKit/Extension/KeepCoveredBounds - UIView+CJKeepCoveredBounds.h 给可手势变换的视图叠加外方向 keep-bounds 约束（内容始终覆盖/包含住裁剪窗口、手势结束自动吸附）\n\n• CJGRKit/CJGRView - 继承系统并添加有手势的 UIView ，能够进行拖动、缩放等手势\n• CJGRKit/CJGRScrollView - 继承系统并添加有手势的 UIScrollView ，能够进行拖动、缩放等手势\n\n每个子库可独立引入，详见各子库描述。",
+  "description": "各种手势，可按需独立引入：\n• CJGRKit/Geometry/AdjustHelper - CGRectCJAdjustHelper.h 调整移动区域的帮助类（调整 frame 使其包含/保持在界内）\n• CJGRKit/Geometry/SubHelper - CGRectCJSubHelper.h 按比例取子/父区域的帮助类（常用于裁剪框/内容等比计算）\n\n• CJGRKit/KeepBounds/KeepInBounds - UIView+CJKeepInBounds.h 限制本视图不移出其父视图或keyWindow（内方向）\n• CJGRKit/KeepBounds/KeepCoveredBounds - UIView+CJKeepCoveredBounds.h 给可手势变换的视图叠加外方向 keep-bounds 约束（内容始终覆盖/包含住裁剪窗口，吸附时机由使用方在手势结束时触发）\n\n• CJGRKit/AnyGR - UIView+CJAnyGR.h 给任意UIView添加独立的拖动、捏合缩放、旋转手势\n• CJGRKit/CornerGR - UIView+CJCornerGR.h 给任意UIView添加角按钮编辑层（依赖 AnyGR 复用 scale/rotation 状态）\n• CJGRKit/FreeDrag - UIView+CJFreeDrag.h 通过pan手势，任意方向自由拖动的视图\n• CJGRKit/PanDown - UIView+CJPanDown.h 下拉回弹的视图拖动\n\n每个子库可独立引入，详见各子库描述。",
   "platforms": {
     "ios": "9.0"
   },
@@ -22,106 +22,55 @@
   "requires_arc": true,
   "subspecs": [
     {
-      "name": "CGRectCJSubHelper",
-      "source_files": "CJGRKit/CGRectCJSubHelper/*.{h,m}"
+      "name": "Geometry",
+      "subspecs": [
+        {
+          "name": "AdjustHelper",
+          "source_files": "CJGRKit/Geometry/AdjustHelper/*.{h,m}"
+        },
+        {
+          "name": "SubHelper",
+          "source_files": "CJGRKit/Geometry/SubHelper/*.{h,m}"
+        }
+      ]
     },
     {
-      "name": "CGRectCJAdjustHelper",
-      "source_files": "CJGRKit/CGRectCJAdjustHelper/*.{h,m}"
-    },
-    {
-      "name": "Extension",
+      "name": "KeepBounds",
       "subspecs": [
         {
           "name": "KeepInBounds",
-          "source_files": "CJGRKit/Extension/KeepBounds/UIView+CJKeepInBounds.{h,m}",
+          "source_files": "CJGRKit/KeepBounds/KeepInBounds/*.{h,m}",
           "dependencies": {
-            "CJGRKit/CGRectCJAdjustHelper": []
-          }
-        },
-        {
-          "name": "FreeDrag",
-          "source_files": "CJGRKit/Extension/FreeDrag/**/*.{h,m}"
-        },
-        {
-          "name": "PanDown",
-          "source_files": "CJGRKit/Extension/PanDown/**/*.{h,m}"
-        },
-        {
-          "name": "GR",
-          "source_files": "CJGRKit/Extension/GR/**/*.{h,m}"
-        },
-        {
-          "name": "Corner",
-          "source_files": "CJGRKit/Extension/Corner/**/*.{h,m}",
-          "dependencies": {
-            "CJGRKit/Extension/GR": []
+            "CJGRKit/Geometry/AdjustHelper": []
           }
         },
         {
           "name": "KeepCoveredBounds",
-          "source_files": "CJGRKit/Extension/KeepBounds/UIView+CJKeepCoveredBounds.{h,m}",
+          "source_files": "CJGRKit/KeepBounds/KeepCoveredBounds/*.{h,m}",
           "dependencies": {
-            "CJGRKit/Extension/GR": [],
-            "CJGRKit/CGRectCJAdjustHelper": []
+            "CJGRKit/Geometry/AdjustHelper": []
           }
         }
       ]
     },
     {
-      "name": "CJGRView",
-      "subspecs": [
-        {
-          "name": "Base",
-          "source_files": "CJGRKit/CJGRView/Base/**/*.{h,m}",
-          "dependencies": {
-            "CJGRKit/CGRectCJAdjustHelper": []
-          }
-        },
-        {
-          "name": "BaseAdjustGRView",
-          "source_files": "CJGRKit/CJGRView/BaseAdjustGRView/**/*.{h,m}",
-          "dependencies": {
-            "CJGRKit/CJGRView/Base": []
-          }
-        },
-        {
-          "name": "ImageAdjustGRView",
-          "source_files": "CJGRKit/CJGRView/ImageAdjustGRView/**/*.{h,m}",
-          "dependencies": {
-            "CJGRKit/CJGRView/BaseAdjustGRView": [],
-            "CJGRKit/CGRectCJSubHelper": []
-          }
-        },
-        {
-          "name": "MaskImageAdjustGRView",
-          "source_files": "CJGRKit/CJGRView/MaskImageAdjustGRView/**/*.{h,m}",
-          "dependencies": {
-            "CJGRKit/CJGRView/ImageAdjustGRView": [],
-            "UIPathCJHelper": []
-          }
-        }
-      ]
+      "name": "AnyGR",
+      "source_files": "CJGRKit/AnyGR/**/*.{h,m}"
     },
     {
-      "name": "CJGRScrollView",
-      "subspecs": [
-        {
-          "name": "Base",
-          "source_files": "CJGRKit/CJGRScrollView/Base/**/*.{h,m}",
-          "dependencies": {
-            "Masonry": []
-          }
-        },
-        {
-          "name": "Image",
-          "source_files": "CJGRKit/CJGRScrollView/Image/**/*.{h,m}",
-          "dependencies": {
-            "CJGRKit/CJGRScrollView/Base": [],
-            "CJGRKit/CGRectCJSubHelper": []
-          }
-        }
-      ]
+      "name": "CornerGR",
+      "source_files": "CJGRKit/CornerGR/**/*.{h,m}",
+      "dependencies": {
+        "CJGRKit/AnyGR": []
+      }
+    },
+    {
+      "name": "FreeDrag",
+      "source_files": "CJGRKit/FreeDrag/**/*.{h,m}"
+    },
+    {
+      "name": "PanDown",
+      "source_files": "CJGRKit/PanDown/**/*.{h,m}"
     }
   ]
 }

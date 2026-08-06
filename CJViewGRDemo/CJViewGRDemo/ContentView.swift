@@ -31,8 +31,8 @@ struct ContentView: View {
                     LayoutInputGestureDemoPage2()
                 }
                 
-                NavigationLink("ImageGRHome") {
-                    ImageGRHomeViewController()
+                NavigationLink("ImageEditGR") {
+                    TSFeatureEditGRViewController()
                         .asSwiftUI()
                 }
             }

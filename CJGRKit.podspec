@@ -31,18 +31,16 @@ Pod::Spec.new do |s|
 
   s.description  = <<-DESC
                  各种手势，可按需独立引入：
-                 • CJGRKit/CGRectCJSubHelper - 一个调整小区域的frame使其保持在cage内部，或调整大区域的frame使其包含住小区域的帮助类
-                 • CJGRKit/CGRectCJAdjustHelper - 调整移动区域的帮助类
+                 • CJGRKit/Geometry/AdjustHelper - CGRectCJAdjustHelper.h 调整移动区域的帮助类（调整 frame 使其包含/保持在界内）
+                 • CJGRKit/Geometry/SubHelper - CGRectCJSubHelper.h 按比例取子/父区域的帮助类（常用于裁剪框/内容等比计算）
 
-                 • CJGRKit/Extension/KeepInBounds - UIView+CJKeepInBounds.h 限制本视图不移出其父视图或keyWindow
-                 • CJGRKit/Extension/FreeDrag - UIView+CJFreeDrag.h 通过pan手势，任意方向自由拖动的视图
-                 • CJGRKit/Extension/PanDown - UIView+CJPanDown.h 下拉回弹的视图拖动
-                 • CJGRKit/Extension/GR - UIView+CJGR.h 给任意UIView添加独立的拖动、捏合缩放、旋转手势
-                 • CJGRKit/Extension/Corner - UIView+CJGRCorner.h 给任意UIView添加角按钮编辑层
-                 • CJGRKit/Extension/KeepCoveredBounds - UIView+CJKeepCoveredBounds.h 给可手势变换的视图叠加外方向 keep-bounds 约束（内容始终覆盖/包含住裁剪窗口、手势结束自动吸附）
-                 
-                 • CJGRKit/CJGRView - 继承系统并添加有手势的 UIView ，能够进行拖动、缩放等手势
-                 • CJGRKit/CJGRScrollView - 继承系统并添加有手势的 UIScrollView ，能够进行拖动、缩放等手势
+                 • CJGRKit/KeepBounds/KeepInBounds - UIView+CJKeepInBounds.h 限制本视图不移出其父视图或keyWindow（内方向）
+                 • CJGRKit/KeepBounds/KeepCoveredBounds - UIView+CJKeepCoveredBounds.h 给可手势变换的视图叠加外方向 keep-bounds 约束（内容始终覆盖/包含住裁剪窗口，吸附时机由使用方在手势结束时触发）
+
+                 • CJGRKit/AnyGR - UIView+CJAnyGR.h 给任意UIView添加独立的拖动、捏合缩放、旋转手势
+                 • CJGRKit/CornerGR - UIView+CJCornerGR.h 给任意UIView添加角按钮编辑层（依赖 AnyGR 复用 scale/rotation 状态）
+                 • CJGRKit/FreeDrag - UIView+CJFreeDrag.h 通过pan手势，任意方向自由拖动的视图
+                 • CJGRKit/PanDown - UIView+CJPanDown.h 下拉回弹的视图拖动
 
                  每个子库可独立引入，详见各子库描述。
                  DESC
@@ -61,99 +59,58 @@ Pod::Spec.new do |s|
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
 
-  # 一个调整小区域的frame使其保持在cage内部，或调整大区域的frame使其包含住小区域的帮助类
-  s.subspec 'CGRectCJSubHelper' do |ss|
-    ss.source_files = "CJGRKit/CGRectCJSubHelper/*.{h,m}"
+  # Geometry 几何核心层：纯 CGRect 几何计算（被 KeepBounds 等上层能力依赖）
+  s.subspec 'Geometry' do |ss|
+    # CGRectCJAdjustHelper.h 调整移动区域的帮助类（调整 frame 使其包含/保持在界内）
+    ss.subspec 'AdjustHelper' do |adjustHelper|
+      adjustHelper.source_files = "CJGRKit/Geometry/AdjustHelper/*.{h,m}"
+    end
+
+    # CGRectCJSubHelper.h 按比例取子/父区域帮助类（常用于裁剪框/内容等比计算）
+    ss.subspec 'SubHelper' do |subHelper|
+      subHelper.source_files = "CJGRKit/Geometry/SubHelper/*.{h,m}"
+    end
   end
 
-  # 调整移动区域的帮助类
-  s.subspec 'CGRectCJAdjustHelper' do |ss|
-    ss.source_files = "CJGRKit/CGRectCJAdjustHelper/*.{h,m}"
-  end
-
-  # UIView+CJKeepInBounds.h 限制本视图不移出其父视图或keyWindow（与 CJKeepCoveredBounds 同属 KeepBounds 家族，文件同在 Extension/KeepBounds 下）
-  s.subspec 'Extension' do |ss|
+  # KeepBounds 家族：约束层（内方向 KeepInBounds / 外方向 KeepCoveredBounds），共享 Geometry/AdjustHelper 几何核心
+  s.subspec 'KeepBounds' do |ss|
     # UIView+CJKeepInBounds.h 限制本视图不移出其父视图或keyWindow（内方向）
     ss.subspec 'KeepInBounds' do |keepInBounds|
-      keepInBounds.source_files = "CJGRKit/Extension/KeepBounds/UIView+CJKeepInBounds.{h,m}"
-      keepInBounds.dependency "CJGRKit/CGRectCJAdjustHelper"
+      keepInBounds.source_files = "CJGRKit/KeepBounds/KeepInBounds/*.{h,m}"
+      keepInBounds.dependency "CJGRKit/Geometry/AdjustHelper"
     end
 
-    # 视图拖动 UIView+CJFreeDrag.h-通过给View添加UIPanGestureRecognizer手势，使其可以移动到拖动的位置（任意方向自由拖动）
-    ss.subspec 'FreeDrag' do |freeDrag|
-      freeDrag.source_files = "CJGRKit/Extension/FreeDrag/**/*.{h,m}"
-    end
-
-    # UIView+CJPanDown.h 下拉回弹的视图拖动
-    ss.subspec 'PanDown' do |panDown|
-      panDown.source_files = "CJGRKit/Extension/PanDown/**/*.{h,m}"
-    end
-
-    # UIView+CJGR.h 给任意UIView添加独立的拖动、捏合缩放、旋转手势，可按需添加任意组合
-    ss.subspec 'GR' do |gr|
-      gr.source_files = "CJGRKit/Extension/GR/**/*.{h,m}"
-    end
-
-    # UIView+CJGRCorner.h 给任意UIView添加角按钮编辑层（边框、删除、更新、右下缩放旋转柄）
-    ss.subspec 'Corner' do |corner|
-      corner.source_files = "CJGRKit/Extension/Corner/**/*.{h,m}"
-      corner.dependency "CJGRKit/Extension/GR"  # 右下操作柄需要复用 GR 的 scale/rotation 状态
-    end
-
-    # UIView+CJKeepCoveredBounds.h 给可手势变换的视图叠加外方向 keep-bounds 约束（内容始终覆盖/包含住裁剪窗口、手势结束自动吸附）
+    # UIView+CJKeepCoveredBounds.h 给可手势变换的视图叠加外方向 keep-bounds 约束（内容始终覆盖/包含住裁剪窗口，吸附时机由使用方触发）
     ss.subspec 'KeepCoveredBounds' do |keepCoveredBounds|
-      keepCoveredBounds.source_files = "CJGRKit/Extension/KeepBounds/UIView+CJKeepCoveredBounds.{h,m}"
-      keepCoveredBounds.dependency "CJGRKit/Extension/GR"      # 复用 GR 的手势状态回调感知变换结束
-      keepCoveredBounds.dependency "CJGRKit/CGRectCJAdjustHelper"  # 复用外方向几何（内容作为大框包含住裁剪窗口）
+      keepCoveredBounds.source_files = "CJGRKit/KeepBounds/KeepCoveredBounds/*.{h,m}"
+      keepCoveredBounds.dependency "CJGRKit/Geometry/AdjustHelper"  # 复用外方向几何（内容作为大框包含住裁剪窗口）
     end
   end
 
-  # 继承系统并添加有手势的 UIView ，能够进行拖动、缩放等手势
-  s.subspec 'CJGRView' do |ss|
-    # CJGRView
-    ss.subspec 'Base' do |sss|
-      sss.source_files = "CJGRKit/CJGRView/Base/**/*.{h,m}"
-      sss.dependency "CJGRKit/CGRectCJAdjustHelper"
-    end
-
-    # CJAdjustGRView
-    ss.subspec 'BaseAdjustGRView' do |sss|
-      sss.source_files = "CJGRKit/CJGRView/BaseAdjustGRView/**/*.{h,m}"
-      sss.dependency "CJGRKit/CJGRView/Base"
-    end
-
-    # CJImageNormalAdjustGRView-图片普通调整（缩放、拖动）视图，没有裁剪框。场景：如图片拼接里的位置、大小调整。  CJImageClipAdjustGRView-图片裁剪调整（缩放、拖动）视图，有裁剪框。场景：如图片裁剪框里的位置、大小调整。
-    ss.subspec 'ImageAdjustGRView' do |sss|
-      sss.source_files = "CJGRKit/CJGRView/ImageAdjustGRView/**/*.{h,m}"
-      sss.dependency "CJGRKit/CJGRView/BaseAdjustGRView"
-      sss.dependency "CJGRKit/CGRectCJSubHelper" # ImageAdjustGRView 中需要使用
-    end
-
-    # CJMaskImageAdjustGRView-用于定制有遮罩层的图片裁剪调整（缩放、拖动）视图。CQMaskImageAdjustGRView-已完成定制有遮罩层的图片裁剪调整（缩放、拖动）视图
-    ss.subspec 'MaskImageAdjustGRView' do |sss|
-      sss.source_files = "CJGRKit/CJGRView/MaskImageAdjustGRView/**/*.{h,m}"
-      sss.dependency "CJGRKit/CJGRView/ImageAdjustGRView"
-      sss.dependency 'UIPathCJHelper'
-    end
-    
+  # 原子手势层：每种手势能力独立子库，可按需引入
+  s.subspec 'AnyGR' do |ss|
+    # UIView+CJAnyGR.h 给任意UIView添加独立的拖动、捏合缩放、旋转手势，可按需添加任意组合
+    ss.source_files = "CJGRKit/AnyGR/**/*.{h,m}"
   end
 
-  # 继承系统并添加有手势的 UIScrollView ，能够进行拖动、缩放等手势
-  s.subspec 'CJGRScrollView' do |ss|
-    # CJGRScrollView
-    ss.subspec 'Base' do |sss|
-      sss.source_files = "CJGRKit/CJGRScrollView/Base/**/*.{h,m}"
-      sss.dependency "Masonry"
-    end
+  # CornerGR 角按钮编辑层：给任意UIView添加角按钮编辑层（边框、删除、更新、右下缩放旋转柄），依赖 AnyGR 复用 scale/rotation 状态
+  s.subspec 'CornerGR' do |ss|
+    # UIView+CJCornerGR.h 给任意UIView添加角按钮编辑层（边框、删除、更新、右下缩放旋转柄）
+    ss.source_files = "CJGRKit/CornerGR/**/*.{h,m}"
+    ss.dependency "CJGRKit/AnyGR"  # 右下操作柄需要复用 AnyGR 的 scale/rotation 状态
+  end
 
-    # CJImageGRScrollView（没有 Adjust 功能）
-    ss.subspec 'Image' do |sss|
-      sss.source_files = "CJGRKit/CJGRScrollView/Image/**/*.{h,m}"
-      sss.dependency 'CJGRKit/CJGRScrollView/Base'
-      sss.dependency "CJGRKit/CGRectCJSubHelper"
-    end
+  # FreeDrag 自由拖动：通过 pan 手势任意方向自由拖动视图（已废弃，推荐用 AnyGR）
+  s.subspec 'FreeDrag' do |ss|
+    # 视图拖动 UIView+CJFreeDrag.h-通过给View添加UIPanGestureRecognizer手势，使其可以移动到拖动的位置（任意方向自由拖动）
+    ss.source_files = "CJGRKit/FreeDrag/**/*.{h,m}"
   end
   
+  # PanDown 下拉回弹：通过 pan 手势下拉视图，松手后回弹到原位
+  s.subspec 'PanDown' do |ss|
+    # UIView+CJPanDown.h 下拉回弹的视图拖动
+    ss.source_files = "CJGRKit/PanDown/**/*.{h,m}"
+  end
 
   
 end

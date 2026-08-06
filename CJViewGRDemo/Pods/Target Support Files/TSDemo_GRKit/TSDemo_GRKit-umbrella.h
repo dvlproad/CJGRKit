@@ -11,24 +11,20 @@
 #endif
 
 #import "DragViewController.h"
-#import "TSGRExtensionViewController.h"
 #import "TSGRKeepCoveredBoundsViewController.h"
-#import "TSViewGRExtensionHomeViewController.h"
 #import "CQCommentsPopView.h"
 #import "ViewPandownViewController1.h"
 #import "ViewPandownViewController2.h"
+#import "TSAnyGRHomeViewController.h"
+#import "TSAnyGRViewController.h"
 #import "TSImageSourceUtil.h"
-#import "TSImageNormalAdjustGRScrollViewController.h"
 #import "TSMaskClipResultViewController.h"
 #import "UIImage+CJClipUtil.h"
-#import "TSAdjustGRViewController.h"
-#import "TSGRViewController.h"
-#import "TSImageClipAdjustGRViewController.h"
-#import "TSImageEditNewModelViewController.h"
+#import "TSFeatureEditGRViewController.h"
 #import "TSImageNormalAdjustGRViewController.h"
 #import "TSMaskImageAdjustGRViewController.h"
-#import "ImageGRHomeViewController.h"
-#import "TSGRScrollViewHomeViewController.h"
+#import "TSFeatureLookGRViewController.h"
+#import "TSImageScrollViewerViewController.h"
 
 FOUNDATION_EXPORT double TSDemo_GRKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char TSDemo_GRKitVersionString[];

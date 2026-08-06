@@ -1,53 +1,41 @@
 PODS:
   - CJBaseUIKit-Swift/UIView/as (0.0.6)
-  - CJGRKit (0.2.8):
-    - CJGRKit/CGRectCJAdjustHelper (= 0.2.8)
-    - CJGRKit/CGRectCJSubHelper (= 0.2.8)
-    - CJGRKit/CJGRScrollView (= 0.2.8)
-    - CJGRKit/CJGRView (= 0.2.8)
-    - CJGRKit/Extension (= 0.2.8)
-  - CJGRKit/CGRectCJAdjustHelper (0.2.8)
-  - CJGRKit/CGRectCJSubHelper (0.2.8)
-  - CJGRKit/CJGRScrollView (0.2.8):
-    - CJGRKit/CJGRScrollView/Base (= 0.2.8)
-    - CJGRKit/CJGRScrollView/Image (= 0.2.8)
-  - CJGRKit/CJGRScrollView/Base (0.2.8):
-    - Masonry
-  - CJGRKit/CJGRScrollView/Image (0.2.8):
-    - CJGRKit/CGRectCJSubHelper
-    - CJGRKit/CJGRScrollView/Base
-  - CJGRKit/CJGRView (0.2.8):
-    - CJGRKit/CJGRView/Base (= 0.2.8)
-    - CJGRKit/CJGRView/BaseAdjustGRView (= 0.2.8)
-    - CJGRKit/CJGRView/ImageAdjustGRView (= 0.2.8)
-    - CJGRKit/CJGRView/MaskImageAdjustGRView (= 0.2.8)
-  - CJGRKit/CJGRView/Base (0.2.8):
-    - CJGRKit/CGRectCJAdjustHelper
-  - CJGRKit/CJGRView/BaseAdjustGRView (0.2.8):
-    - CJGRKit/CJGRView/Base
-  - CJGRKit/CJGRView/ImageAdjustGRView (0.2.8):
-    - CJGRKit/CGRectCJSubHelper
-    - CJGRKit/CJGRView/BaseAdjustGRView
-  - CJGRKit/CJGRView/MaskImageAdjustGRView (0.2.8):
-    - CJGRKit/CJGRView/ImageAdjustGRView
+  - CJFeatureGRView (0.1.0):
+    - CJFeatureGRView/ImageAdjustGRView (= 0.1.0)
+    - CJFeatureGRView/MaskImageAdjustGRView (= 0.1.0)
+    - CJFeatureGRView/ScrollViewer (= 0.1.0)
+  - CJFeatureGRView/ImageAdjustGRView (0.1.0):
+    - CJGRKit/AnyGR
+    - CJGRKit/Geometry/SubHelper
+    - CJGRKit/KeepBounds/KeepCoveredBounds
+  - CJFeatureGRView/MaskImageAdjustGRView (0.1.0):
+    - CJFeatureGRView/ImageAdjustGRView
     - UIPathCJHelper
-  - CJGRKit/Extension (0.2.8):
-    - CJGRKit/Extension/Corner (= 0.2.8)
-    - CJGRKit/Extension/FreeDrag (= 0.2.8)
-    - CJGRKit/Extension/GR (= 0.2.8)
-    - CJGRKit/Extension/KeepCoveredBounds (= 0.2.8)
-    - CJGRKit/Extension/KeepInBounds (= 0.2.8)
-    - CJGRKit/Extension/PanDown (= 0.2.8)
-  - CJGRKit/Extension/Corner (0.2.8):
-    - CJGRKit/Extension/GR
-  - CJGRKit/Extension/FreeDrag (0.2.8)
-  - CJGRKit/Extension/GR (0.2.8)
-  - CJGRKit/Extension/KeepCoveredBounds (0.2.8):
-    - CJGRKit/CGRectCJAdjustHelper
-    - CJGRKit/Extension/GR
-  - CJGRKit/Extension/KeepInBounds (0.2.8):
-    - CJGRKit/CGRectCJAdjustHelper
-  - CJGRKit/Extension/PanDown (0.2.8)
+  - CJFeatureGRView/ScrollViewer (0.1.0)
+  - CJGRKit (0.2.8):
+    - CJGRKit/AnyGR (= 0.2.8)
+    - CJGRKit/CornerGR (= 0.2.8)
+    - CJGRKit/FreeDrag (= 0.2.8)
+    - CJGRKit/Geometry (= 0.2.8)
+    - CJGRKit/KeepBounds (= 0.2.8)
+    - CJGRKit/PanDown (= 0.2.8)
+  - CJGRKit/AnyGR (0.2.8)
+  - CJGRKit/CornerGR (0.2.8):
+    - CJGRKit/AnyGR
+  - CJGRKit/FreeDrag (0.2.8)
+  - CJGRKit/Geometry (0.2.8):
+    - CJGRKit/Geometry/AdjustHelper (= 0.2.8)
+    - CJGRKit/Geometry/SubHelper (= 0.2.8)
+  - CJGRKit/Geometry/AdjustHelper (0.2.8)
+  - CJGRKit/Geometry/SubHelper (0.2.8)
+  - CJGRKit/KeepBounds (0.2.8):
+    - CJGRKit/KeepBounds/KeepCoveredBounds (= 0.2.8)
+    - CJGRKit/KeepBounds/KeepInBounds (= 0.2.8)
+  - CJGRKit/KeepBounds/KeepCoveredBounds (0.2.8):
+    - CJGRKit/Geometry/AdjustHelper
+  - CJGRKit/KeepBounds/KeepInBounds (0.2.8):
+    - CJGRKit/Geometry/AdjustHelper
+  - CJGRKit/PanDown (0.2.8)
   - CJViewElement-Swift (0.0.3):
     - CJViewElement-Swift/CommonSettingRow (= 0.0.3)
     - CJViewElement-Swift/ComponentConfigModel (= 0.0.3)
@@ -154,6 +142,7 @@ PODS:
   - Masonry (1.1.0)
   - SnapKit (5.7.1)
   - TSDemo_GRKit (0.0.1):
+    - CJFeatureGRView
     - CJGRKit
     - CQDemoKit/BaseUtil
     - CQDemoKit/BaseVC
@@ -173,6 +162,7 @@ PODS:
   - UIPathCJHelper (0.1.0)
 
 DEPENDENCIES:
+  - CJFeatureGRView (from `../`)
   - CJGRKit (from `../`)
   - CJViewElement-Swift/ComponentConfigModel (~> 0.0.1)
   - CJViewElement-Swift/LayoutInputView (~> 0.0.1)
@@ -195,6 +185,8 @@ SPEC REPOS:
     - SnapKit
 
 EXTERNAL SOURCES:
+  CJFeatureGRView:
+    :path: "../"
   CJGRKit:
     :path: "../"
   CJViewGR-Swift:
@@ -206,7 +198,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   CJBaseUIKit-Swift: c79fdbe59d136f8846058530224045539897a03e
-  CJGRKit: 48df95c544691be1fdc606d1fa6c40d86c2981ac
+  CJFeatureGRView: 23cacafba1641cbc6dde9cc5a4b58b6b6abda090
+  CJGRKit: 30af688dabb96ef1a1827603df951cbd1d7eae18
   CJViewElement-Swift: 216908621cdaeb319b638fc788554f36f20ce13d
   CJViewGR-Swift: 1d7f88a119780703290785b0460adf472f1d7d65
   CQDemoKit: 174e2a414589bc4f1d860a7d94c633d312174ca0
@@ -214,10 +207,10 @@ SPEC CHECKSUMS:
   CQDemoResource: efdf1a0231767f665f5e6e0df59ed8a5042680f7
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
-  TSDemo_GRKit: 6a1c71ead6341bcf6f96c598c2206223de91d9ad
+  TSDemo_GRKit: e981e6998923e8d6ff993b4776be136d4720d4df
   TSDemo_GRKit-Swift: 6115c7b9fbd4066d5c701670ff009ecea2e4f73a
   UIPathCJHelper: f06a25a414a889098be70a89a33f939ddd9eb805
 
-PODFILE CHECKSUM: 3a24ef4b10476bf08fc8c83cd60a0ace4ff10fab
+PODFILE CHECKSUM: a6335e437701bb741f049b0a7f2e4b4f1687b98e
 
 COCOAPODS: 1.16.2
