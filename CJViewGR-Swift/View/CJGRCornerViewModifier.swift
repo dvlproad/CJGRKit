@@ -146,6 +146,7 @@ public struct CJGRCornerView: View {
             .resizable()
             .frame(width: iconLength, height: iconLength, alignment: .center)
             .frame(width: hitLength, height: hitLength, alignment: .center)
+            .background(Color.gray.opacity(0.5)) // 临时可视化背景色，用于查看可操作区域
             .contentShape(Rectangle())
             .position(position)
     }

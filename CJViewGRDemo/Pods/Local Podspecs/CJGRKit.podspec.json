@@ -1,6 +1,6 @@
 {
   "name": "CJGRKit",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "summary": "可进行各种手势(缩放、拖动(含位置调整))的基于UIView或UIScrollView的视图基类",
   "homepage": "https://github.com/dvlproad/CJGRKit.git",
   "license": {
@@ -16,7 +16,7 @@
   },
   "source": {
     "git": "https://github.com/dvlproad/CJGRKit.git",
-    "tag": "CJGRKit_0.2.7"
+    "tag": "CJGRKit_0.2.8"
   },
   "frameworks": "UIKit",
   "requires_arc": true,
@@ -46,6 +46,17 @@
         {
           "name": "PanDown",
           "source_files": "CJGRKit/Extension/PanDown/**/*.{h,m}"
+        },
+        {
+          "name": "GR",
+          "source_files": "CJGRKit/Extension/GR/**/*.{h,m}"
+        },
+        {
+          "name": "Corner",
+          "source_files": "CJGRKit/Extension/Corner/**/*.{h,m}",
+          "dependencies": {
+            "CJGRKit/Extension/GR": []
+          }
         }
       ]
     },

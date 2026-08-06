@@ -11,6 +11,7 @@
 #endif
 
 #import "DragViewController.h"
+#import "TSGRExtensionViewController.h"
 #import "TSViewGRExtensionHomeViewController.h"
 #import "CQCommentsPopView.h"
 #import "ViewPandownViewController1.h"

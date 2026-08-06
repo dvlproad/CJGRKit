@@ -20,7 +20,10 @@
 #import "CJImageNormalAdjustGRView.h"
 #import "CJMaskImageAdjustGRView.h"
 #import "CQMaskImageAdjustGRView.h"
+#import "CJGRCornerPanResizeCalculator.h"
+#import "UIView+CJGRCorner.h"
 #import "UIView+CJFreeDrag.h"
+#import "UIView+CJGR.h"
 #import "UIView+CJKeepBounds.h"
 #import "UIView+CJPanDown.h"
 

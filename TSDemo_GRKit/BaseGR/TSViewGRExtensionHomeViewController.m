@@ -15,6 +15,9 @@
 #import "ViewPandownViewController1.h"
 #import "ViewPandownViewController2.h"
 
+// UIView+CJGR
+#import "TSGRExtensionViewController.h"
+
 
 @interface TSViewGRExtensionHomeViewController ()
 
@@ -25,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationItem.title = NSLocalizedString(@"UIView(FreeDrag+KeepBounds、Pandown)", nil);
+    self.navigationItem.title = NSLocalizedString(@"UIView(FreeDrag+KeepBounds、Pandown、CJGR)", nil);
     self.view.backgroundColor = [UIColor whiteColor];
     
     NSString *bundleName = @"TSDemo_GRKit";
@@ -78,6 +81,30 @@
             [sectionDataModel.values addObject:panModule];
         }
         
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    // UIView+CJGR
+    {
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
+        sectionDataModel.theme = @"UIView+CJGR";
+        {
+            CQDMModuleModel *grModule = [[CQDMModuleModel alloc] init];
+            grModule.title = @"任意视图：拖动/缩放/旋转+角按钮\n(独立能力，按需组合)";
+            grModule.content = [@[
+                @"#import <CJGRKit/UIView+CJGR.h>",
+                @"[view cj_addPanGR];       //拖动",
+                @"[view cj_addPinchGR];      //缩放",
+                @"[view cj_addRotationGR];   //旋转",
+                @"#import <CJGRKit/UIView+CJGRCorner.h>",
+                @"[view cj_setCornerBorderWithColor:[UIColor blackColor]];",
+                @"[view cj_addCornerDeleteButtonWithBlock:...];",
+                @"[view cj_addCornerUpdateButtonWithBlock:...];",
+                @"[view cj_addCornerMinimizeHandle];",
+            ] componentsJoinedByString:@"\n"];
+            grModule.classEntry = [TSGRExtensionViewController class];
+            [sectionDataModel.values addObject:grModule];
+        }
         [sectionDataModels addObject:sectionDataModel];
     }
     
