@@ -53,7 +53,7 @@
     [greenView cj_addRotationGR];
     
     // 4. 只加边框 + 角按钮（右下操作柄直接驱动缩放旋转）
-    UIView *orangeView = [self __createColorViewWithTitle:@"角按钮" color:[UIColor systemOrangeColor]];
+    UIView *orangeView = [self __createColorViewWithTitle:@"只对角按钮加手势" color:[UIColor systemOrangeColor]];
     orangeView.frame = CGRectMake(centerX - viewWidth/2, CGRectGetMaxY(greenView.frame) + gap, viewWidth, viewHeight);
     [self.view addSubview:orangeView];
     [orangeView cj_setCornerBorderWithColor:[UIColor blackColor]];
@@ -61,7 +61,7 @@
         [view removeFromSuperview];
     }];
     [orangeView cj_addCornerUpdateButtonWithBlock:^(UIView *view) {
-        view.backgroundColor = [UIColor systemPurpleColor];
+        view.backgroundColor = [CJUIKitRandomUtil randomColorWithAlpha:1.0];
     }];
     [orangeView cj_addCornerMinimizeHandle];
     
@@ -77,7 +77,7 @@
         [view removeFromSuperview];
     }];
     [purpleView cj_addCornerUpdateButtonWithBlock:^(UIView *view) {
-        view.backgroundColor = [UIColor systemTealColor];
+        view.backgroundColor = [CJUIKitRandomUtil randomColorWithAlpha:1.0];
     }];
     [purpleView cj_addCornerMinimizeHandle];
 }
