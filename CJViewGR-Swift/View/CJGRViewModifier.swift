@@ -54,8 +54,7 @@ public struct CJGRViewModifier: ViewModifier {
     @State private var isTransforming: Bool = false
     @State private var isPinchingBelowMinScale: Bool = false
     @State private var isResizingFromCorner: Bool = false
-    @State private var resizeStartScale: CGFloat = 1
-    @State private var resizeStartRotation: Angle = .zero
+    @State private var resizeCalculator = CJGRCornerPanResizeCalculator()
     @GestureState private var gestureScale: CGFloat = 1
     @GestureState private var gestureRotation: Angle = .zero
     @GestureState private var gestureOffset: CGSize = .zero
@@ -247,41 +246,34 @@ public struct CJGRViewModifier: ViewModifier {
 
     // 拖动右下角操作柄时，把该角点看作绕贴纸中心运动的点。
     // 根据“中心 -> 右下角”的向量长度变化计算缩放，根据向量角度变化计算旋转。
+    // 换算交给 CJGRCornerPanResizeCalculator（与 OC 版同构），这里只负责状态存取。
     private func resizeFromCorner(_ translation: CGSize, contentSize: CGSize) {
         onSelect?()
         if isResizingFromCorner == false {
-            resizeStartScale = scale
-            resizeStartRotation = rotation
             isResizingFromCorner = true
+            let startVector = CGSize(width: contentSize.width / 2,
+                                     height: contentSize.height / 2)
+            resizeCalculator.panBegan(withCornerVector: startVector,
+                                      startScale: safeBaseScale * scale,
+                                      startRotation: rotation.radians)
         }
         isTransforming = true
 
-        let startVector = CGSize(width: contentSize.width / 2,
-                                 height: contentSize.height / 2)
-        let startLength = vectorLength(startVector)
-        guard startLength > 0 else { return }
-
-        let startVectorInScreen = rotated(startVector, by: resizeStartRotation) * (safeBaseScale * resizeStartScale)
-        let movedVectorInScreen = CGSize(width: startVectorInScreen.width + translation.width,
-                                         height: startVectorInScreen.height + translation.height)
-        let movedLength = vectorLength(movedVectorInScreen)
-        guard movedLength > 0 else { return }
-
-        scale = limitedScale((movedLength / startLength) / safeBaseScale)
-        rotation = angle(of: movedVectorInScreen) - angle(of: startVector)
+        let result = resizeCalculator.panChanged(withTranslation: translation)
+        scale = limitedScale(result.scale / safeBaseScale)
+        rotation = Angle.radians(result.rotation)
     }
 
     private func finishCornerResize() {
         let endedScale = scale
-        let deltaScale = resizeStartScale > 0 ? endedScale / resizeStartScale : endedScale
-        let deltaRotation = Angle.radians(rotation.radians - resizeStartRotation.radians)
+        let startRelativeScale = resizeCalculator.startScale / safeBaseScale
+        let deltaScale = startRelativeScale > 0 ? endedScale / startRelativeScale : endedScale
+        let deltaRotation = Angle.radians(rotation.radians - resizeCalculator.startRotation)
         if onTransformEnded != nil {
             notifyTransformEnded(scale: deltaScale, rotation: deltaRotation)
-            scale = resizeStartScale
-            rotation = resizeStartRotation
+            scale = startRelativeScale
+            rotation = Angle.radians(resizeCalculator.startRotation)
         }
-        resizeStartScale = scale
-        resizeStartRotation = rotation
         isResizingFromCorner = false
         isTransforming = false
     }
@@ -321,26 +313,6 @@ public struct CJGRViewModifier: ViewModifier {
     private var displayScale: CGFloat {
         safeBaseScale * currentScale
     }
-
-    private func vectorLength(_ vector: CGSize) -> CGFloat {
-        sqrt(vector.width * vector.width + vector.height * vector.height)
-    }
-
-    private func angle(of vector: CGSize) -> Angle {
-        .radians(atan2(vector.height, vector.width))
-    }
-
-    private func rotated(_ vector: CGSize, by angle: Angle) -> CGSize {
-        let radians = angle.radians
-        let cosValue = CGFloat(cos(radians))
-        let sinValue = CGFloat(sin(radians))
-        return CGSize(width: vector.width * cosValue - vector.height * sinValue,
-                      height: vector.width * sinValue + vector.height * cosValue)
-    }
-}
-
-private func * (lhs: CGSize, rhs: CGFloat) -> CGSize {
-    CGSize(width: lhs.width * rhs, height: lhs.height * rhs)
 }
 
 
