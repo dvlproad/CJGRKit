@@ -85,6 +85,8 @@ public struct CJGRCornerView: View {
                              iconLength: iconLength,
                              hitLength: hitLength,
                              position: CGPoint(x: minX, y: minY))
+                    // contentShape 必须紧邻其后的 gesture 才生效（background 的 Color 是装饰层，默认不参与命中）
+                    .contentShape(Rectangle())
                     .onTapGesture {
                         onDelete?()
                     }
@@ -94,6 +96,7 @@ public struct CJGRCornerView: View {
                                  iconLength: iconLength,
                                  hitLength: hitLength,
                                  position: CGPoint(x: maxX, y: minY))
+                        .contentShape(Rectangle())
                         .onTapGesture {
                             onUpdate?()
                         }
@@ -106,6 +109,8 @@ public struct CJGRCornerView: View {
                                  position: CGPoint(x: maxX, y: maxY))
                         // 完整贴纸模式下，右下角是缩放/旋转操作柄，不承担点击动作。
                         // 使用高优先级拖拽，避免被外层贴纸拖动手势抢占。
+                        // contentShape 必须紧邻其后的 gesture 才生效（background 的 Color 是装饰层，默认不参与命中）
+                        .contentShape(Rectangle())
                         .highPriorityGesture(
                             DragGesture(minimumDistance: 0, coordinateSpace: .global)
                                 .onChanged { value in
@@ -120,6 +125,8 @@ public struct CJGRCornerView: View {
                                  iconLength: iconLength,
                                  hitLength: hitLength,
                                  position: CGPoint(x: maxX, y: maxY))
+                        // contentShape 必须紧邻其后的 gesture 才生效（background 的 Color 是装饰层，默认不参与命中）
+                        .contentShape(Rectangle())
                         .onTapGesture {
                             onMinimize?()
                         }
@@ -138,6 +145,10 @@ public struct CJGRCornerView: View {
         return 1 / displayScale
     }
 
+    // contentShape = 显式指定视图的命中区域（可点击区域）。默认按内容命中，透明/空白处点不中；
+    // 用 contentShape(Rectangle()) 声明"整块矩形都可点"。
+    // 注意：不要在 position 之前添加 contentShape。contentShape 只作用于修饰符链中其后相邻的 gesture，
+    // 被 position 隔开后对内层/外层手势都无效。命中声明必须在调用处与 gesture 紧邻（见下方调用处）。
     private func cornerButton(imageName: String,
                               iconLength: CGFloat,
                               hitLength: CGFloat,
@@ -147,7 +158,6 @@ public struct CJGRCornerView: View {
             .frame(width: iconLength, height: iconLength, alignment: .center)
             .frame(width: hitLength, height: hitLength, alignment: .center)
             .background(Color.gray.opacity(0.5)) // 临时可视化背景色，用于查看可操作区域
-            .contentShape(Rectangle())
             .position(position)
     }
 

@@ -181,7 +181,9 @@ public struct CJGRViewModifier: ViewModifier {
                     .padding(-cornerOutset)
                 }
             }
-            .contentShape(Rectangle())
+            // 命中区域必须覆盖负 padding 扩展出去的那一圈（右下角操作柄有近一半在贴纸边界外）。
+            // 负 inset 扩展：否则触摸伸出贴纸的部分时，外层先判定不命中，不会递归到角按钮。
+            .contentShape(Rectangle().inset(by: -cornerOutset))
             .scaleEffect(displayScale)
             .rotationEffect(baseRotation + rotation + gestureRotation)
             .offset(x: position.width + gestureOffset.width,

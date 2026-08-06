@@ -14,7 +14,7 @@
   
 Pod::Spec.new do |s|
   s.name         = "CJViewGR-Swift"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "Swift版的视图手势操作扩展库"
   s.homepage     = "https://github.com/dvlproad/CJGRKit.git"
   s.license      = "MIT"
@@ -45,7 +45,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "17.0"
   s.swift_version = '5.0'
 
-  s.source       = { :git => "https://github.com/dvlproad/CJGRKit.git", :tag => "CJViewGR-Swift_0.0.1" }
+  s.source       = { :git => "https://github.com/dvlproad/CJGRKit.git", :tag => "CJViewGR-Swift_0.0.2" }
   # s.source_files  = "CJViewGR-Swift/**/*.{swift}"
   # s.resources = "CJBaseUtil/**/*.{png}"
   s.frameworks = 'UIKit'
