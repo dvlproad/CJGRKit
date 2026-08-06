@@ -12,7 +12,7 @@
 #import <CQDemoResource/UIImage+CQDemoResource.h>
 
 #import <CJGRKit/UIView+CJFreeDrag.h>
-#import <CJGRKit/UIView+CJKeepBounds.h>
+#import <CJGRKit/UIView+CJKeepInBounds.h>
 
 @interface DragViewController ()
 

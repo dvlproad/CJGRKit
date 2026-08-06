@@ -10,7 +10,7 @@
   "authors": {
     "dvlproad": ""
   },
-  "description": "各种手势，可按需独立引入：\n• CJGRKit/CGRectCJSubHelper - 一个调整小区域的frame使其保持在cage内部，或调整大区域的frame使其包含住小区域的帮助类\n• CJGRKit/CGRectCJAdjustHelper - 调整移动区域的帮助类\n\n• CJGRKit/Extension/KeepBounds - UIView+CJKeepBounds.h 限制本视图不移出其父视图或keyWindow\n• CJGRKit/Extension/FreeDrag - UIView+CJFreeDrag.h 通过pan手势，任意方向自由拖动的视图\n• CJGRKit/Extension/PanDown - UIView+CJPanDown.h 下拉回弹的视图拖动\n\n• CJGRKit/CJGRView - 继承系统并添加有手势的 UIView ，能够进行拖动、缩放等手势\n• CJGRKit/CJGRScrollView - 继承系统并添加有手势的 UIScrollView ，能够进行拖动、缩放等手势\n\n每个子库可独立引入，详见各子库描述。",
+  "description": "各种手势，可按需独立引入：\n• CJGRKit/CGRectCJSubHelper - 一个调整小区域的frame使其保持在cage内部，或调整大区域的frame使其包含住小区域的帮助类\n• CJGRKit/CGRectCJAdjustHelper - 调整移动区域的帮助类\n\n• CJGRKit/Extension/KeepInBounds - UIView+CJKeepInBounds.h 限制本视图不移出其父视图或keyWindow\n• CJGRKit/Extension/FreeDrag - UIView+CJFreeDrag.h 通过pan手势，任意方向自由拖动的视图\n• CJGRKit/Extension/PanDown - UIView+CJPanDown.h 下拉回弹的视图拖动\n• CJGRKit/Extension/GR - UIView+CJGR.h 给任意UIView添加独立的拖动、捏合缩放、旋转手势\n• CJGRKit/Extension/Corner - UIView+CJGRCorner.h 给任意UIView添加角按钮编辑层\n• CJGRKit/Extension/KeepCoveredBounds - UIView+CJKeepCoveredBounds.h 给可手势变换的视图叠加外方向 keep-bounds 约束（内容始终覆盖/包含住裁剪窗口、手势结束自动吸附）\n\n• CJGRKit/CJGRView - 继承系统并添加有手势的 UIView ，能够进行拖动、缩放等手势\n• CJGRKit/CJGRScrollView - 继承系统并添加有手势的 UIScrollView ，能够进行拖动、缩放等手势\n\n每个子库可独立引入，详见各子库描述。",
   "platforms": {
     "ios": "9.0"
   },
@@ -33,8 +33,8 @@
       "name": "Extension",
       "subspecs": [
         {
-          "name": "KeepBounds",
-          "source_files": "CJGRKit/Extension/KeepBounds/**/*.{h,m}",
+          "name": "KeepInBounds",
+          "source_files": "CJGRKit/Extension/KeepBounds/UIView+CJKeepInBounds.{h,m}",
           "dependencies": {
             "CJGRKit/CGRectCJAdjustHelper": []
           }
@@ -56,6 +56,14 @@
           "source_files": "CJGRKit/Extension/Corner/**/*.{h,m}",
           "dependencies": {
             "CJGRKit/Extension/GR": []
+          }
+        },
+        {
+          "name": "KeepCoveredBounds",
+          "source_files": "CJGRKit/Extension/KeepBounds/UIView+CJKeepCoveredBounds.{h,m}",
+          "dependencies": {
+            "CJGRKit/Extension/GR": [],
+            "CJGRKit/CGRectCJAdjustHelper": []
           }
         }
       ]

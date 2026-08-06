@@ -5,6 +5,10 @@
 //  Created by qian on 2021/3/5.
 //
 //  在【自定义的形同 UIScrollView 能够进行拖动和缩放的视图】的基础上【增加可限制拖动范围】
+//  已废弃（保留兼容）：由「UIView+CJGR + UIView+CJKeepCoveredBounds」替代：
+//  拖动/捏合/旋转走 UIView+CJGR；限制移动范围走 UIView+CJKeepCoveredBounds（内容作为大框覆盖裁剪窗口、松手吸附，
+//  即本类 clippingFrame + adjustShowViewAccordingToClippingFrame 的逻辑）。
+//  注：UIView+CJKeepInBounds（内方向：内容保持在其边界内）是另一种限制场景，非本类能力。
 
 #import "CJGRView.h"
 

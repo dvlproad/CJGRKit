@@ -1,15 +1,15 @@
 //
-//  UIView+CJKeepBounds.m
+//  UIView+CJKeepInBounds.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2016/11/05.
 //  Copyright © 2016年 dvlproad. All rights reserved.
 //
 
-#import "UIView+CJKeepBounds.h"
+#import "UIView+CJKeepInBounds.h"
 #import "CGRectCJAdjustHelper.h"
 
-@implementation UIView (CJKeepBounds)
+@implementation UIView (CJKeepInBounds)
 
 /*
  *  黏合区域(①当视图超出边界的时候，XY是否黏合最近边界;②当视图没超出边界的时候，X也会黏合最近边界)
@@ -72,6 +72,5 @@
     self.frame = newSmallFrame;
     [UIView commitAnimations];
 }
-
 
 @end

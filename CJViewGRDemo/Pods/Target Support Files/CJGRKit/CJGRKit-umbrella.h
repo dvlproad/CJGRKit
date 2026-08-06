@@ -24,7 +24,8 @@
 #import "UIView+CJGRCorner.h"
 #import "UIView+CJFreeDrag.h"
 #import "UIView+CJGR.h"
-#import "UIView+CJKeepBounds.h"
+#import "UIView+CJKeepCoveredBounds.h"
+#import "UIView+CJKeepInBounds.h"
 #import "UIView+CJPanDown.h"
 
 FOUNDATION_EXPORT double CJGRKitVersionNumber;

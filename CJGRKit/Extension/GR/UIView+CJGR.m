@@ -21,6 +21,8 @@
 @property (nonatomic, assign) CGFloat cjGRMinScale;
 @property (nonatomic, assign) CGFloat cjGRMaxScale;
 
+@property (nonatomic, copy) void(^cjGRStateChangeBlock)(UIGestureRecognizerState state);
+
 @end
 
 @implementation UIView (CJGR)
@@ -32,6 +34,7 @@ static NSString * const cjGRScaleValueKey = @"cjGRScaleValueKey";
 static NSString * const cjGRRotationValueKey = @"cjGRRotationValueKey";
 static NSString * const cjGRMinScaleKey = @"cjGRMinScaleKey";
 static NSString * const cjGRMaxScaleKey = @"cjGRMaxScaleKey";
+static NSString * const cjGRStateChangeBlockKey = @"cjGRStateChangeBlockKey";
 
 static const CGFloat CJGRDefaultMinScale = 0.3;   // 默认最小缩放倍数，属性 cjGRMinScale 未设置时使用
 static const CGFloat CJGRDefaultMaxScale = 6.0;   // 默认最大缩放倍数，属性 cjGRMaxScale 未设置时使用
@@ -113,6 +116,22 @@ static const CGFloat CJGRDefaultMaxScale = 6.0;   // 默认最大缩放倍数，
     objc_setAssociatedObject(self, &cjGRMaxScaleKey, @(cjGRMaxScale), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
+//cjGRStateChangeBlock
+- (void (^)(UIGestureRecognizerState))cjGRStateChangeBlock {
+    return objc_getAssociatedObject(self, &cjGRStateChangeBlockKey);
+}
+
+- (void)setCjGRStateChangeBlock:(void (^)(UIGestureRecognizerState))cjGRStateChangeBlock {
+    objc_setAssociatedObject(self, &cjGRStateChangeBlockKey, cjGRStateChangeBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+/// 手势状态变化时，统一回调给外部（用于感知变换开始/进行/结束）
+- (void)__cj_notifyGRStateChange:(UIGestureRecognizerState)state {
+    if (self.cjGRStateChangeBlock) {
+        self.cjGRStateChangeBlock(state);
+    }
+}
+
 #pragma mark - add
 /// 添加拖动平移手势
 - (void)cj_addPanGR {
@@ -166,6 +185,7 @@ static const CGFloat CJGRDefaultMaxScale = 6.0;   // 默认最大缩放倍数，
         default:
             break;
     }
+    [self __cj_notifyGRStateChange:panGR.state];
 }
 
 /// 捏合缩放事件
@@ -181,6 +201,7 @@ static const CGFloat CJGRDefaultMaxScale = 6.0;   // 默认最大缩放倍数，
         default:
             break;
     }
+    [self __cj_notifyGRStateChange:pinchGR.state];
 }
 
 /// 旋转事件
@@ -196,6 +217,7 @@ static const CGFloat CJGRDefaultMaxScale = 6.0;   // 默认最大缩放倍数，
         default:
             break;
     }
+    [self __cj_notifyGRStateChange:rotationGR.state];
 }
 
 /// 统一执行 transform（缩放+旋转），拖动通过 center 执行，互不干扰

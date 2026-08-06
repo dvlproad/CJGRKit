@@ -1,6 +1,6 @@
 {
   "name": "CJViewGR-Swift",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "summary": "Swift版的视图手势操作扩展库",
   "homepage": "https://github.com/dvlproad/CJGRKit.git",
   "license": "MIT",
@@ -12,7 +12,7 @@
   "swift_versions": "5.0",
   "source": {
     "git": "https://github.com/dvlproad/CJGRKit.git",
-    "tag": "CJViewGR-Swift_0.0.1"
+    "tag": "CJViewGR-Swift_0.0.2"
   },
   "frameworks": "UIKit",
   "requires_arc": true,

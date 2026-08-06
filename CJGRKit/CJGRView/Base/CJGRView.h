@@ -5,6 +5,8 @@
 //  Created by qian on 2021/3/5.
 //
 //  自定义的形同 UIScrollView 能够进行拖动和缩放的视图
+//  已废弃（保留兼容）：手势能力由「UIView+CJGR」替代（cj_addPanGR/cj_addPinchGR/cj_addRotationGR，正交独立可任意组合）。
+//  建议迁移：内容视图（如 UIImageView）直接加手势即可，无需再继承本容器类。
 
 #import <UIKit/UIKit.h>
 

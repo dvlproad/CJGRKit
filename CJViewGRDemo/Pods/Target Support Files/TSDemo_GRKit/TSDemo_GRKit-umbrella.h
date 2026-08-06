@@ -12,6 +12,7 @@
 
 #import "DragViewController.h"
 #import "TSGRExtensionViewController.h"
+#import "TSGRKeepCoveredBoundsViewController.h"
 #import "TSViewGRExtensionHomeViewController.h"
 #import "CQCommentsPopView.h"
 #import "ViewPandownViewController1.h"
@@ -23,6 +24,7 @@
 #import "TSAdjustGRViewController.h"
 #import "TSGRViewController.h"
 #import "TSImageClipAdjustGRViewController.h"
+#import "TSImageEditNewModelViewController.h"
 #import "TSImageNormalAdjustGRViewController.h"
 #import "TSMaskImageAdjustGRViewController.h"
 #import "ImageGRHomeViewController.h"

@@ -17,6 +17,8 @@
 
 // UIView+CJGR
 #import "TSGRExtensionViewController.h"
+// UIView+CJKeepCoveredBounds
+#import "TSGRKeepCoveredBoundsViewController.h"
 
 
 @interface TSViewGRExtensionHomeViewController ()
@@ -47,7 +49,7 @@
             dragViewModule.title = @"任意视图：位置调整\nDrag And KeepBounds (视图的拖曳和吸附)";
             dragViewModule.content = [@[
                 @"#import <CJGRKit/UIView+CJFreeDrag.h>",
-                @"#import <CJGRKit/UIView+CJKeepBounds.h>"
+                @"#import <CJGRKit/UIView+CJKeepInBounds.h>"
             ] componentsJoinedByString:@"\n"];
             dragViewModule.classEntry = [DragViewController class];
             dragViewModule.isCreateByXib = YES;
@@ -104,6 +106,19 @@
             ] componentsJoinedByString:@"\n"];
             grModule.classEntry = [TSGRExtensionViewController class];
             [sectionDataModel.values addObject:grModule];
+        }
+        {
+            CQDMModuleModel *clipModule = [[CQDMModuleModel alloc] init];
+            clipModule.title = @"任意视图：外方向约束\n(自由拖动+缩放，松手吸附回窗口)";
+            clipModule.content = [@[
+                @"#import <CJGRKit/UIView+CJGR.h>",
+                @"#import <CJGRKit/UIView+CJKeepCoveredBounds.h>",
+                @"[view cj_addPanGR];   //拖动",
+                @"[view cj_addPinchGR];  //缩放",
+                @"[view cj_setKeepCoveredRect:windowBounds];  //外方向约束",
+            ] componentsJoinedByString:@"\n"];
+            clipModule.classEntry = [TSGRKeepCoveredBoundsViewController class];
+            [sectionDataModel.values addObject:clipModule];
         }
         [sectionDataModels addObject:sectionDataModel];
     }

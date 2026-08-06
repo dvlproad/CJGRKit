@@ -15,6 +15,7 @@
 #import "TSImageClipAdjustGRViewController.h"
 #import "TSImageNormalAdjustGRViewController.h"
 #import "TSMaskImageAdjustGRViewController.h"
+#import "TSImageEditNewModelViewController.h"
 
 
 // 图片视图：缩放+位置调整+蒙版：使用CJGRScrollView
@@ -40,7 +41,25 @@
 
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     
-   
+    // 新模型：内容第一公民 + 约束叠加（内容 UIImageView + GR 变换 + Clip 裁剪约束）
+    {
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
+        sectionDataModel.theme = @"新模型：内容第一公民 + 约束叠加";
+        {
+            CQDMModuleModel *module = [[CQDMModuleModel alloc] init];
+            module.title = @"图片裁剪：内容UIImageView+GR变换+Clip裁剪约束";
+            module.content = [@[
+                @"内容视图是第一公民，裁剪窗口不实体化（只是展示覆盖层+约束叠加）",
+                @"展示对齐旧 CJImageClipAdjustGRView：内容铺满编辑区+半透明红方块裁剪框",
+                @"对比旧 CJImageClipAdjustGRView：手势能力正交独立、裁剪约束松手吸附",
+            ] componentsJoinedByString:@"\n"];
+            module.classEntry = [TSImageEditNewModelViewController class];
+            [sectionDataModel.values addObject:module];
+        }
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    
     // 缩放+位置调整+蒙版：使用CJGRView
     {
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];

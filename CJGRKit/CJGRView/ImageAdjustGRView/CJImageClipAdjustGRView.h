@@ -6,6 +6,9 @@
 //
 //
 //  图片裁剪调整（缩放、拖动）视图，有裁剪框。场景：如图片裁剪框里的位置、大小调整。
+//  已废弃（保留兼容）：由「UIView+CJGR + UIView+CJKeepCoveredBounds」替代：
+//  内容 UIImageView（第一公民）+ cj_addPanGR/cj_addPinchGR + cj_setKeepCoveredRect:；
+//  裁剪窗口展示（半透明红方块等）由宿主负责。参考演示页 TSImageEditNewModelViewController。
 //  裁剪缩放调整视图：为更好使用，请继承并根据要求调用updateFrameByImage方法（附：本类里面已重写 layoutSubviews）
 
 #import "CJAdjustGRView.h"

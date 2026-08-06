@@ -44,6 +44,7 @@ Pod::Spec.new do |s|
   s.dependency 'CQDemoResource/Images'
   #
   s.dependency 'CJGRKit'
+  s.dependency 'Masonry'
 
   # # 基础工具
   # s.subspec 'BaseUtil' do |ss|

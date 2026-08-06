@@ -5,6 +5,8 @@
 //  Created by qian on 2021/3/5.
 //
 //  图片普通调整（缩放、拖动）视图，没有裁剪框。场景：如图片拼接里的位置、大小调整。
+//  已废弃（保留兼容）：由「UIView+CJGR」替代：UIImageView（开启 userInteractionEnabled）直接加
+//  cj_addPanGR/cj_addPinchGR 即为可拖动缩放的图片视图。
 //  为更好使用，请继承并根据要求调用updateFrameByImage方法（附：本类里面已重写 layoutSubviews）
 
 #import "CJAdjustGRView.h"

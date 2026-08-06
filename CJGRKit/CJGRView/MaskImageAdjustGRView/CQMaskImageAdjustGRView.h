@@ -5,6 +5,7 @@
 //  Created by qian on 2021/3/9.
 //
 //  已完成定制有遮罩层的图片裁剪调整（缩放、拖动）视图
+//  已废弃（保留兼容）：由「UIView+CJGR + UIView+CJKeepCoveredBounds + 宿主自定义蒙层」替代（同 CJMaskImageAdjustGRView 说明）。
 
 #import <CJGRKit/CJMaskImageAdjustGRView.h>
 #import <UIPathCJHelper/UIBezierPathCJHelper.h>

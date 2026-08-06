@@ -52,6 +52,15 @@ NS_ASSUME_NONNULL_BEGIN
 /// 设置旋转弧度并刷新 transform（供 CJGRCorner 等共享状态使用）
 - (void)cj_setGRRotation:(CGFloat)rotation;
 
+#pragma mark - 状态回调
+
+/**
+ *  手势状态变化回调（Began/Changed/Ended/Cancelled 等）。
+ *  拖动、捏合、旋转任一手势状态变化时都会回调，用于感知变换开始/进行/结束。
+ *  注意：此为公共能力，业务若同时使用外方向约束（UIView+CJKeepCoveredBounds），两者会共用此回调，请勿同时自定义。
+ */
+@property (nonatomic, copy, nullable) void(^cjGRStateChangeBlock)(UIGestureRecognizerState state);
+
 @end
 
 NS_ASSUME_NONNULL_END
