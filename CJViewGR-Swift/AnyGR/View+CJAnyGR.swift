@@ -1,5 +1,5 @@
 //
-//  CJViewGRExtension.swift
+//  View+CJAnyGR.swift
 //  CJViewGRDemo
 //
 //  Created by qian on 2024/11/27.
@@ -8,16 +8,6 @@
 import SwiftUI
 
 public extension View {
-    // 调试用背景修饰符。
-    func redBackground(color: Color = .red, cornerRadius: CGFloat = 0, padding: CGFloat = 0) -> some View {
-        self.modifier(
-            RedBackgroundModifier(color: color,
-                                  cornerRadius: cornerRadius,
-                                  padding: padding)
-        )
-    }
-    
-    
     // 为视图添加基础手势能力：拖动、双指缩放、双指旋转。
     func addGR(enableGR: Bool = true,
                grModel: String = "",
@@ -70,7 +60,6 @@ public extension View {
                minScale: CGFloat = 0.3,
                maxScale: CGFloat = 6.0) -> some View {
         self.modifier(
-//            CJGRViewModifier(imageModel: grModel)
             CJGRViewModifier(enableGR: enableGR,
                              showCornerButton: showCornerButton,
                              onDelete: onDelete,
@@ -83,38 +72,5 @@ public extension View {
                              minScale: minScale,
                              maxScale: maxScale)
         )
-    }
-    
-    
-    // 为视图添加边框和三个角按钮
-    func addGRButtons(onDelete: @escaping () -> Void,
-                      onUpdate: @escaping () -> Void,
-                      onMinimize: @escaping () -> Void
-    ) -> some View {
-        self.modifier(CJGRCornerViewModifier(
-            onDelete: onDelete,
-            onUpdate: onUpdate,
-            onMinimize: onMinimize
-        ))
-    }
-}
-
-
-
-
-
-// 自定义ViewModifier，接受参数以自定义红色背景视图的样式
-public struct RedBackgroundModifier: ViewModifier {
-    var color: Color
-    var cornerRadius: CGFloat
-    var padding: CGFloat
-
-    public func body(content: Content) -> some View {
-        content
-//            .padding(padding) // 添加内边距
-            .background(color) // 应用红色背景
-            .clipShape(RoundedRectangle(cornerRadius: cornerRadius)) // 应用圆角
-//            .border(Color.green, width: padding)
-        
     }
 }

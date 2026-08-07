@@ -54,9 +54,12 @@ PODS:
     - CJViewElement-Swift/Extension
   - CJViewElement-Swift/SquareResultView (0.0.3):
     - CJViewElement-Swift/ComponentConfigModel
-  - CJViewGR-Swift (0.0.2):
-    - CJViewGR-Swift/Extension (= 0.0.2)
-  - CJViewGR-Swift/Extension (0.0.2)
+  - CJViewGR-Swift (0.0.4):
+    - CJViewGR-Swift/AnyGR (= 0.0.4)
+    - CJViewGR-Swift/CornerGR (= 0.0.4)
+  - CJViewGR-Swift/AnyGR (0.0.4):
+    - CJViewGR-Swift/CornerGR
+  - CJViewGR-Swift/CornerGR (0.0.4)
   - CQDemoKit-Swift/as (0.0.5)
   - CQDemoKit-Swift/BaseVC (0.0.5)
   - CQDemoKit/Auxiliary (0.9.17):
@@ -205,7 +208,7 @@ SPEC CHECKSUMS:
   CJFeatureGRView: 2d270a97d02dd87c070b28046f6910b0300e375f
   CJGRKit: a9adae087b9b6060f68964afc2c40d95cb23d258
   CJViewElement-Swift: 216908621cdaeb319b638fc788554f36f20ce13d
-  CJViewGR-Swift: 1d7f88a119780703290785b0460adf472f1d7d65
+  CJViewGR-Swift: 3d4381a994ec5422bc565b7af3d5e049358fad6f
   CQDemoKit: 984c61284e80742f1284ab4c9ad8fbe487789680
   CQDemoKit-Swift: 7d9c026dc37e64b13ddaa91c1b1df823e022781e
   CQDemoResource: efdf1a0231767f665f5e6e0df59ed8a5042680f7
