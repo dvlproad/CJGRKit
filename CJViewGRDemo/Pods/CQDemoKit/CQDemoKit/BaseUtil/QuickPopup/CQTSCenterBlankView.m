@@ -38,8 +38,6 @@
         _popupViewSize = popupViewSize;
         _popupCenterOffset = popupCenterOffset;
         _tapBlankHandle = tapBlankComplete;
-
-        _blankPresenter = [[CQTSBlankPresenter alloc] init];
         
         self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.2];   // 半透明遮罩，对齐原版默认
         
@@ -63,25 +61,6 @@
         popupView.transform = CGAffineTransformMakeScale(0.01, 0.01);
     }
     return self;
-}
-
-#pragma mark - Show & Hide
-/*
- *  显示弹窗（默认显示在 keyWindow 上，内部委托给 blankPresenter 执行）
- *
- *  @param blankSuperview  要显示在什么视图上（传 nil 表示 keyWindow）
- *  @param showComplete    显示动画完成的回调
- */
-- (void)showBlankViewInView:(nullable UIView *)blankSuperview
-                   complete:(void(^ _Nullable)(void))showComplete {
-    [self.blankPresenter showBlankView:self inView:blankSuperview complete:showComplete];
-}
-
-/*
- *  隐藏弹窗（幂等，可多次调用，内部委托给 blankPresenter 执行）
- */
-- (void)hideBlankView {
-    [self.blankPresenter hideBlankView:self];
 }
 
 #pragma mark - CQTSBlankViewProtocol

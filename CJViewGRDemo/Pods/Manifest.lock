@@ -62,85 +62,85 @@ PODS:
   - CJViewGR-Swift/CornerGR (0.0.4)
   - CQDemoKit-Swift/as (0.0.5)
   - CQDemoKit-Swift/BaseVC (0.0.5)
-  - CQDemoKit/Auxiliary (0.9.17):
+  - CQDemoKit/Auxiliary (0.9.18):
     - Masonry
-  - CQDemoKit/BaseUIKit (0.9.17):
-    - CQDemoKit/BaseUIKit/Button (= 0.9.17)
-    - CQDemoKit/BaseUIKit/Container (= 0.9.17)
-    - CQDemoKit/BaseUIKit/ImageLoader (= 0.9.17)
-    - CQDemoKit/BaseUIKit/Segment (= 0.9.17)
-    - CQDemoKit/BaseUIKit/Switch (= 0.9.17)
-  - CQDemoKit/BaseUIKit/Button (0.9.17):
+  - CQDemoKit/BaseUIKit (0.9.18):
+    - CQDemoKit/BaseUIKit/Button (= 0.9.18)
+    - CQDemoKit/BaseUIKit/Container (= 0.9.18)
+    - CQDemoKit/BaseUIKit/ImageLoader (= 0.9.18)
+    - CQDemoKit/BaseUIKit/Segment (= 0.9.18)
+    - CQDemoKit/BaseUIKit/Switch (= 0.9.18)
+  - CQDemoKit/BaseUIKit/Button (0.9.18):
     - Masonry
-  - CQDemoKit/BaseUIKit/Container (0.9.17):
+  - CQDemoKit/BaseUIKit/Container (0.9.18):
     - Masonry
-  - CQDemoKit/BaseUIKit/ImageLoader (0.9.17)
-  - CQDemoKit/BaseUIKit/Segment (0.9.17):
+  - CQDemoKit/BaseUIKit/ImageLoader (0.9.18)
+  - CQDemoKit/BaseUIKit/Segment (0.9.18):
     - Masonry
-  - CQDemoKit/BaseUIKit/Switch (0.9.17):
+  - CQDemoKit/BaseUIKit/Switch (0.9.18):
     - Masonry
-  - CQDemoKit/BaseUtil (0.9.17):
+  - CQDemoKit/BaseUtil (0.9.18):
     - Masonry
-  - CQDemoKit/BaseVC (0.9.17):
-    - CQDemoKit/BaseVC/Base (= 0.9.17)
-    - CQDemoKit/BaseVC/Collection (= 0.9.17)
-    - CQDemoKit/BaseVC/ScrollView (= 0.9.17)
-    - CQDemoKit/BaseVC/TabBar (= 0.9.17)
-    - CQDemoKit/BaseVC/TableView (= 0.9.17)
-  - CQDemoKit/BaseVC/Base (0.9.17):
+  - CQDemoKit/BaseVC (0.9.18):
+    - CQDemoKit/BaseVC/Base (= 0.9.18)
+    - CQDemoKit/BaseVC/Collection (= 0.9.18)
+    - CQDemoKit/BaseVC/ScrollView (= 0.9.18)
+    - CQDemoKit/BaseVC/TabBar (= 0.9.18)
+    - CQDemoKit/BaseVC/TableView (= 0.9.18)
+  - CQDemoKit/BaseVC/Base (0.9.18):
     - CQDemoKit/BaseUIKit
     - Masonry
-  - CQDemoKit/BaseVC/Collection (0.9.17):
+  - CQDemoKit/BaseVC/Collection (0.9.18):
     - CQDemoKit/BaseVC/Base
-  - CQDemoKit/BaseVC/ScrollView (0.9.17):
+  - CQDemoKit/BaseVC/ScrollView (0.9.18):
     - CQDemoKit/BaseVC/Base
-  - CQDemoKit/BaseVC/TabBar (0.9.17):
+  - CQDemoKit/BaseVC/TabBar (0.9.18):
     - CQDemoKit/Helper
-  - CQDemoKit/BaseVC/TableView (0.9.17):
+  - CQDemoKit/BaseVC/TableView (0.9.18):
     - CQDemoKit/BaseVC/Base
-  - CQDemoKit/Demo_DataSourceAndDelegate (0.9.17):
+  - CQDemoKit/Demo_DataSourceAndDelegate (0.9.18):
     - CQDemoKit/BaseVC
-  - CQDemoKit/Demo_Resource (0.9.17):
-    - CQDemoKit/Demo_Resource/GitUtil (= 0.9.17)
-    - CQDemoKit/Demo_Resource/ImageModel (= 0.9.17)
-    - CQDemoKit/Demo_Resource/InFramework (= 0.9.17)
-    - CQDemoKit/Demo_Resource/RandomUtil (= 0.9.17)
-    - CQDemoKit/Demo_Resource/ResourceInfoUtil (= 0.9.17)
-    - CQDemoKit/Demo_Resource/SandboxFileUtil (= 0.9.17)
-    - CQDemoKit/Demo_Resource/SandboxPathUtil (= 0.9.17)
-    - CQDemoKit/Demo_Resource/SandboxPhotoUtil (= 0.9.17)
-  - CQDemoKit/Demo_Resource/GitUtil (0.9.17)
-  - CQDemoKit/Demo_Resource/ImageModel (0.9.17)
-  - CQDemoKit/Demo_Resource/InFramework (0.9.17)
-  - CQDemoKit/Demo_Resource/RandomUtil (0.9.17)
-  - CQDemoKit/Demo_Resource/ResourceInfoUtil (0.9.17)
-  - CQDemoKit/Demo_Resource/SandboxFileUtil (0.9.17):
+  - CQDemoKit/Demo_Resource (0.9.18):
+    - CQDemoKit/Demo_Resource/GitUtil (= 0.9.18)
+    - CQDemoKit/Demo_Resource/ImageModel (= 0.9.18)
+    - CQDemoKit/Demo_Resource/InFramework (= 0.9.18)
+    - CQDemoKit/Demo_Resource/RandomUtil (= 0.9.18)
+    - CQDemoKit/Demo_Resource/ResourceInfoUtil (= 0.9.18)
+    - CQDemoKit/Demo_Resource/SandboxFileUtil (= 0.9.18)
+    - CQDemoKit/Demo_Resource/SandboxPathUtil (= 0.9.18)
+    - CQDemoKit/Demo_Resource/SandboxPhotoUtil (= 0.9.18)
+  - CQDemoKit/Demo_Resource/GitUtil (0.9.18)
+  - CQDemoKit/Demo_Resource/ImageModel (0.9.18)
+  - CQDemoKit/Demo_Resource/InFramework (0.9.18)
+  - CQDemoKit/Demo_Resource/RandomUtil (0.9.18)
+  - CQDemoKit/Demo_Resource/ResourceInfoUtil (0.9.18)
+  - CQDemoKit/Demo_Resource/SandboxFileUtil (0.9.18):
     - CQDemoKit/Demo_Resource/SandboxPathUtil
     - CQDemoKit/Helper
-  - CQDemoKit/Demo_Resource/SandboxPathUtil (0.9.17):
+  - CQDemoKit/Demo_Resource/SandboxPathUtil (0.9.18):
     - CQDemoKit/Demo_Resource/ResourceInfoUtil
-  - CQDemoKit/Demo_Resource/SandboxPhotoUtil (0.9.17):
+  - CQDemoKit/Demo_Resource/SandboxPhotoUtil (0.9.18):
     - CQDemoKit/Demo_Resource/ResourceInfoUtil
-  - CQDemoKit/Demo_RipeView (0.9.17):
+  - CQDemoKit/Demo_RipeView (0.9.18):
     - CQDemoKit/BaseUIKit
     - CQDemoKit/BaseUtil
     - CQDemoKit/Demo_DataSourceAndDelegate
     - CQDemoKit/Demo_Resource
-    - CQDemoKit/Demo_RipeView/ImagePicker (= 0.9.17)
-    - CQDemoKit/Demo_RipeView/RipeCollectionView (= 0.9.17)
-  - CQDemoKit/Demo_RipeView/ImagePicker (0.9.17):
+    - CQDemoKit/Demo_RipeView/ImagePicker (= 0.9.18)
+    - CQDemoKit/Demo_RipeView/RipeCollectionView (= 0.9.18)
+  - CQDemoKit/Demo_RipeView/ImagePicker (0.9.18):
     - CQDemoKit/BaseUIKit
     - CQDemoKit/BaseUtil
     - CQDemoKit/Demo_DataSourceAndDelegate
     - CQDemoKit/Demo_Resource
     - Masonry
-  - CQDemoKit/Demo_RipeView/RipeCollectionView (0.9.17):
+  - CQDemoKit/Demo_RipeView/RipeCollectionView (0.9.18):
     - CQDemoKit/BaseUIKit
     - CQDemoKit/BaseUtil
     - CQDemoKit/Demo_DataSourceAndDelegate
     - CQDemoKit/Demo_Resource
     - Masonry
-  - CQDemoKit/Helper (0.9.17)
+  - CQDemoKit/Helper (0.9.18)
   - CQDemoResource/Core (0.3.2):
     - CQDemoKit/Demo_Resource
   - CQDemoResource/Images (0.3.2):
@@ -209,7 +209,7 @@ SPEC CHECKSUMS:
   CJGRKit: a9adae087b9b6060f68964afc2c40d95cb23d258
   CJViewElement-Swift: 216908621cdaeb319b638fc788554f36f20ce13d
   CJViewGR-Swift: 3d4381a994ec5422bc565b7af3d5e049358fad6f
-  CQDemoKit: 984c61284e80742f1284ab4c9ad8fbe487789680
+  CQDemoKit: e3fc8c66bdba65d8056607185973e16a50888396
   CQDemoKit-Swift: 7d9c026dc37e64b13ddaa91c1b1df823e022781e
   CQDemoResource: efdf1a0231767f665f5e6e0df59ed8a5042680f7
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201

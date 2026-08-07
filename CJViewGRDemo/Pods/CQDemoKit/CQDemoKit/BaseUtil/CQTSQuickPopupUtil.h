@@ -4,44 +4,28 @@
 //
 //  Created by ciyouzen on 2026/08/04.
 //
+//  此为 Demo 所以不进行 CQTSQuickPopupUtil 的封装，而是用原始的方式来操作，使得更容易理解整个弹出的逻辑
 
 #import <UIKit/UIKit.h>
 
-@class CQTSBottomBlankView;
-@class CQTSCenterBlankView;
+#import "CQTSBottomBlankView.h"
+#import "CQTSCenterBlankView.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
-@interface CQTSQuickPopupUtil : NSObject
+#import "CQTSBlankPresenter.h"
 
 /*
- *  创建并显示【底部弹窗】在 keyWindow 上（自定义内容视图直接作为内容，无下拉线、无模糊圆角）
- *  @brief 默认：点击空白区域自动隐藏；无毛玻璃效果；无下拉手势
- *
- *  @param contentView          弹出视图的内容视图
- *  @param popupViewHeight      弹出视图的高度
- *  @param tapBlankComplete     点击空白区域要执行的操作（如 [bBlankView hideBlankView]）
- *
- *  @return 显示中的容器视图（可持有，用于之后调用 hideBlankView 隐藏）
- */
-+ (nullable CQTSBottomBlankView *)showWindowBottomClearView:(UIView *)contentView
-                                                     height:(CGFloat)popupViewHeight
-                                           tapBlankComplete:(void(^ _Nullable)(CQTSBottomBlankView *bBlankView))tapBlankComplete;
+// 1.创建 blankPresenter
+CQTSBlankPresenter *blankPresenter = [[CQTSBlankPresenter alloc] init];
 
-/*
- *  创建并显示【中心弹窗】在 keyWindow 上（自定义内容视图直接作为内容，无模糊圆角）
- *  @brief 点击空白区域是否隐藏由 tapBlankDismiss 决定；显示位置可通过 popupCenterOffset 调整
- *
- *  @param contentView           弹出视图的内容视图
- *  @param popupViewSize         弹出视图的大小
- *  @param tapBlankComplete      点击空白区域要执行的操作（如 [bBlankView hideBlankView]）
- *
- *  @return 显示中的容器视图（可持有，用于之后调用 hideBlankView 隐藏）
- */
-+ (nullable CQTSCenterBlankView *)showWindowCenterClearView:(UIView *)contentView
-                                                       size:(CGSize)popupViewSize
-                                           tapBlankComplete:(void(^ _Nullable)(CQTSCenterBlankView *bBlankView))tapBlankComplete;
-
-@end
-
-NS_ASSUME_NONNULL_END
+// 2.创建 blankPresenter 要弹出的 blankView (bottom)
+CQTSBottomBlankView *blankView = [[CQTSBottomBlankView alloc] initWithPopupView:popupView popupViewHeight:200 tapBlankComplete:^(CQTSBottomBlankView * _Nonnull bBlankView) {
+    [blankPresenter hideBlankView:bBlankView];
+}];
+// 2.创建 blankPresenter 要弹出的 blankView (center)
+CQTSCenterBlankView *blankView = [[CQTSCenterBlankView alloc] initWithPopupView:contentView
+                                                                  popupViewSize:popupViewSize
+                                                              popupCenterOffset:CGPointZero
+                                                               tapBlankComplete:tapBlankComplete];
+// 3.使用 blankPresenter 弹出 blankView
+[blankPresenter showBlankView:blankView inView:nil complete:nil];
+*/

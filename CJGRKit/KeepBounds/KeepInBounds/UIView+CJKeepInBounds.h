@@ -13,7 +13,7 @@
 //
 //  手势来源       约束时机
 //  CJKeepInBounds（内）      UIView+CJAnyGR    手动调用（你拖完自己想黏合时调 cjKeepBounds，它不自动观察手势）
-//  CJKeepCoveredBounds（外） UIView+CJAnyGR    自动（绑定了 GR 的 cjGRStateChangeBlock，手势 Ended/Cancelled 自动吸附）
+//  CJKeepCoveredBounds（外） UIView+CJAnyGR    手动调用（手势 Ended/Cancelled 时由外部调用 cj_keepCoveredAdsorb 吸附，本类不感知手势）
 
 #import <UIKit/UIKit.h>
 
