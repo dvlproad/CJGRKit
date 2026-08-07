@@ -2,7 +2,7 @@
   "name": "CJFeatureGRView",
   "version": "0.1.0",
   "summary": "基于 CJGRKit 手势能力的业务组件库（图片调整、图片裁剪）",
-  "homepage": "https://github.com/dvlproad/CJFeatureGRView.git",
+  "homepage": "https://github.com/dvlproad/CJGRKit.git",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -15,7 +15,7 @@
     "ios": "9.0"
   },
   "source": {
-    "git": "https://github.com/dvlproad/CJFeatureGRView.git",
+    "git": "https://github.com/dvlproad/CJGRKit.git",
     "tag": "CJFeatureGRView_0.1.0"
   },
   "frameworks": "UIKit",

@@ -1,5 +1,5 @@
 //
-//  TSGRKeepCoveredBoundsViewController.h
+//  TSKeepCoveredBoundsViewController.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2026/08/06.
@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TSGRKeepCoveredBoundsViewController : UIViewController
+@interface TSKeepCoveredBoundsViewController : UIViewController
 
 @end
 

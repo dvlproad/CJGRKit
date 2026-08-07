@@ -41,6 +41,7 @@ Pod::Spec.new do |s|
   s.dependency 'CQDemoKit/BaseVC'
   s.dependency 'CQDemoKit/BaseUtil'
   s.dependency 'CQDemoKit/Demo_RipeView'
+  s.dependency 'CQDemoKit/Auxiliary'
   s.dependency 'CQDemoResource/Images'
   #
   s.dependency 'CJGRKit'

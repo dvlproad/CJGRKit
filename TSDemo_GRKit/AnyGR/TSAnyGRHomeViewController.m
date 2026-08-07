@@ -11,8 +11,8 @@
 // UIView+CJAnyGR
 #import "TSAnyGRViewController.h"
 // UIView+CJKeepBounds
-#import "DragViewController.h"
-#import "TSGRKeepCoveredBoundsViewController.h"
+#import "TSKeepInBoundsViewController.h"
+#import "TSKeepCoveredBoundsViewController.h"
 
 // View Pandown
 #import "ViewPandownViewController1.h"
@@ -68,29 +68,29 @@
         sectionDataModel.theme = @"UIView+CJKeepBounds";
         {
             CQDMModuleModel *keepInModule = [[CQDMModuleModel alloc] init];
-            keepInModule.title = @"内方向约束：自由拖动，松手吸附回自身\nKeepInBounds";
+            keepInModule.title = @"内方向约束：自由拖动，松手吸附回自身(单选三档策略)\nKeepInBounds";
             keepInModule.content = [@[
+                @"#import <CJGRKit/UIView+CJAnyGR.h>",
                 @"#import <CJGRKit/UIView+CJKeepInBounds.h>",
-                @"[view cjKeepBounds];   //松手后吸附回自身范围",
-                @"//拖动部分为已废弃的 CJFreeDrag 演示，仅作 KeepBounds 展示",
-                @"//新实现请用 [view cj_addPanGR] + cjGRStateChangeBlock",
+                @"[view cj_addPanGR];   //拖动",
+                @"[view cjKeepBoundsWithBoundEdgeInsets:...];  //松手按档位吸附",
+                @"//三档：①出界+界内都吸附 ②仅出界吸附 ③无约束对照",
             ] componentsJoinedByString:@"\n"];
-            keepInModule.classEntry = [DragViewController class];
-            keepInModule.isCreateByXib = YES;
-            keepInModule.xibBundleName = @"TSDemo_GRKit";
+            keepInModule.classEntry = [TSKeepInBoundsViewController class];
             [sectionDataModel.values addObject:keepInModule];
         }
         {
             CQDMModuleModel *clipModule = [[CQDMModuleModel alloc] init];
-            clipModule.title = @"外方向约束：自由拖动+缩放，松手吸附回窗口\nKeepCoveredBounds";
+            clipModule.title = @"外方向约束：自由拖动+缩放，松手吸附回窗口(单选三档覆盖)\nKeepCoveredBounds";
             clipModule.content = [@[
                 @"#import <CJGRKit/UIView+CJAnyGR.h>",
                 @"#import <CJGRKit/UIView+CJKeepCoveredBounds.h>",
                 @"[view cj_addPanGR];   //拖动",
                 @"[view cj_addPinchGR];  //缩放",
                 @"[view cj_setKeepCoveredRect:windowBounds];  //外方向约束",
+                @"//三档覆盖力度：①1.5x ②1.2x ③0.9x(不足自动放大)",
             ] componentsJoinedByString:@"\n"];
-            clipModule.classEntry = [TSGRKeepCoveredBoundsViewController class];
+            clipModule.classEntry = [TSKeepCoveredBoundsViewController class];
             [sectionDataModel.values addObject:clipModule];
         }
         [sectionDataModels addObject:sectionDataModel];

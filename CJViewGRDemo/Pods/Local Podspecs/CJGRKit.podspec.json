@@ -1,6 +1,6 @@
 {
   "name": "CJGRKit",
-  "version": "0.2.8",
+  "version": "0.3.0",
   "summary": "可进行各种手势(缩放、拖动(含位置调整))的基于UIView或UIScrollView的视图基类",
   "homepage": "https://github.com/dvlproad/CJGRKit.git",
   "license": {
@@ -16,7 +16,7 @@
   },
   "source": {
     "git": "https://github.com/dvlproad/CJGRKit.git",
-    "tag": "CJGRKit_0.2.8"
+    "tag": "CJGRKit_0.3.0"
   },
   "frameworks": "UIKit",
   "requires_arc": true,

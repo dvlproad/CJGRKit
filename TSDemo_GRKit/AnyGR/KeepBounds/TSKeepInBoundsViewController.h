@@ -1,5 +1,5 @@
 //
-//  DragViewController.h
+//  TSKeepInBoundsViewController.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2016/11/05.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DragViewController : UIViewController
+@interface TSKeepInBoundsViewController : UIViewController
 
 @end
